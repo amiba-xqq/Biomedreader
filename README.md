@@ -10,7 +10,7 @@
 | --- | --- |
 | [BiomedReader_Setup_2.0_x64.exe](https://github.com/amiba-xqq/Biomedreader/releases/download/v2.0/BiomedReader_Setup_2.0_x64.exe) | Windows 10/11 64 位安装程序 |
 | [BiomedReader_2.0_Portable_x64.zip](https://github.com/amiba-xqq/Biomedreader/releases/download/v2.0/BiomedReader_2.0_Portable_x64.zip) | 完整目录版，解压后运行 |
-| [BiomedReader_2.0_使用说明.txt](https://github.com/amiba-xqq/Biomedreader/releases/download/v2.0/BiomedReader_2.0_%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E.txt) | 详细操作说明 |
+| [BiomedReader_2.0_User_Guide.txt](https://github.com/amiba-xqq/Biomedreader/releases/download/v2.0/BiomedReader_2.0_User_Guide.txt) | 详细操作说明 |
 | [BiomedReader_2.0_SHA256.txt](https://github.com/amiba-xqq/Biomedreader/releases/download/v2.0/BiomedReader_2.0_SHA256.txt) | 下载文件的 SHA256 校验值 |
 
 安装版运行安装程序，按照提示完成安装。目录版完整解压后运行 `BiomedReader.exe`，保留 `_internal` 和其它配套文件。
