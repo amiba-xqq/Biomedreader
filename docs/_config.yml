@@ -1,0 +1,12 @@
+title: "刊禾 · Biomed Reader"
+description: "生物医学文献检索、离线阅读与 PDF 整理"
+url: "https://amiba-xqq.github.io"
+baseurl: "/Biomedreader"
+lang: zh-CN
+timezone: Asia/Shanghai
+encoding: utf-8
+markdown: kramdown
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

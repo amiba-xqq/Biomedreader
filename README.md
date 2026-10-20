@@ -2,6 +2,12 @@
 
 适用于 Windows 10/11 的生物医学文献检索与离线阅读软件。保存课题关键词，检索 PubMed、bioRxiv 与 medRxiv，管理收藏、笔记和本地 PDF。
 
+## 网站与使用教程
+
+[访问刊禾官网](https://amiba-xqq.github.io/Biomedreader/) · [下载（GitHub / 夸克网盘）](https://amiba-xqq.github.io/Biomedreader/downloads.html) · [详细使用教程](https://amiba-xqq.github.io/Biomedreader/guide.html)
+
+网站使用 Jekyll 构建，由 GitHub Pages 公开托管，源码与维护说明见 [docs/README.md](docs/README.md)。
+
 ## 下载与安装
 
 [打开 2.0 发布页](https://github.com/amiba-xqq/Biomedreader/releases/tag/v2.0)

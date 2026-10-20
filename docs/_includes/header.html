@@ -1,0 +1,19 @@
+<header class="site-header">
+<div class="wrap header-inner">
+<a class="brand" href="{{ '/' | relative_url }}"{% if page.page_id == "home" %} aria-current="page"{% endif %} aria-label="刊禾 Biomed Reader 主页">
+<img src="{{ '/assets/app-icon.png' | relative_url }}" width="40" height="40" alt="刊禾标志">
+<div>
+<strong>刊禾</strong>
+<small>Biomed Reader</small>
+</div>
+</a>
+<nav class="nav" id="main-nav" aria-label="主导航">
+<a href="{{ '/' | relative_url }}"{% if page.page_id == "home" %} aria-current="page"{% endif %}>主页</a>
+<a href="{{ '/downloads.html' | relative_url }}"{% if page.page_id == "downloads" %} aria-current="page"{% endif %}>下载</a>
+<a href="{{ '/guide.html' | relative_url }}"{% if page.page_id == "guide" %} aria-current="page"{% endif %}>使用教程</a>
+</nav>
+<a class="header-download" href="{{ '/downloads.html' | relative_url }}">获取 Biomed Reader <span aria-hidden="true">↗</span>
+</a>
+<button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">菜单</button>
+</div>
+</header>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#faf8f4">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="{{ page.description | escape }}">
+  <meta property="og:title" content="{{ page.title | escape }}">
+  <meta property="og:description" content="{{ page.description | escape }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ '/assets/app-icon.png' | absolute_url }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <link rel="icon" type="image/png" href="{{ '/assets/app-icon.png' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+  <title>{{ page.title | escape }}</title>
+</head>
+<body data-page="{{ page.page_id }}">
+  <a class="skip" href="#main">跳到主要内容</a>
+  {% include header.html %}
+  {{ content }}
+  {% include footer.html %}
+  <script src="{{ '/site.js' | relative_url }}" defer></script>
+</body>
+</html>

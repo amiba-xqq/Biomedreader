@@ -1,0 +1,355 @@
+---
+layout: default
+page_id: guide
+title: "使用教程｜刊禾 Biomed Reader"
+description: "Biomed Reader 2.0 完整使用教程：安装、关键词方案、增量检索、默认卡片、DOI 标记、收藏与 PDF、期刊 JIF、分享备份和数据迁移。"
+permalink: /guide.html
+---
+<main id="main" class="wrap">
+<section class="page-intro guide-intro">
+<p class="eyebrow">GETTING STARTED & EVERYDAY USE</p>
+<h1>从安装，到自己的文献库。</h1>
+<p class="lead">按一次真实的使用流程，熟悉关键词方案、缓存阅读、收藏与本地数据管理。教程适用于 2.0，包含本次默认展现形式更新。</p>
+</section>
+<div class="guide-layout">
+<aside class="guide-sidebar" aria-label="教程目录">
+<p>使用教程 · CONTENTS</p>
+<nav class="toc">
+<a href="#install">01　安装与升级</a>
+<a href="#start">02　第一次打开与界面导航</a>
+<a href="#keywords">03　创建关键词方案与表达式</a>
+<a href="#filters">04　数据源、年份与期刊筛选</a>
+<a href="#ranking">05　候选数与三种排序</a>
+<a href="#refresh">06　首次、增量与完整检索</a>
+<a href="#browser">07　预印本官网验证与取消</a>
+<a href="#views">08　表格、卡片与默认展现形式</a>
+<a href="#hidden">09　缓存来源与隐藏文章</a>
+<a href="#details">10　文章详情、DOI 与已读标记</a>
+<a href="#favorites">11　收藏分组与本地 PDF</a>
+<a href="#journals">12　期刊目录与 JIF 年份</a>
+<a href="#sharing">13　分享、备份与移动数据目录</a>
+<a href="#faq">14　常见问题与使用注意</a>
+</nav>
+<a class="back-top" href="#main">返回顶部 ↑</a>
+</aside>
+<div>
+<div class="guide-search">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+<circle cx="10" cy="10" r="6"/>
+<path d="m15 15 6 6"/>
+</svg>
+<label class="hidden" for="guide-search">搜索教程章节</label>
+<input type="search" id="guide-search" placeholder="查找教程，例如：增量、PDF、默认视图" autocomplete="off">
+<div class="search-result" role="status">共 14 个章节，可搜索关键词或按目录跳转</div>
+</div>
+<p class="empty-search" hidden>没有找到匹配章节。试试“检索”“收藏”或“备份”，也可清空搜索查看全部教程。</p>
+<section class="chapter" id="install">
+<h2>
+<span>01</span>安装与升级</h2>
+<p>首先在<a class="text-link" href="{{ '/downloads.html' | relative_url }}">下载页面</a>选择正确的系统与芯片版本。</p>
+<ol>
+<li>
+<strong>Windows 安装版：</strong>运行 EXE 安装程序。支持 Windows 10/11 的 64 位系统。</li>
+<li>
+<strong>Windows 目录版：</strong>完整解压 ZIP，再运行 BiomedReader.exe。不能只复制一个 EXE。</li>
+<li>
+<strong>macOS：</strong>M 系列与 Intel 使用不同的 DMG。支持 macOS 12 及以上，将应用拖到“应用程序”。</li>
+</ol>
+<div class="notice">
+<strong>升级前先备份。</strong>退出旧软件，在设置中备份完整本地数据。新版沿用数据兼容标识，缓存、方案、收藏与 PDF 关联继续使用。macOS 若出现开发者提示，请参考<a class="text-link" href="https://github.com/amiba-xqq/Biomedreader_macos#下载与安装" target="_blank" rel="noopener">仓库安装说明</a>。</div>
+</section>
+<section class="chapter" id="start">
+<h2>
+<span>02</span>第一次打开与界面导航</h2>
+<p>左侧四个入口分别负责不同的工作：</p>
+<ul>
+<li>
+<strong>关键词方案：</strong>保存检索条件，进入某个课题的缓存与结果页面。</li>
+<li>
+<strong>收藏文章：</strong>管理收藏分组、标签、笔记与 PDF。</li>
+<li>
+<strong>期刊目录：</strong>维护内置和自定义期刊范围。</li>
+<li>
+<strong>设置：</strong>调整默认视图、检索范围、JIF 年份、字体和本地数据。</li>
+</ul>
+<p>首次使用时先检查设置中的预印本来源范围与最近年限，然后创建关键词方案。</p>
+</section>
+<section class="chapter" id="keywords">
+<h2>
+<span>03</span>创建关键词方案与表达式</h2>
+<ol>
+<li>点击“添加关键词组”，输入便于识别的<strong>方案名称</strong>。</li>
+<li>输入关键词或布尔表达式。方案名称用于卡片与收藏分组，检索表达式决定实际查询。</li>
+<li>选择本方案的数据源、候选数与默认排序，保存后即可从主页卡片进入。</li>
+</ol>
+<div class="example">R-loop OR "DNA-RNA hybrid"</div>
+<p>
+<code>AND</code> 连接需要同时满足的概念，<code>OR</code> 合并同义词，英文引号标记短语，括号组织条件。不同网站对表达式的解析可能不同，复杂查询建议在对应官网核对。</p>
+<p>PubMed 专属字段标签建议只用于仅 PubMed 的方案。主页关键词卡片可拖动排序，默认每行五张，也可调整宽度。</p>
+<figure class="guide-figure">
+<button type="button" class="zoom-image" aria-label="放大查看：编辑关键词方案：名称、关键词、数据源和候选数">
+<img src="{{ '/assets/profile.png' | relative_url }}" alt="编辑关键词方案：名称、关键词、数据源和候选数" loading="lazy">
+</button>
+<figcaption>
+<span>软件实际界面，文献为演示数据</span>
+<span>点击图片放大</span>
+</figcaption>
+</figure>
+</section>
+<section class="chapter" id="filters">
+<h2>
+<span>04</span>数据源、年份与期刊筛选</h2>
+<p>在“编辑方案”中选择仅 PubMed、仅预印本官网，或两者。预印本具体使用 bioRxiv、medRxiv 还是两者，在设置中选择。</p>
+<ul>
+<li>
+<strong>文章类型：</strong>Research Article、Review 等可多选，仅用于 PubMed。</li>
+<li>
+<strong>发表年份：</strong>上下限分别设置，包含边界。支持直接输入或下拉选择，最大年份跟随本地电脑年份。</li>
+<li>
+<strong>期刊范围：</strong>选择一个或多个期刊目录，多个目录取并集。</li>
+<li>
+<strong>最低 JIF 与期刊目录：</strong>仅限制 PubMed，不限制预印本文章。</li>
+</ul>
+<h3>检索范围在设置中调整</h3>
+<p>PubMed 可选默认范围或标题与摘要。预印本可选默认、标题与摘要、全文、全文与标题摘要。预印本最近年限默认两年，并与方案年份取交集。全文命中也可能来自参考文献等位置。</p>
+<figure class="guide-figure">
+<button type="button" class="zoom-image" aria-label="放大查看：发表年份上下限与多个期刊目录勾选">
+<img src="{{ '/assets/filters.png' | relative_url }}" alt="发表年份上下限与多个期刊目录勾选" loading="lazy">
+</button>
+<figcaption>
+<span>软件实际界面，文献为演示数据</span>
+<span>点击图片放大</span>
+</figcaption>
+</figure>
+</section>
+<section class="chapter" id="ranking">
+<h2>
+<span>05</span>候选数与三种排序</h2>
+<p>PubMed 与预印本候选数分别设置，新方案均默认为 <strong>0（不限）</strong>。数量越大，首次完整搜索通常越久。同时启用 bioRxiv 与 medRxiv 时，各站点分别使用同一个预印本候选数。例如设置 20，两个站点各获取至多 20 篇。</p>
+<table class="guide-table">
+<thead>
+<tr>
+<th>排序</th>
+<th>阅读顺序与预印本检索</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>最新发表</td>
+<td>按日期优先，预印本官网对应 Newest first。</td>
+</tr>
+<tr>
+<td>最相关</td>
+<td>按来源排名与相关性信息，预印本官网对应 Best Match。</td>
+</tr>
+<tr>
+<td>综合最佳</td>
+<td>预印本先按 Newest first 获取候选，再结合相关性和新近程度本地排序。</td>
+</tr>
+</tbody>
+</table>
+<p>综合最佳使用 72% 归一化相关性与 28% 时间新近度，时间权重约每 180 天减半。相关性依据已有标题、摘要和关键词计算，不能视为跨网站统一的官方评分。</p>
+<div class="notice">有限候选集不保证覆盖全部历史中最相关的文章。候选数、年份、期刊、文章类型和收录时间差异，都会影响软件与官网结果的对应关系。</div>
+</section>
+<section class="chapter" id="refresh">
+<h2>
+<span>06</span>首次、增量与完整检索</h2>
+<ol>
+<li>
+<strong>首次联网刷新：</strong>为新方案完整建立缓存基线。</li>
+<li>
+<strong>后续普通刷新：</strong>检索条件不变时，从对应来源上次成功刷新日到本地今天，按日检索并去重合并。</li>
+<li>
+<strong>完整检索：</strong>主动勾选该选项，重新核查全部条件范围。修改实际检索条件也可能需要重新建立基线。</li>
+</ol>
+<p>各来源分别保存成功状态。一个来源失败，不要求已成功来源重复完整检索。缺少有效成功检查点的旧缓存，可能需要一次核验；PubMed 会复用已有摘要并补取缺失记录。</p>
+<p>检索结果分批保存。取消或部分失败后，仍能查看本次已缓存的新文章。失败不会推进整体成功刷新时间，也不会改变其它关键词卡片的刷新时间。</p>
+<div class="notice">
+<strong>严格按日增量的边界：</strong>PubMed 依据发表日期，预印本依据版本发布日期，可能遗漏晚收录的旧文章。需要重新核对时使用完整检索。刷新时间与间隔以本地电脑时间为准。</div>
+</section>
+<section class="chapter" id="browser">
+<h2>
+<span>07</span>预印本官网验证与取消</h2>
+<p>预印本关键词检索由对应的 bioRxiv 或 medRxiv 官网完成。弹出的搜索窗口可以最小化，搜索会继续。</p>
+<ul>
+<li>出现人机验证时，恢复窗口并<strong>手动完成验证</strong>，软件不会自动破解验证码。</li>
+<li>如果网站提示请求过多，请等待自动恢复，频繁重新加载可能延长等待。</li>
+<li>关闭官网窗口会取消这次官网检索。主结果页也可使用“取消检索”。</li>
+<li>首次大量结果可能需要多页读取，比在官网仅查看第一页更耗时。</li>
+</ul>
+<p>网站改版、限流或临时不可用都可能影响检索。遇到问题先保留缓存，再检查来源和筛选条件。预印本通常尚未完成同行评审，引用前请核对正式发表状态。</p>
+</section>
+<section class="chapter" id="views">
+<h2>
+<span>08</span>表格、卡片与默认展现形式</h2>
+<p>
+<strong>2.0 最新设置：</strong>在设置中选择“关键词方案默认展现形式”：宽松的嵌入式卡片、紧密的嵌入式卡片、表格。默认紧密卡片。</p>
+<p>每次重新打开软件，各方案从设置中的默认形式开始。进入方案后仍可临时切换表格、卡片及密度，临时选择仅在本次运行有效，不修改全局默认值。</p>
+<figure class="guide-figure">
+<button type="button" class="zoom-image" aria-label="放大查看：设置中的关键词方案默认展现形式">
+<img src="{{ '/assets/default-view.png' | relative_url }}" alt="设置中的关键词方案默认展现形式" loading="lazy">
+</button>
+<figcaption>
+<span>Biomed Reader 2.0 实际设置界面</span>
+<span>点击图片放大</span>
+</figcaption>
+</figure>
+<ul>
+<li>
+<strong>表格：</strong>拖动列边界调整宽度。先加载部分行，向下滚动继续查看。</li>
+<li>
+<strong>嵌入式卡片：</strong>展示期刊、标题和摘要。点击展开摘要查看全文本，底部使用上一页或下一页，每页 24 篇。</li>
+<li>
+<strong>卡片密度：</strong>紧密缩小卡片，实际每行数量随窗口宽度变化。关键词卡片模式记录浏览页面和位置。</li>
+<li>
+<strong>预印本：</strong>标题浅红加粗。缺失摘要按当前页面后台补取，尚未获取的摘要可能暂时无法离线查看。</li>
+</ul>
+<figure class="guide-figure">
+<button type="button" class="zoom-image" aria-label="放大查看：紧密的嵌入式卡片、摘要、收藏与分页">
+<img src="{{ '/assets/reading.png' | relative_url }}" alt="紧密的嵌入式卡片、摘要、收藏与分页" loading="lazy">
+</button>
+<figcaption>
+<span>软件实际界面，文献为演示数据</span>
+<span>点击图片放大</span>
+</figcaption>
+</figure>
+</section>
+<section class="chapter" id="hidden">
+<h2>
+<span>09</span>缓存来源与隐藏文章</h2>
+<p>结果页面的“检索源”用于筛选<strong>已缓存</strong>的 PubMed、bioRxiv、medRxiv 文章，可以多选。它不会更改方案的联网检索数据源，也不会删除其它来源的缓存。</p>
+<ol>
+<li>对不想继续看到的文章点击“隐藏”。表格模式先选择文章，再使用对应按钮。</li>
+<li>需要恢复时打开“隐藏设置”，勾选显示隐藏文章。</li>
+<li>对该文章点击“取消隐藏”，再关闭显示隐藏的选项即可恢复普通展示。</li>
+</ol>
+<p>隐藏只作用于当前关键词方案，重启和刷新后仍保留，不删除缓存、收藏或 PDF。缓存总数仍包含隐藏文章，当前显示数量会根据筛选变化。</p>
+</section>
+<section class="chapter" id="details">
+<h2>
+<span>10</span>文章详情、DOI 与已读标记</h2>
+<p>点击文章详情可阅读完整摘要、作者、DOI、期刊与已录入的 JIF，也可记录标签和笔记。已缓存内容可以离线查看，DOI 网页本身通常需要联网。</p>
+<p>“打开 DOI / 文章界面”会调用默认浏览器，详情文字保持不变。点击后，这一轮结果中的对应文章显示访问标记，字体颜色变淡，<strong>卡片背景始终保持白色</strong>。</p>
+<p>联网刷新重置 DOI 访问标记，保留收藏、笔记和隐藏状态。软件不会在刷新或打开详情时自动寻找模型图或抓取文章首图。</p>
+</section>
+<section class="chapter" id="favorites">
+<h2>
+<span>11</span>收藏分组与本地 PDF</h2>
+<p>在哪个关键词方案收藏，文章就进入同名收藏分组。删除关键词方案后，收藏分组继续保留。支持自定义分组、拖动排序，将一篇或多篇文章复制或移动到其它分组。</p>
+<p>收藏文章可按分组或全部展示，并按发表时间或收藏时间排序。组内支持表格、嵌入式卡片和卡片密度选择。</p>
+<h3>链接与打开原文</h3>
+<ol>
+<li>先收藏文章，在收藏文章详情中点击“链接文章”。</li>
+<li>浏览并选择已下载的 PDF，软件复制到当前数据目录的 <code>paper</code> 文件夹，以文章标题命名。</li>
+<li>链接成功且文件存在时，“查看原文”可点击，由系统默认 PDF 阅读器打开副本。</li>
+</ol>
+<figure class="guide-figure">
+<button type="button" class="zoom-image" aria-label="放大查看：收藏文章详情中的链接文章与查看原文">
+<img src="{{ '/assets/pdf.png' | relative_url }}" alt="收藏文章详情中的链接文章与查看原文" loading="lazy">
+</button>
+<figcaption>
+<span>软件实际界面，文献为演示数据</span>
+<span>点击图片放大</span>
+</figcaption>
+</figure>
+<div class="notice">
+<strong>取消收藏与删除：</strong>关键词方案中“取消本组收藏”只移出当前组。收藏文章详情中的“取消收藏”解除该文全部收藏组归属。最后一处收藏解除后，软件删除 paper 中的 PDF 副本，保留您原始下载的文件和文章缓存。若文件占用导致删除失败，关闭阅读器后再试。</div>
+</section>
+<section class="chapter" id="journals">
+<h2>
+<span>12</span>期刊目录与 JIF 年份</h2>
+<p>内置 IF 6-10、IF 10-20、IF 20-500、NC精选、NC扩选五个目录。IF 三组按 2025 年已录入 JIF 固定划分：6≤JIF&lt;10、10≤JIF&lt;20、20≤JIF≤500。</p>
+<ol>
+<li>创建自定义目录，或将内置目录复制为自定义目录。</li>
+<li>输入部分期刊名称或 ISSN，按名称或 JIF 排序，输入 JIF 上下限筛选。</li>
+<li>勾选“只显示已选择的期刊”检查成员，命名并保存。全选与全不选只针对当前筛选结果。</li>
+</ol>
+<figure class="guide-figure">
+<button type="button" class="zoom-image" aria-label="放大查看：按部分名称和 JIF 范围筛选自定义期刊目录">
+<img src="{{ '/assets/journals.png' | relative_url }}" alt="按部分名称和 JIF 范围筛选自定义期刊目录" loading="lazy">
+</button>
+<figcaption>
+<span>软件实际界面，文献为演示数据</span>
+<span>点击图片放大</span>
+</figcaption>
+</figure>
+<p>设置中的 JIF 年份默认本地年份减一，可选 2010 年至当前年。只有已录入对应年度数据时才显示数值，缺失留空。切换显示年份不会重新划分 IF 三组的成员。</p>
+<p>软件不在线补全 JIF，不调用 Clarivate Journals API。NLM 公开目录收录不等同于 SCI 认证，指标以本地已录入年度数据为准。</p>
+</section>
+<section class="chapter" id="sharing">
+<h2>
+<span>13</span>分享、备份与移动数据目录</h2>
+<h3>分享收藏与期刊目录</h3>
+<p>收藏打包时先选择一个或多个分组，右侧只展示这些组的文章并默认勾选。最终只导出右侧已勾选文章，可选择包含已链接 PDF。接收者使用“读取分享压缩包”，导入文章、分组、笔记与 PDF 关联。</p>
+<figure class="guide-figure">
+<button type="button" class="zoom-image" aria-label="放大查看：选择分组和文章后打包收藏分享 ZIP">
+<img src="{{ '/assets/share.png' | relative_url }}" alt="选择分组和文章后打包收藏分享 ZIP" loading="lazy">
+</button>
+<figcaption>
+<span>软件实际界面，文献为演示数据</span>
+<span>点击图片放大</span>
+</figcaption>
+</figure>
+<p>期刊目录也可选择多个卡片导出 ZIP。导入同名目录时追加“_已重复”，避免覆盖原目录。</p>
+<h3>备份整个本地资料库</h3>
+<p>“备份本地数据（ZIP）”导出整个数据目录，包含数据库、缓存和 paper 下的 PDF。单独导出收藏分享包不能代替完整备份。</p>
+<figure class="guide-figure">
+<button type="button" class="zoom-image" aria-label="放大查看：本地数据的备份、移动和链接入口">
+<img src="{{ '/assets/data.png' | relative_url }}" alt="本地数据的备份、移动和链接入口" loading="lazy">
+</button>
+<figcaption>
+<span>演示环境的数据目录，实际位置以软件设置为准</span>
+<span>点击图片放大</span>
+</figcaption>
+</figure>
+<ul>
+<li>Windows 默认：<code>%LOCALAPPDATA%\OrangeReader\BiomedLiterature</code>
+</li>
+<li>macOS 默认：<code>~/Library/Application Support/OrangeReader/BiomedLiterature</code>
+</li>
+<li>
+<strong>移动本地数据目录：</strong>选择专用空目录，按提示退出迁移，验证完成后删除原数据并使用新路径。操作前先备份。</li>
+<li>
+<strong>链接本地数据目录：</strong>选择已有文件夹本身，其中应直接包含 <code>biomed_literature.sqlite3</code>，结构不正确会拒绝链接。</li>
+</ul>
+<p>路径选择窗口支持在 Look in 中输入或粘贴路径，按 Enter 进入后再选择目录。字体和布局可在设置中自动适配屏幕或整体缩放，软件保持浅色界面。</p>
+</section>
+<section class="chapter" id="faq">
+<h2>
+<span>14</span>常见问题与使用注意</h2>
+<div class="faq">
+<details>
+<summary>为什么结果与 PubMed 或预印本官网不同？</summary>
+<p>检查表达式、数据源、范围、年份、文章类型、期刊和候选数，并确认检索完成。多个来源合并、不同的排序方式与收录延迟，都可能产生差异。</p>
+</details>
+<details>
+<summary>为什么新方案第一次搜索比较慢？</summary>
+<p>第一次需要建立基线，大候选集通常需要读取多页结果。预印本官网可能还会要求验证或限流。后续条件不变时按来源检查点进行日级增量。</p>
+</details>
+<details>
+<summary>断网后能查看哪些内容？</summary>
+<p>能查看已经缓存的文章标题、摘要、收藏和笔记，也能打开已链接的本地 PDF。尚未下载的摘要、DOI 网页或尚未取得的全文需要联网。</p>
+</details>
+<details>
+<summary>为什么重启后卡片形式恢复了？</summary>
+<p>这是当前设计：重启采用设置中的关键词方案默认展现形式。要长期使用表格或宽松卡片，请在设置中修改默认项。</p>
+</details>
+<details>
+<summary>为什么某篇文章没有 JIF 或 PDF？</summary>
+<p>JIF 只显示本地已录入的对应年份数据，缺失时留空。PDF 需要自己下载并链接，软件不会自动取得出版社全文。</p>
+</details>
+<details>
+<summary>数据或原始 PDF 会因升级被删除吗？</summary>
+<p>升级保持数据兼容，但建议事先完整备份。取消最后一处收藏会删除软件 paper 中的 PDF 副本，原始下载文件仍保留。移动数据目录会在校验后移走并删除旧数据。</p>
+</details>
+<details>
+<summary>如何查看最新版本和报告问题？</summary>
+<p>从下载页进入对应平台的 GitHub 仓库，核对 latest 发布与使用说明。反馈时可提供系统、软件版本、操作步骤和错误信息，避免附带私人文献或凭据。</p>
+</details>
+</div>
+</section>
+<p class="notice">图示采用软件实际界面与独立演示数据，不代表真实发表的文献。大多数图示来自 2.0 前后共有界面，新增默认视图截图来自本次 2.0 更新。Windows 与 macOS 功能入口一致，窗口外观可能略有不同。</p>
+<a class="btn" href="{{ '/downloads.html' | relative_url }}">下载并开始使用</a>
+</div>
+</div>
+</main>
