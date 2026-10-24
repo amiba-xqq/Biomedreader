@@ -15,10 +15,11 @@
 | 下载文件 | 用途 |
 | --- | --- |
 | [BiomedReader_Setup_2.1_x64.exe](https://github.com/amiba-xqq/Biomedreader/releases/download/v2.1/BiomedReader_Setup_2.1_x64.exe) | Windows 10/11 64 位安装程序 |
+| [BiomedReader_2.1_Portable_x64.zip](https://github.com/amiba-xqq/Biomedreader/releases/download/v2.1/BiomedReader_2.1_Portable_x64.zip) | Windows 10/11 64 位完整目录版，解压后运行 |
 | [Release_Notes_2.1.txt](https://github.com/amiba-xqq/Biomedreader/releases/download/v2.1/Release_Notes_2.1.txt) | 最新更新说明 |
 | [SHA256_Windows_2.1.txt](https://github.com/amiba-xqq/Biomedreader/releases/download/v2.1/SHA256_Windows_2.1.txt) | 下载文件的 SHA256 校验值 |
 
-运行安装程序，按照提示完成安装。升级前请关闭 Biomed Reader 和 Word，覆盖安装保留原有本地数据。旧 2.0 的目录版及网盘仍可在历史发布中下载，2.1 请使用上面的 GitHub 安装包。
+安装版运行安装程序；完整目录版需先解压全部文件，再运行文件夹中的 `BiomedReader.exe`，不要单独移动 EXE 或删除 `_internal`。升级前关闭 Biomed Reader 和 Word，原有本地数据保留。目录版需要 Word 插件时，关闭 Word 后运行 `RegisterWordAddin.cmd`；完整说明见压缩包内的 `Portable_README_2.1.txt`。
 
 软件包含 Python 3.12、依赖库和内嵌浏览器，无需另外安装 Python。安装包未数字签名，Windows 可能显示发布者提示。
 
@@ -32,7 +33,7 @@
 - PDF 选择窗口独立显示，主窗口最小化后仍可拖入文件。
 - Windows Word 插件保留插入/更新引用、Arial 五号默认字体和含嵌入文献库的 EndNote 文档导出。
 
-本仓库发布 Windows 安装版。对应 macOS DMG 在 [独立仓库](https://github.com/amiba-xqq/Biomedreader_macos/releases/latest) 发布；Mac 2.1 使用 Word 文档导出及 EndNote CWYW 接管，不包含 Windows COM 工具栏。
+本仓库发布 Windows 安装版和完整目录版。对应 macOS DMG 在 [独立仓库](https://github.com/amiba-xqq/Biomedreader_macos/releases/latest) 发布；Mac 2.1 使用 Word 文档导出及 EndNote CWYW 接管，不包含 Windows COM 工具栏。
 
 ## 快速开始
 
