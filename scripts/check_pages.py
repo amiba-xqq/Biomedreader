@@ -15,7 +15,7 @@ expected_quark = {
 }
 expected_legacy_quark = dict(windows='https://pan.quark.cn/s/d7308ecd7a92',portable='https://pan.quark.cn/s/3ad56e327034',apple='https://pan.quark.cn/s/31867e2dc3e0',intel='https://pan.quark.cn/s/4130cba6f1d1')
 filenames = dict(windows='BiomedReader_Setup_2.1_x64.exe',portable='BiomedReader_2.1_Portable_x64.zip',apple='BiomedReader_2.1_macOS12_AppleSilicon.dmg',intel='BiomedReader_2.1_macOS12_Intel.dmg')
-expected_hashes = dict(windows='df57e6b6cdffdec06090bafb23f1232ab7fa6e76951c7ebf26d1c48d8621a023',portable='f63e3a9111efaca993e8d80451460d6cad288957a320510acda8a2481d272ad8',apple='860e1a11eb9c67c08514998d19620a68355a38e3efea724f0bc846bc8b0acce7',intel='b5ed1ad4c2ffcd0dd2315d364304b4d05abfb2016fd48a46d08326d579d34a23')
+expected_hashes = {'windows': '1df2b533484e000d045971c275f3611eb9b981952fb2cb693da22f4a1fc3e9c4', 'portable': '5e7ed964a611d5d808adc5fc1eb7792e0a66ab7f402443c70381c231b61685fa', 'apple': 'bc2f67cb683402c16e2535acf00df843e2049b6eab638bad02bde3772a4483c7', 'intel': '1e89f3b7a68bded6183a02aad494911af31d21e9c98ddc0c94a21adb3ca58214'}
 
 
 class Page(HTMLParser):
