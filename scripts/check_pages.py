@@ -106,3 +106,14 @@ assert len(locations) == 3
 assert all(link.startswith('https://amiba-xqq.github.io/Biomedreader/') for link in locations)
 assert 'Sitemap: https://amiba-xqq.github.io/Biomedreader/sitemap.xml' in (root / 'robots.txt').read_text()
 print('PASS: Jekyll rendered 3 pages, 18 chapters, all local links/assets/anchors, sitemap, 8 exact Quark links, 8 version-specific GitHub downloads and 4 SHA256 values.')
+
+# The desktop updater consumes the same version and hashes as the download page.
+import json
+update=json.loads((root/'app-update.json').read_text(encoding='utf8'))
+assert update['schema']==1 and update['application']=='BiomedReader' and update['version']=='2.1'
+for label,key in [('windows-x64','windows'),('macos-arm64','apple'),('macos-intel','intel')]:
+    package=update['packages'][label]
+    assert package['filename']==filenames[key]
+    assert package['url']==pages['downloads.html'].github[key]
+    assert package['sha256']==expected_hashes[key] and package['bytes']>0
+print('PASS: desktop update manifest agrees with the published packages.')

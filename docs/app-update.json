@@ -1,0 +1,30 @@
+---
+layout: null
+permalink: /app-update.json
+---
+{
+  "schema": 1,
+  "application": "BiomedReader",
+  "version": {{ site.data.downloads.version | jsonify }},
+  "website": {{ '/' | absolute_url | jsonify }},
+  "packages": {
+    "windows-x64": {
+      "filename": {{ site.data.downloads.windows.filename | jsonify }},
+      "url": {{ site.data.downloads.windows.github | jsonify }},
+      "bytes": {{ site.data.downloads.windows.bytes | jsonify }},
+      "sha256": {{ site.data.downloads.windows.sha256 | jsonify }}
+    },
+    "macos-arm64": {
+      "filename": {{ site.data.downloads.apple.filename | jsonify }},
+      "url": {{ site.data.downloads.apple.github | jsonify }},
+      "bytes": {{ site.data.downloads.apple.bytes | jsonify }},
+      "sha256": {{ site.data.downloads.apple.sha256 | jsonify }}
+    },
+    "macos-intel": {
+      "filename": {{ site.data.downloads.intel.filename | jsonify }},
+      "url": {{ site.data.downloads.intel.github | jsonify }},
+      "bytes": {{ site.data.downloads.intel.bytes | jsonify }},
+      "sha256": {{ site.data.downloads.intel.sha256 | jsonify }}
+    }
+  }
+}
