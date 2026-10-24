@@ -1,4 +1,4 @@
-# 刊禾 · Biomed Reader 2.0
+# 刊禾 · Biomed Reader 2.1
 
 适用于 Windows 10/11 的生物医学文献检索与离线阅读软件。保存课题关键词，检索 PubMed、bioRxiv 与 medRxiv，管理收藏、笔记和本地 PDF。
 
@@ -10,24 +10,29 @@
 
 ## 下载与安装
 
-[打开 2.0 发布页](https://github.com/amiba-xqq/Biomedreader/releases/tag/v2.0)
+[打开 2.1 发布页](https://github.com/amiba-xqq/Biomedreader/releases/tag/v2.1)
 
 | 下载文件 | 用途 |
 | --- | --- |
-| [BiomedReader_Setup_2.0_x64.exe](https://github.com/amiba-xqq/Biomedreader/releases/download/v2.0/BiomedReader_Setup_2.0_x64.exe) | Windows 10/11 64 位安装程序 |
-| [BiomedReader_2.0_Portable_x64.zip](https://github.com/amiba-xqq/Biomedreader/releases/download/v2.0/BiomedReader_2.0_Portable_x64.zip) | 完整目录版，解压后运行 |
-| [BiomedReader_2.0_User_Guide.txt](https://github.com/amiba-xqq/Biomedreader/releases/download/v2.0/BiomedReader_2.0_User_Guide.txt) | 详细操作说明 |
-| [BiomedReader_2.0_SHA256.txt](https://github.com/amiba-xqq/Biomedreader/releases/download/v2.0/BiomedReader_2.0_SHA256.txt) | 下载文件的 SHA256 校验值 |
+| [BiomedReader_Setup_2.1_x64.exe](https://github.com/amiba-xqq/Biomedreader/releases/download/v2.1/BiomedReader_Setup_2.1_x64.exe) | Windows 10/11 64 位安装程序 |
+| [Release_Notes_2.1.txt](https://github.com/amiba-xqq/Biomedreader/releases/download/v2.1/Release_Notes_2.1.txt) | 最新更新说明 |
+| [SHA256_Windows_2.1.txt](https://github.com/amiba-xqq/Biomedreader/releases/download/v2.1/SHA256_Windows_2.1.txt) | 下载文件的 SHA256 校验值 |
 
-安装版运行安装程序，按照提示完成安装。目录版完整解压后运行 `BiomedReader.exe`，保留 `_internal` 和其它配套文件。
+运行安装程序，按照提示完成安装。升级前请关闭 Biomed Reader 和 Word，覆盖安装保留原有本地数据。旧 2.0 的目录版及网盘仍可在历史发布中下载，2.1 请使用上面的 GitHub 安装包。
 
 软件包含 Python 3.12、依赖库和内嵌浏览器，无需另外安装 Python。安装包未数字签名，Windows 可能显示发布者提示。
 
-## 2.0 版本
+## 2.1 版本
 
-应用、设置左下角、联网客户端、程序文件属性、安装程序和配套说明统一使用产品版本 **2.0**。保留当前功能和已有数据兼容性，Windows 数字版本资源为 `2.0.0.0`。
+应用、设置左下角、程序文件属性和安装程序使用产品版本 **2.1**，Windows 数字版本资源为 `2.1.0.0`，保留已有数据兼容性。
 
-本仓库发布 Windows 安装版与完整目录版。对应 macOS DMG 在 [独立仓库](https://github.com/amiba-xqq/Biomedreader_macos/releases/latest) 发布。
+- 全部联网刷新依次处理关键词方案，并保留各来源增量检查点。
+- 引用、Word 插件和 EndNote 导出保留 Volume、Issue、Pages。复制引用时卷页缺失则每次联网尝试补齐，完整则直接使用缓存。
+- 批量收藏 PDF 支持多选/拖放、必选期刊目录和目标分组、识别首页完整标题、PubMed 匹配、自动关联 PDF、进度及失败名单。
+- PDF 选择窗口独立显示，主窗口最小化后仍可拖入文件。
+- Windows Word 插件保留插入/更新引用、Arial 五号默认字体和含嵌入文献库的 EndNote 文档导出。
+
+本仓库发布 Windows 安装版。对应 macOS DMG 在 [独立仓库](https://github.com/amiba-xqq/Biomedreader_macos/releases/latest) 发布；Mac 2.1 使用 Word 文档导出及 EndNote CWYW 接管，不包含 Windows COM 工具栏。
 
 ## 快速开始
 
