@@ -2,14 +2,22 @@
 layout: default
 page_id: guide
 title: "使用教程｜刊禾 Biomed Reader"
-description: "Biomed Reader 2.0 完整使用教程：安装、关键词方案、增量检索、默认卡片、DOI 标记、收藏与 PDF、期刊 JIF、分享备份和数据迁移。"
+description: "Biomed Reader 2.1 使用教程：全部联网刷新、引用卷页、Windows Word 插件、EndNote 接管、批量收藏 PDF，以及检索、离线阅读和数据管理。"
 permalink: /guide.html
 ---
 <main id="main" class="wrap">
 <section class="page-intro guide-intro">
 <p class="eyebrow">GETTING STARTED & EVERYDAY USE</p>
 <h1>从安装，到自己的文献库。</h1>
-<p class="lead">按一次真实的使用流程，熟悉关键词方案、缓存阅读、收藏与本地数据管理。教程适用于 2.0，包含本次默认展现形式更新。</p>
+<p class="lead">按一次真实的使用流程，熟悉关键词方案、缓存阅读、收藏与本地数据管理。教程适用于 2.1，包含 Windows Word 插件、Mac Word / EndNote 文档互通、卷页引用和批量收藏 PDF。</p>
+<nav class="guide-new-links" aria-label="2.1 新增功能快速入口">
+<strong>2.1 新增功能</strong>
+<a class="text-link" href="#batch-refresh">全部联网刷新</a>
+<a class="text-link" href="#citations">复制引用</a>
+<a class="text-link" href="#batch-pdf">批量收藏 PDF</a>
+<a class="text-link" href="#word-plugin">Windows Word 插件</a>
+<a class="text-link" href="#endnote-macos">Mac Word / EndNote</a>
+</nav>
 </section>
 <div class="guide-layout">
 <aside class="guide-sidebar" aria-label="教程目录">
@@ -20,15 +28,19 @@ permalink: /guide.html
 <a href="#keywords">03　创建关键词方案与表达式</a>
 <a href="#filters">04　数据源、年份与期刊筛选</a>
 <a href="#ranking">05　候选数与三种排序</a>
-<a href="#refresh">06　首次、增量与完整检索</a>
+<a href="#refresh">06　首次、增量与全部联网刷新</a>
 <a href="#browser">07　预印本官网验证与取消</a>
 <a href="#views">08　表格、卡片与默认展现形式</a>
 <a href="#hidden">09　缓存来源与隐藏文章</a>
 <a href="#details">10　文章详情、DOI 与已读标记</a>
-<a href="#favorites">11　收藏分组与本地 PDF</a>
-<a href="#journals">12　期刊目录与 JIF 年份</a>
-<a href="#sharing">13　分享、备份与移动数据目录</a>
-<a href="#faq">14　常见问题与使用注意</a>
+<a href="#citations">11　复制引用与卷页信息</a>
+<a href="#favorites">12　收藏分组与本地 PDF</a>
+<a href="#batch-pdf">13　批量收藏 PDF</a>
+<a href="#word-plugin">14　Windows Word 插件</a>
+<a href="#endnote-macos">15　Mac Word / EndNote</a>
+<a href="#journals">16　期刊目录与 JIF 年份</a>
+<a href="#sharing">17　分享、备份与移动数据目录</a>
+<a href="#faq">18　常见问题与使用注意</a>
 </nav>
 <a class="back-top" href="#main">返回顶部 ↑</a>
 </aside>
@@ -39,8 +51,8 @@ permalink: /guide.html
 <path d="m15 15 6 6"/>
 </svg>
 <label class="hidden" for="guide-search">搜索教程章节</label>
-<input type="search" id="guide-search" placeholder="查找教程，例如：增量、PDF、默认视图" autocomplete="off">
-<div class="search-result" role="status">共 14 个章节，可搜索关键词或按目录跳转</div>
+<input type="search" id="guide-search" placeholder="查找教程，例如：Word、批量 PDF、Volume、增量" autocomplete="off">
+<div class="search-result" role="status">共 18 个章节，可搜索关键词或按目录跳转</div>
 </div>
 <p class="empty-search" hidden>没有找到匹配章节。试试“检索”“收藏”或“备份”，也可清空搜索查看全部教程。</p>
 <section class="chapter" id="install">
@@ -51,12 +63,12 @@ permalink: /guide.html
 <li>
 <strong>Windows 安装版：</strong>运行 EXE 安装程序。支持 Windows 10/11 的 64 位系统。</li>
 <li>
-<strong>Windows 目录版：</strong>完整解压 ZIP，再运行 BiomedReader.exe。不能只复制一个 EXE。</li>
+<strong>Windows 目录版：</strong>完整解压 ZIP，进入 <code>BiomedReader_2.1_Portable_x64</code> 文件夹运行 <code>BiomedReader.exe</code>，保留 <code>_internal</code>。需要 Word 插件时按<a class="text-link" href="#word-plugin">插件安装步骤</a>注册。</li>
 <li>
 <strong>macOS：</strong>M 系列与 Intel 使用不同的 DMG。支持 macOS 12 及以上，将应用拖到“应用程序”。</li>
 </ol>
 <div class="notice">
-<strong>升级前先备份。</strong>退出旧软件，在设置中备份完整本地数据。新版沿用数据兼容标识，缓存、方案、收藏与 PDF 关联继续使用。macOS 若出现开发者提示，请参考<a class="text-link" href="https://github.com/amiba-xqq/Biomedreader_macos#下载与安装" target="_blank" rel="noopener">仓库安装说明</a>。</div>
+<strong>升级前先备份。</strong>先在旧版设置中备份完整本地数据，再退出 Biomed Reader 和 Word 后升级。新版沿用数据兼容标识，缓存、方案、收藏与 PDF 关联继续使用。macOS 若出现开发者提示，请参考<a class="text-link" href="https://github.com/amiba-xqq/Biomedreader_macos#下载与安装" target="_blank" rel="noopener">仓库安装说明</a>。</div>
 </section>
 <section class="chapter" id="start">
 <h2>
@@ -166,6 +178,14 @@ permalink: /guide.html
 <p>检索结果分批保存。取消或部分失败后，仍能查看本次已缓存的新文章。失败不会推进整体成功刷新时间，也不会改变其它关键词卡片的刷新时间。</p>
 <div class="notice">
 <strong>严格按日增量的边界：</strong>PubMed 依据发表日期，预印本依据版本发布日期，可能遗漏晚收录的旧文章。需要重新核对时使用完整检索。刷新时间与间隔以本地电脑时间为准。</div>
+<h3 id="batch-refresh">2.1：全部联网刷新</h3>
+<ol>
+<li>回到“关键词方案”，先拖动卡片排好顺序，再点击右上角<strong>全部联网刷新</strong>。</li>
+<li>软件按当前卡片从左到右、从上到下的顺序，逐个处理方案；正在检索的卡片显示进度状态。</li>
+<li>首次刷新的卡片建立完整缓存。已有有效成功检查点、检索条件未改变的卡片，按各来源上次成功日期到本地当天增量检索；它不是对每个卡片强制“完整检索”。</li>
+<li>某个来源或方案失败会记录结果并继续队列；已取得内容保留。需要停止时点击<strong>取消全部刷新</strong>，取消当前检索及后续队列。</li>
+</ol>
+<p>开始全部刷新前请等待正在运行的单方案检索结束。遇到预印本验证窗口，仍需人工完成验证；可最小化该窗口等待检索。</p>
 </section>
 <section class="chapter" id="browser">
 <h2>
@@ -183,7 +203,7 @@ permalink: /guide.html
 <h2>
 <span>08</span>表格、卡片与默认展现形式</h2>
 <p>
-<strong>2.0 最新设置：</strong>在设置中选择“关键词方案默认展现形式”：宽松的嵌入式卡片、紧密的嵌入式卡片、表格。默认紧密卡片。</p>
+<strong>默认展现形式：</strong>在设置中选择“关键词方案默认展现形式”：宽松的嵌入式卡片、紧密的嵌入式卡片、表格。默认紧密卡片。</p>
 <p>每次重新打开软件，各方案从设置中的默认形式开始。进入方案后仍可临时切换表格、卡片及密度，临时选择仅在本次运行有效，不修改全局默认值。</p>
 <figure class="guide-figure">
 <button type="button" class="zoom-image" aria-label="放大查看：设置中的关键词方案默认展现形式">
@@ -232,11 +252,27 @@ permalink: /guide.html
 <p>“打开 DOI / 文章界面”会调用默认浏览器，详情文字保持不变。点击后，这一轮结果中的对应文章显示访问标记，字体颜色变淡，<strong>卡片背景始终保持白色</strong>。</p>
 <p>联网刷新重置 DOI 访问标记，保留收藏、笔记和隐藏状态。软件不会在刷新或打开详情时自动寻找模型图或抓取文章首图。</p>
 </section>
+<section class="chapter" id="citations">
+<h2><span>11</span>复制引用、期刊样式与卷页信息</h2>
+<ol>
+<li>打开文章详情，点击<strong>导出 / 复制引用</strong>。</li>
+<li>在弹窗中选择期刊样式，或先在“设置 → 参考文献格式”选择默认期刊；默认 <strong>Cell</strong>，支持下拉选择和输入关键词匹配。</li>
+<li>等候必要的元数据补全，检查引用中的作者、年份、期刊、<strong>Volume（卷号）</strong>、Issue（期号）、<strong>Pages（页码或文章号）</strong>及 DOI。</li>
+<li>点击<strong>复制引用</strong>，引用窗口关闭并提示“复制成功，可以粘贴”，再粘贴到所需位置。</li>
+</ol>
+<h3>什么时候联网，什么时候使用缓存？</h3>
+<ul>
+<li>Volume 或 Pages 任意一项仍缺失：每次点击导出/复制引用都即时尝试补全，不等待 24 小时。</li>
+<li>两项都已缓存：直接使用已有信息，不再为补全卷页发起请求；已补齐的数据可离线使用。</li>
+<li>在线优先发表或预印本可能尚未分配卷页，网络也可能临时不可用。软件保留已有引用，未分配字段留空，不编造数值。</li>
+</ul>
+<p>元数据优先通过 PubMed 获取，必要时按 DOI 补充。单篇引用格式对未匹配独立样式的期刊会明确标注出版社通用后备样式。复制引用得到文字；需要在 Word 中自动编号和维护文末列表，请使用下面对应平台的写作流程。</p>
+</section>
 <section class="chapter" id="favorites">
 <h2>
-<span>11</span>收藏分组与本地 PDF</h2>
+<span>12</span>收藏分组与本地 PDF</h2>
 <p>在哪个关键词方案收藏，文章就进入同名收藏分组。删除关键词方案后，收藏分组继续保留。支持自定义分组、拖动排序，将一篇或多篇文章复制或移动到其它分组。</p>
-<p>收藏文章可按分组或全部展示，并按发表时间或收藏时间排序。组内支持表格、嵌入式卡片和卡片密度选择。</p>
+<p>收藏文章可按分组或全部展示，并按发表时间或收藏时间排序。<strong>收藏时间按最近收藏优先</strong>：表格从上到下由新到旧，卡片按相应阅读顺序排列。组内支持表格、嵌入式卡片和卡片密度选择。</p>
 <h3>链接与打开原文</h3>
 <ol>
 <li>先收藏文章，在收藏文章详情中点击“链接文章”。</li>
@@ -255,9 +291,69 @@ permalink: /guide.html
 <div class="notice">
 <strong>取消收藏与删除：</strong>关键词方案中“取消本组收藏”只移出当前组。收藏文章详情中的“取消收藏”解除该文全部收藏组归属。最后一处收藏解除后，软件删除 paper 中的 PDF 副本，保留您原始下载的文件和文章缓存。若文件占用导致删除失败，关闭阅读器后再试。</div>
 </section>
+<section class="chapter" id="batch-pdf">
+<h2><span>13</span>批量收藏本地 PDF</h2>
+<p>适合将已下载的一批 PDF 整理进文献库。软件不下载论文，而是读取本地 PDF 的首页完整标题，通过 PubMed 找到可靠匹配并关联原文。</p>
+<ol>
+<li>进入“收藏文章”，点击<strong>批量收藏 PDF…</strong>。</li>
+<li>点击“选择 PDF 文件…”多选或单选文件；也可将一个或多个 PDF 拖进选择框。选择窗口独立显示，主窗口最小化后，仍可从资源管理器或 Finder 拖入文件。</li>
+<li><strong>必须勾选一个或多个期刊目录</strong>，多个目录取并集。目录中没有的期刊不参与匹配；覆盖不全时先扩充自定义目录。</li>
+<li><strong>必须选择目标收藏分组</strong>，可选择已有分组，或勾选新建并输入不重复的名称。</li>
+<li>点击“开始识别与收藏”。程序识别首页较大字号的完整标题，包括换行，并结合 DOI 核对候选。仅通过 PubMed 检索，检索范围跟随设置，<strong>不使用年份和 JIF 限制</strong>，但始终保留所选期刊目录范围。</li>
+<li>确认匹配后加入所选分组，PDF 副本存入当前数据目录的 <code>paper</code> 并自动关联。打开该收藏详情，点击“查看原文”即可用默认 PDF 阅读器查看。</li>
+</ol>
+<h3>查看进度、失败名单和取消结果</h3>
+<p>目标分组卡片显示进度，例如“共 10 个 PDF，已完成 2 个”。全部成功时提示完成；部分失败时显示文件名与原因，可点击“复制未成功的 PDF 文件名”或“导出文件名单…”。<strong>复制后报告继续保持打开，需手动关闭</strong>。</p>
+<p>点击“取消 PDF 导入”会保留已成功收藏和关联的文件，尚未完成的项目在报告中列出。同篇文章按标识合并；原始下载 PDF 不会被移走或删除，已有链接也会尽量沿用。</p>
+<div class="notice"><strong>匹配不到时：</strong>检查期刊是否在所选目录、PubMed 是否收录、首页是否为封面或扫描图。当前未内置 OCR；无法提取或核实完整标题时会报告失败。可以先按标题手动检索、收藏，再通过“链接文章”选择 PDF。</div>
+</section>
+<section class="chapter" id="word-plugin">
+<h2><span>14</span>Windows：Biomed Reader Word 插件</h2>
+<p>适用于 Microsoft Office 2021 及以上的桌面版 Word。Windows 安装版会注册当前用户的插件；完整目录版提供手动注册脚本。Mac 的操作见<a class="text-link" href="#endnote-macos">下一章</a>。</p>
+<h3>安装与打开工具栏</h3>
+<ol>
+<li>关闭 Word 后安装或升级 2.1，重新打开 Word，查找 <strong>Biomed Reader</strong> 选项卡。</li>
+<li>目录版先完整解压到固定位置，关闭所有 Word 窗口，运行 <code>RegisterWordAddin.cmd</code> 后重新打开 Word。移动程序文件夹后重新注册；需要取消该目录的注册时使用 <code>UnregisterWordAddin.cmd</code>。</li>
+<li>插件未显示时，在 Word“文件 → 选项 → 加载项 → 管理：COM 加载项 → 转到”中确认 Biomed Reader 已启用。目录版与安装版同时存在时，最近注册的位置决定插件连接哪一份程序。</li>
+<li>点击插件的<strong>打开 Biomed Reader</strong>；也可先手动启动软件并等待本地文献库载入。</li>
+</ol>
+<h3>选择文章并插入引用</h3>
+<ol>
+<li>在 Biomed Reader 的“收藏文章”进入目标分组，选中要引用的文章，表格或卡片均可。</li>
+<li>切回 Word，将光标放到<strong>正文</strong>需要引用的位置，不要放在文末参考文献列表内。</li>
+<li>点击插件<strong>插入引用</strong>。程序按所选样式插入引文标记，并在文末维护参考文献；继续插入其它文章时会重新排列编号。</li>
+<li>引文样式决定使用上标、括号编号或其它标记。默认 Cell；样式改变时不要手动改数字，使用更新命令统一处理。</li>
+</ol>
+<h3>更换期刊格式、字体与更新文献</h3>
+<p>在插件“参考文献格式”的期刊框中下拉选择，或点击<strong>选择期刊…</strong>输入部分名称筛选。Word 列表限于 <strong>NC 扩选与已核实 EndNote 样式的交集</strong>。选择后点击<strong>更新引用文献</strong>应用到全文；软件设置中的单篇复制引用样式，与 Word 当前文档的期刊选择是两个入口。</p>
+<p>点击<strong>参考文献字体</strong>设置字体、字形和字号。默认 <strong>Arial、常规、五号（10.5 磅）</strong>，作用于文末参考文献和正文引文标记；上标继续保持上标，正文普通文字的字体不受影响。旧文档缺少卷页时，更新引用也会尝试从本地库补齐已有信息。</p>
+<div class="notice"><strong>更新前请保存稿件副本。</strong>引用记录绑定最初选择文章时的收藏分组。若文章已从那个原分组移出，点击“更新引用文献”会删除对应引文并重排编号，即使它仍在其它组收藏。文档来自其它本地文献库时，应先连接原文献库再更新，以免核对错误。</div>
+<h3>导出给 EndNote 接管</h3>
+<ol>
+<li>先安装并启用 EndNote 桌面版及 Word 的 Cite While You Write（CWYW）插件。</li>
+<li>在含 Biomed Reader 引文的稿件中点击<strong>导出为 EndNote</strong>，选择 <code>.docx</code> 或 <code>.doc</code>。</li>
+<li>插件生成文档副本，将引文交由 EndNote 格式化，保存嵌入文献记录与文末参考文献，原稿保持不变；这不是仅导出 RIS。</li>
+<li>在导出副本中使用 EndNote 的“Update Citations and Bibliography”继续维护；需要独立文献库时，使用 EndNote 的“Export Traveling Library”。</li>
+</ol>
+<p>若插件暂时无法连接，请先确认 Biomed Reader 已启动、使用的是原本的本地文献库，并在升级后完整退出再打开 Word。导出失败时保留原稿，检查 EndNote CWYW 是否正常启用。</p>
+</section>
+<section class="chapter" id="endnote-macos">
+<h2><span>15</span>Mac：Word 文档导出与 EndNote 接管</h2>
+<p>Mac 2.1 使用文档互通流程，在 Biomed Reader 中导出引文集合，再由 Mac Word 中已安装的 EndNote CWYW 接管。此版不安装 Mac 原生 Biomed Reader Word 工具栏，也不自动根据收藏分组变化改写已有稿件。</p>
+<ol>
+<li>打开“收藏文章”，选择目标分组或全部收藏，点击<strong>导出 Word / EndNote…</strong>。</li>
+<li>在导出窗口勾选文章，选择期刊样式；列表同样为 NC 扩选与已核实 EndNote 样式的交集，可输入关键词筛选。</li>
+<li>导出 <code>.docx</code>。文件包含 EndNote 引文域、各篇嵌入的文献记录、卷页信息和文末参考文献，默认字体为 Arial 常规五号。</li>
+<li>用桌面版 Mac Word 打开，使用 EndNote 的 <strong>Update Citations and Bibliography</strong> 更新引用与格式。EndNote 若没有相应样式，请安装或选择可用样式。</li>
+<li>写入自己的稿件时，从引文集合中复制所需引文域，保留 Word 域格式，再由 EndNote 更新编号与参考文献。不要使用“仅保留文本”或将引文转换为纯文本。</li>
+<li>需要建立 EndNote 文献库时，在 Word 的 EndNote 工具中选择 <strong>Export Traveling Library</strong>，导出嵌入记录。</li>
+</ol>
+<div class="notice"><strong>已验证范围：</strong>跨平台文档结构及 EndNote 重建参考文献已在 Windows Word / EndNote 中测试，Mac 应用已通过双架构构建、部署目标和启动检查；Mac Word / EndNote 的实机端到端联动尚未完成验证。请先用文档副本试用。应用支持 macOS 12，不代表任意 Word 或 EndNote 版本也支持该系统，版本匹配以各软件要求为准。</div>
+<p><a class="text-link" href="https://github.com/amiba-xqq/Biomedreader_macos#mac-word-与-endnote文档互通" target="_blank" rel="noopener">Mac 仓库完整说明 ↗</a> · <a class="text-link" href="https://endnote.com/product-details/compatibility/" target="_blank" rel="noopener">EndNote 官方兼容列表 ↗</a></p>
+</section>
 <section class="chapter" id="journals">
 <h2>
-<span>12</span>期刊目录与 JIF 年份</h2>
+<span>16</span>期刊目录与 JIF 年份</h2>
 <p>内置 IF 6-10、IF 10-20、IF 20-500、NC精选、NC扩选五个目录。IF 三组按 2025 年已录入 JIF 固定划分：6≤JIF&lt;10、10≤JIF&lt;20、20≤JIF≤500。</p>
 <ol>
 <li>创建自定义目录，或将内置目录复制为自定义目录。</li>
@@ -278,7 +374,7 @@ permalink: /guide.html
 </section>
 <section class="chapter" id="sharing">
 <h2>
-<span>13</span>分享、备份与移动数据目录</h2>
+<span>17</span>分享、备份与移动数据目录</h2>
 <h3>分享收藏与期刊目录</h3>
 <p>收藏打包时先选择一个或多个分组，右侧只展示这些组的文章并默认勾选。最终只导出右侧已勾选文章，可选择包含已链接 PDF。接收者使用“读取分享压缩包”，导入文章、分组、笔记与 PDF 关联。</p>
 <figure class="guide-figure">
@@ -316,7 +412,7 @@ permalink: /guide.html
 </section>
 <section class="chapter" id="faq">
 <h2>
-<span>14</span>常见问题与使用注意</h2>
+<span>18</span>常见问题与使用注意</h2>
 <div class="faq">
 <details>
 <summary>为什么结果与 PubMed 或预印本官网不同？</summary>
@@ -346,9 +442,12 @@ permalink: /guide.html
 <summary>如何查看最新版本和报告问题？</summary>
 <p>从下载页进入对应平台的 GitHub 仓库，核对 latest 发布与使用说明。反馈时可提供系统、软件版本、操作步骤和错误信息，避免附带私人文献或凭据。</p>
 </details>
+<details><summary>为什么复制引用后仍缺少 Volume 或 Pages？</summary><p>在线优先发表或预印本可能尚未分配卷页，元数据也可能延迟。字段缺失时每次点击都会尝试联网补齐，完整后使用缓存；不会为了填满格式而虚构卷页。</p></details>
+<details><summary>批量收藏 PDF 为什么有些文件失败？</summary><p>先查看失败报告。常见原因包括 PubMed 未收录、所选期刊目录不包含该刊、首页缺少可提取的大标题、扫描件或网络失败。可复制或导出未成功文件名，报告需手动关闭。</p></details>
+<details><summary>为什么 Mac Word 中没有 Biomed Reader 工具栏？</summary><p>Mac 2.1 采用“收藏文章 → 导出 Word / EndNote…”的文档互通方式。Windows 的 COM 插件不能直接安装到 Mac；使用 Mac Word 的 EndNote CWYW 接管导出的引文文档。</p></details>
 </div>
 </section>
-<p class="notice">图示采用软件实际界面与独立演示数据，不代表真实发表的文献。大多数图示来自 2.0 前后共有界面，新增默认视图截图来自本次 2.0 更新。Windows 与 macOS 功能入口一致，窗口外观可能略有不同。</p>
+<p class="notice">现有图示来自 2.0 的真实界面和独立演示数据，用于说明两版共有操作，不代表 2.1 新增窗口截图。2.1 新功能按本页文字步骤使用。Windows 通过 Word 插件操作；Mac 通过 Word 文档导出与 EndNote CWYW 接管，两平台写作入口不同。</p>
 <a class="btn" href="{{ '/downloads.html' | relative_url }}">下载并开始使用</a>
 </div>
 </div>

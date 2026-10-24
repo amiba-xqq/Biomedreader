@@ -25,7 +25,9 @@ jobs:
           destination: ./_site
           base_path: ${{ steps.pages.outputs.base_path }}
       - name: Validate links, assets and download mappings
-        run: python3 scripts/check_pages.py _site
+        run: |
+          python3 scripts/check_pages.py _site
+          node --check _site/site.js
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:

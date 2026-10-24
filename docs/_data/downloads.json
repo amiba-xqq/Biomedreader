@@ -1,14 +1,66 @@
 {
+  "version": "2.1",
+  "updated": "2026-10-24",
   "windows": {
-    "quark": "https://pan.quark.cn/s/d7308ecd7a92"
+    "name": "Windows 安装版",
+    "filename": "BiomedReader_Setup_2.1_x64.exe",
+    "github": "https://github.com/amiba-xqq/Biomedreader/releases/download/v2.1/BiomedReader_Setup_2.1_x64.exe",
+    "quark": "https://pan.quark.cn/s/9e03e03670b9",
+    "bytes": 139824718,
+    "sha256": "df57e6b6cdffdec06090bafb23f1232ab7fa6e76951c7ebf26d1c48d8621a023",
+    "display_size": "139.8 MB"
   },
   "portable": {
-    "quark": "https://pan.quark.cn/s/3ad56e327034"
+    "name": "Windows 完整目录版",
+    "filename": "BiomedReader_2.1_Portable_x64.zip",
+    "github": "https://github.com/amiba-xqq/Biomedreader/releases/download/v2.1/BiomedReader_2.1_Portable_x64.zip",
+    "quark": "https://pan.quark.cn/s/bc814f34d962",
+    "bytes": 207329225,
+    "sha256": "f63e3a9111efaca993e8d80451460d6cad288957a320510acda8a2481d272ad8",
+    "display_size": "207.3 MB"
   },
   "apple": {
-    "quark": "https://pan.quark.cn/s/31867e2dc3e0"
+    "name": "macOS · Apple Silicon",
+    "filename": "BiomedReader_2.1_macOS12_AppleSilicon.dmg",
+    "github": "https://github.com/amiba-xqq/Biomedreader_macos/releases/download/v2.1/BiomedReader_2.1_macOS12_AppleSilicon.dmg",
+    "quark": "https://pan.quark.cn/s/4e3b4b69e8a7",
+    "bytes": 234043885,
+    "sha256": "860e1a11eb9c67c08514998d19620a68355a38e3efea724f0bc846bc8b0acce7",
+    "display_size": "234.0 MB"
   },
   "intel": {
-    "quark": "https://pan.quark.cn/s/4130cba6f1d1"
+    "name": "macOS · Intel",
+    "filename": "BiomedReader_2.1_macOS12_Intel.dmg",
+    "github": "https://github.com/amiba-xqq/Biomedreader_macos/releases/download/v2.1/BiomedReader_2.1_macOS12_Intel.dmg",
+    "quark": "https://pan.quark.cn/s/7e133dd9b236",
+    "bytes": 254557844,
+    "sha256": "b5ed1ad4c2ffcd0dd2315d364304b4d05abfb2016fd48a46d08326d579d34a23",
+    "display_size": "254.6 MB"
+  },
+  "legacy": {
+    "windows": {
+      "name": "Windows 安装版",
+      "filename": "BiomedReader_Setup_2.0_x64.exe",
+      "github": "https://github.com/amiba-xqq/Biomedreader/releases/download/v2.0/BiomedReader_Setup_2.0_x64.exe",
+      "quark": "https://pan.quark.cn/s/d7308ecd7a92"
+    },
+    "portable": {
+      "name": "Windows 完整目录版",
+      "filename": "BiomedReader_2.0_Portable_x64.zip",
+      "github": "https://github.com/amiba-xqq/Biomedreader/releases/download/v2.0/BiomedReader_2.0_Portable_x64.zip",
+      "quark": "https://pan.quark.cn/s/3ad56e327034"
+    },
+    "apple": {
+      "name": "macOS · Apple Silicon",
+      "filename": "BiomedReader_2.0_macOS12_AppleSilicon.dmg",
+      "github": "https://github.com/amiba-xqq/Biomedreader_macos/releases/download/v2.0/BiomedReader_2.0_macOS12_AppleSilicon.dmg",
+      "quark": "https://pan.quark.cn/s/31867e2dc3e0"
+    },
+    "intel": {
+      "name": "macOS · Intel",
+      "filename": "BiomedReader_2.0_macOS12_Intel.dmg",
+      "github": "https://github.com/amiba-xqq/Biomedreader_macos/releases/download/v2.0/BiomedReader_2.0_macOS12_Intel.dmg",
+      "quark": "https://pan.quark.cn/s/4130cba6f1d1"
+    }
   }
 }

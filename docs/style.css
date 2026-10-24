@@ -6,5 +6,24 @@
 @media(max-width:720px){.wrap{width:calc(100% - 36px)}.site-header{height:75px}.brand strong{font-size:22px}.brand small{font-size:11px}.brand img{width:36px;height:36px}.menu-toggle{display:block}.nav{display:none;position:absolute;top:74px;left:0;right:0;background:var(--paper);border-bottom:1px solid var(--line);padding:20px 22px;gap:25px;box-shadow:0 15px 20px #29241f08}.nav.open{display:flex}.nav a[aria-current=page]:after{bottom:-9px}.hero{display:flex;flex-direction:column;align-items:stretch;gap:40px;padding:42px 0}.hero h1{font-size:44px}.lead{font-size:14px}.hero-meta{font-size:10px}.hero-visual{padding:18px 15px 13px}.sources{gap:18px;font-size:18px}.source-strip{display:block;padding:20px 0}.source-strip>span{display:block;margin-bottom:12px;font-size:11px}.section{padding:55px 0}h2{font-size:29px}.section-heading{display:block;margin-bottom:25px}.section-heading p{margin-top:16px}.feature-list{display:block}.feature,.feature:nth-child(even){padding:24px 0;border-left:0;gap:18px}.feature h3{font-size:19px}.split{display:flex;flex-direction:column;gap:32px;align-items:stretch}.reading-section{padding:45px 0}.product-figure img{max-height:300px}.audiences{grid-template-columns:1fr;gap:5px}.audience{padding:22px 0;border-top:1px solid var(--line)}.audience .label{margin-bottom:10px}.closing{display:block;padding:30px 0 45px}.closing .btn{margin-top:24px}.closing h2{font-size:28px}.footer-inner{display:block}.footer-links{margin-top:23px;gap:18px}.page-intro{padding:38px 0 25px}.page-intro h1{font-size:39px}.release-banner{display:block;padding:15px 18px;margin-bottom:24px}.release-status{text-align:left;margin-top:8px;max-width:100%}.download-grid{grid-template-columns:1fr;gap:20px}.download-card{padding:26px;}.download-card h2{font-size:28px}.platform-icon{margin-bottom:18px}.platform-sub{min-height:0;margin-bottom:20px}.download-card .btn{font-size:14px}.download-note{display:block;font-size:11px;margin-bottom:30px}.install-help{grid-template-columns:1fr;gap:25px;padding:30px 0}.github-row{display:block;padding:25px 0 45px}.github-links{margin-top:24px}.guide-layout{display:block}.guide-sidebar{position:static;max-height:none;overflow:visible;margin-bottom:28px;padding:15px;background:var(--cream);border-radius:8px}.toc{display:grid;grid-template-columns:1fr 1fr;gap:0 8px}.toc a{padding:6px 8px;font-size:11px}.chapter{padding:10px 0 25px;scroll-margin-top:95px}.chapter h2{font-size:24px;gap:12px}.guide-table{font-size:11px}.guide-table th,.guide-table td{padding:8px 6px}.guide-figure button{padding:6px}.guide-figure figcaption{display:block;font-size:10px}.lightbox img{max-width:94vw}.eyebrow{font-size:10px}.guide-search input{font-size:13px}.footer-brand{font-size:15px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 
-/* Two explicit download channels; fixed 2.0 Quark links are independent of live GitHub metadata. */
+/* Versioned download channels; the 2.0 archive is independent of current metadata. */
 .quark-download{width:100%;margin-top:10px}.download-divider{color:var(--sub)}.alt-download{line-height:1.9}.download-card .btn{white-space:normal;text-align:center}
+.release-highlights{padding:28px 0 42px;border-top:1px solid var(--line)}
+.release-highlights>h2{font-size:28px;margin-bottom:24px}
+.release-highlights-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.release-highlights-grid article{padding:23px;background:white;border:1px solid var(--line);border-radius:12px}
+.release-highlights-grid h3{font-size:19px;margin-bottom:10px}
+.release-highlights-grid p{font-size:14px;color:var(--sub);margin-bottom:12px}
+.release-highlights-grid .text-link{font-size:13px}
+.legacy-downloads{padding:38px 0 65px;border-top:1px solid var(--line)}
+.legacy-downloads h2{font-size:28px}
+.legacy-downloads>p{font-size:14px;color:var(--sub)}
+.table-scroll{max-width:100%;overflow-x:auto;overscroll-behavior-x:contain}
+.legacy-downloads .guide-table{min-width:670px}
+.legacy-downloads .guide-table th[scope=row]{font-weight:500;background:transparent;white-space:nowrap}
+.legacy-downloads code{font-size:12px;overflow-wrap:anywhere}
+.legacy-release-links{display:flex;gap:12px;flex-wrap:wrap}
+.guide-new-links{display:flex;flex-wrap:wrap;gap:9px 18px;border-top:1px solid var(--line);margin-top:22px;padding-top:17px;align-items:baseline}
+.guide-new-links strong{font-size:13px;color:var(--deep)}
+.guide-new-links .text-link{font-size:13px}
+@media(max-width:720px){.release-highlights-grid{grid-template-columns:1fr;gap:14px}.release-highlights-grid article{padding:20px}.release-highlights>h2,.legacy-downloads h2{font-size:25px}.legacy-downloads{padding-bottom:40px}.guide-new-links{gap:8px 14px}}

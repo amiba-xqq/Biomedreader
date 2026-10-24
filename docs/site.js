@@ -29,11 +29,16 @@ if (search) {
       if (link) link.hidden = !match;
       if (match) visible++;
     });
-    document.querySelector('.search-result').textContent = term ? `找到 ${visible} 个相关章节` : '共 14 个章节，可搜索关键词或按目录跳转';
+    document.querySelector('.search-result').textContent = term ? `找到 ${visible} 个相关章节` : `共 ${chapters.length} 个章节，可搜索关键词或按目录跳转`;
     document.querySelector('.empty-search').hidden = visible > 0;
   };
   search.addEventListener('input', applySearch);
   search.addEventListener('keydown', event => { if (event.key === 'Escape') { search.value = ''; applySearch(); } });
+  document.querySelectorAll('a[href^="#"]').forEach(link => link.addEventListener('click', () => {
+    const chapter = document.getElementById(decodeURIComponent(link.hash.slice(1)))?.closest('.chapter');
+    if (chapter?.hidden) { search.value = ''; applySearch(); }
+  }));
+  applySearch();
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => { if (entry.isIntersecting) {
       toc.forEach(link => link.classList.toggle('active', link.hash === '#' + entry.target.id));
@@ -58,31 +63,29 @@ if (document.body.dataset.page === 'downloads') {
   const system = navigator.platform.toLowerCase();
   const card = system.includes('win') ? document.querySelector('[data-package="windows"]') : null;
   if (card) { card.classList.add('recommended'); card.querySelector('.recommendation').hidden = false; }
-  // Public release metadata only. No GitHub token or visitor account is needed.
-  // Embedded release snapshots keep working if GitHub's metadata API is limited.
+  // Pin both channels to 2.1. The historical 2.0 links use separate attributes.
+  // Public metadata only; embedded links remain usable if GitHub limits its API.
+  const version = document.querySelector('[data-current-version]').dataset.currentVersion;
   const repos = {windows:'amiba-xqq/Biomedreader',macos:'amiba-xqq/Biomedreader_macos'};
-  const map = {windows:/^BiomedReader_Setup_.*_x64\.exe$/,portable:/^BiomedReader_.*_Portable_x64\.zip$/,apple:/^BiomedReader_.*_AppleSilicon\.dmg$/,intel:/^BiomedReader_.*_Intel\.dmg$/};
+  const map = {windows:`BiomedReader_Setup_${version}_x64.exe`,portable:`BiomedReader_${version}_Portable_x64.zip`,apple:`BiomedReader_${version}_macOS12_AppleSilicon.dmg`,intel:`BiomedReader_${version}_macOS12_Intel.dmg`};
   async function updateRelease(platform) {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 6500);
     try {
-      const response = await fetch(`https://api.github.com/repos/${repos[platform]}/releases/latest`, {signal:controller.signal,headers:{Accept:'application/vnd.github+json'}});
+      const response = await fetch(`https://api.github.com/repos/${repos[platform]}/releases/tags/v${version}`, {signal:controller.signal,headers:{Accept:'application/vnd.github+json'}});
       if (!response.ok) throw new Error('Release metadata unavailable');
       const data = await response.json();
-      if (data.draft || data.prerelease || !Array.isArray(data.assets) || !data.html_url?.startsWith(`https://github.com/${repos[platform]}/releases/`)) throw new Error('Invalid release');
-      for (const [key, regex] of Object.entries(map)) {
+      if (data.draft || data.prerelease || data.tag_name !== `v${version}` || !Array.isArray(data.assets) || data.html_url !== `https://github.com/${repos[platform]}/releases/tag/v${version}`) throw new Error('Invalid release');
+      for (const [key, filename] of Object.entries(map)) {
         if ((platform === 'windows') !== ['windows','portable'].includes(key)) continue;
-        const asset = data.assets.find(asset => regex.test(asset.name) && asset.state === 'uploaded');
-        if (!asset || !asset.browser_download_url?.startsWith(`https://github.com/${repos[platform]}/releases/download/`)) continue;
+        const asset = data.assets.find(asset => asset.name === filename && asset.state === 'uploaded');
+        if (!asset || asset.browser_download_url !== `https://github.com/${repos[platform]}/releases/download/v${version}/${filename}`) throw new Error('Missing expected package');
         document.querySelectorAll(`[data-download="${key}"]`).forEach(link => { link.href = asset.browser_download_url; });
+        document.querySelectorAll(`[data-asset-size="${key}"]`).forEach(label => { label.textContent = `${(asset.size / 1000000).toFixed(1)} MB`; });
         const box = document.querySelector(`[data-package="${key}"]`);
-        if (box) {
-          box.querySelector('[data-version]').textContent = data.tag_name.replace(/^v/,'');
-          box.querySelector('[data-size]').textContent = `${(asset.size / 1048576).toFixed(1)} MB`;
-          const hash = box.querySelector('.hash');
-          const validHash = /^sha256:[a-f0-9]{64}$/.test(asset.digest ?? '');
-          box.querySelector('.integrity').hidden = !validHash;
-          if (validHash) hash.textContent = asset.digest.slice(7);
+        if (box) box.querySelector('[data-version]').textContent = version;
+        if (/^sha256:[a-f0-9]{64}$/.test(asset.digest ?? '')) {
+          document.querySelectorAll(`[data-asset-hash="${key}"]`).forEach(hash => { hash.textContent = asset.digest.slice(7); });
         }
       }
       document.querySelectorAll(`[data-release="${platform}"]`).forEach(link => { link.href = data.html_url; });
@@ -91,7 +94,7 @@ if (document.body.dataset.page === 'downloads') {
   }
   Promise.all([updateRelease('windows'),updateRelease('macos')]).then(results => {
     document.querySelector('.release-status').textContent = results.every(Boolean)
-      ? '已核对 GitHub 最新发布信息'
-      : '显示已验证的 2.0 下载，最新信息请查看 GitHub';
+      ? `已核对 GitHub ${version} 发布信息`
+      : `显示已核对的 ${version} 下载快照，发布详情请查看 GitHub`;
   });
 }
