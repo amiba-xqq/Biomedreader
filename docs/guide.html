@@ -2,16 +2,19 @@
 layout: default
 page_id: guide
 title: "使用教程｜刊禾 Biomed Reader"
-description: "Biomed Reader 2.1 使用教程：全部联网刷新、引用卷页、Windows Word 插件、EndNote 接管、批量收藏 PDF，以及检索、离线阅读和数据管理。"
+description: "Biomed Reader 2.1 使用教程：全部联网刷新、引用卷页、Windows Word 插件、EndNote 接管、批量收藏 PDF，以及检索、离线阅读、收藏搜索、批量取消收藏和软件更新。"
 permalink: /guide.html
 ---
 <main id="main" class="wrap">
 <section class="page-intro guide-intro">
 <p class="eyebrow">GETTING STARTED & EVERYDAY USE</p>
 <h1>从安装，到自己的文献库。</h1>
-<p class="lead">按一次真实的使用流程，熟悉关键词方案、缓存阅读、收藏与本地数据管理。教程适用于 2.1，包含 Windows Word 插件、Mac Word / EndNote 文档互通、卷页引用和批量收藏 PDF。</p>
+<p class="lead">按一次真实的使用流程，熟悉关键词方案、缓存阅读、收藏与本地数据管理。教程适用于最新 2.1 修订，包含收藏搜索、批量取消收藏、软件更新，以及 Windows Word 插件、Mac Word / EndNote 文档互通、卷页引用和批量收藏 PDF。</p>
 <nav class="guide-new-links" aria-label="2.1 新增功能快速入口">
 <strong>2.1 新增功能</strong>
+<a class="text-link" href="#favorite-search">搜索已收藏文章</a>
+<a class="text-link" href="#bulk-unfavorite">批量取消收藏</a>
+<a class="text-link" href="#software-update">软件更新</a>
 <a class="text-link" href="#batch-refresh">全部联网刷新</a>
 <a class="text-link" href="#citations">复制引用</a>
 <a class="text-link" href="#batch-pdf">批量收藏 PDF</a>
@@ -35,12 +38,15 @@ permalink: /guide.html
 <a href="#details">10　文章详情、DOI 与已读标记</a>
 <a href="#citations">11　复制引用与卷页信息</a>
 <a href="#favorites">12　收藏分组与本地 PDF</a>
-<a href="#batch-pdf">13　批量收藏 PDF</a>
-<a href="#word-plugin">14　Windows Word 插件</a>
-<a href="#endnote-macos">15　Mac Word / EndNote</a>
-<a href="#journals">16　期刊目录与 JIF 年份</a>
-<a href="#sharing">17　分享、备份与移动数据目录</a>
-<a href="#faq">18　常见问题与使用注意</a>
+<a href="#favorite-search">13　搜索已收藏文章</a>
+<a href="#bulk-unfavorite">14　批量取消收藏与确认</a>
+<a href="#software-update">15　软件更新</a>
+<a href="#batch-pdf">16　批量收藏 PDF</a>
+<a href="#word-plugin">17　Windows Word 插件</a>
+<a href="#endnote-macos">18　Mac Word / EndNote</a>
+<a href="#journals">19　期刊目录与 JIF 年份</a>
+<a href="#sharing">20　分享、备份与移动数据目录</a>
+<a href="#faq">21　常见问题与使用注意</a>
 </nav>
 <a class="back-top" href="#main">返回顶部 ↑</a>
 </aside>
@@ -51,8 +57,8 @@ permalink: /guide.html
 <path d="m15 15 6 6"/>
 </svg>
 <label class="hidden" for="guide-search">搜索教程章节</label>
-<input type="search" id="guide-search" placeholder="查找教程，例如：Word、批量 PDF、Volume、增量" autocomplete="off">
-<div class="search-result" role="status">共 18 个章节，可搜索关键词或按目录跳转</div>
+<input type="search" id="guide-search" placeholder="查找教程，例如：收藏搜索、取消收藏、软件更新、Word" autocomplete="off">
+<div class="search-result" role="status">共 21 个章节，可搜索关键词或按目录跳转</div>
 </div>
 <p class="empty-search" hidden>没有找到匹配章节。试试“检索”“收藏”或“备份”，也可清空搜索查看全部教程。</p>
 <section class="chapter" id="install">
@@ -289,10 +295,47 @@ permalink: /guide.html
 </figcaption>
 </figure>
 <div class="notice">
-<strong>取消收藏与删除：</strong>关键词方案中“取消本组收藏”只移出当前组。收藏文章详情中的“取消收藏”解除该文全部收藏组归属。最后一处收藏解除后，软件删除 paper 中的 PDF 副本，保留您原始下载的文件和文章缓存。若文件占用导致删除失败，关闭阅读器后再试。</div>
+<strong>取消收藏与删除：</strong>所有入口都会弹出确认窗口。确认后从全部分组取消该文章的收藏，并清除 PDF 链接、删除不再使用的 paper 内副本；原始下载文件与文章缓存保留。详见<a class="text-link" href="#bulk-unfavorite">批量取消收藏与确认规则</a>。</div>
+</section>
+<section class="chapter" id="favorite-search">
+<h2><span>13</span>搜索已收藏文章</h2>
+<p>这项搜索只查找已有收藏，不会联网检索新文章，也不会读取 PDF 全文。</p>
+<ol>
+<li>进入<strong>收藏文章</strong>，点击<strong>搜索已收藏文章…</strong>。</li>
+<li>在弹窗中勾选一个或多个收藏分组；可使用全选或全不选，再输入需要查找的关键词。分组和关键词均为必填。</li>
+<li>点击确定。软件在所选分组的标题、摘要、作者、期刊、DOI、PMID、标签和笔记中匹配关键词。</li>
+<li><strong>分组展示：</strong>只保留包含匹配文章的分组卡片，点进后也只展示匹配文章。<strong>不分组展示：</strong>合并去重后只显示符合条件的文章。</li>
+<li>可继续选择表格或嵌入式卡片以及排序方式；点击<strong>清除搜索</strong>恢复全部收藏。</li>
+</ol>
+<p>多个词用空格分隔时，需要全部匹配；完整短语可用双引号，例如 <code>"DNA repair" ATM</code>。这里不使用 PubMed 的 AND / OR 检索表达式。筛选不会删除或移动文章，也不会改变分组归属。</p>
+<div class="notice"><strong>筛选范围：</strong>搜索只覆盖所选分组中的本地缓存。当前搜索条件在本次打开期间保留，重新启动后需重新设置。</div>
+</section>
+<section class="chapter" id="bulk-unfavorite">
+<h2><span>14</span>批量取消收藏与删除确认</h2>
+<ol>
+<li>在收藏文章页面点击<strong>批量取消收藏…</strong>，打开分组与文章双列选择窗口。</li>
+<li>左侧勾选一个或多个分组，右侧只显示这些分组的文章，并自动勾选新增所选分组的文章。</li>
+<li>在右侧逐篇调整勾选，也可使用全选可见文章或全不选。最终以<strong>右侧全部已勾选项</strong>为准，包含被弹窗内搜索暂时隐藏的勾选项。</li>
+<li>点击<strong>批量取消收藏</strong>，阅读确认弹窗。默认选择为保留收藏；只有点击<strong>确定取消收藏</strong>才会实际执行。</li>
+<li>处理完成后查看结果；如部分 PDF 被占用无法删除，对应文章的收藏、分组和 PDF 链接保留，其余成功项正常取消。关闭占用文件的阅读器后可重试。</li>
+</ol>
+<div class="notice"><strong>所有取消收藏入口采用相同规则。</strong>关键词方案中的收藏按钮、文章详情和批量取消都会先确认。确认后，文章会从<strong>全部收藏分组</strong>移除；已链接的 PDF 会解除关联，当前数据目录 <code>paper</code> 中不再被其它文章共用的 PDF 副本会被删除。<code>paper</code> 外的原始 PDF、检索缓存和笔记保留。操作前请确认要删除的对象。</div>
+<p>批量取消与正在进行的 PDF 导入、分享操作不能同时执行。打开了 PDF 选择窗口时，请先关闭该窗口。若文章已用于 Windows Word 插件，之后更新引用时还会按原收藏分组的成员关系重新核对，详见<a class="text-link" href="#word-plugin">Word 插件教程</a>。</p>
+</section>
+<section class="chapter" id="software-update">
+<h2><span>15</span>检查软件更新与安装新版</h2>
+<ol>
+<li>进入<strong>设置 → 软件更新</strong>，点击<strong>检查软件更新</strong>，保持联网。</li>
+<li>软件读取官网版本。当前版本与官网相同，会提示<strong>已是最新版本，无需更新</strong>；不会下载旧版本。</li>
+<li>发现更高版本时，自动选择对应系统的 GitHub 安装包：Windows x64 EXE，或 macOS Apple Silicon / Intel DMG。选择保存位置后开始下载。</li>
+<li>等待进度完成。软件会验证文件大小和 SHA256；取消或校验失败时，不覆盖已有文件。</li>
+<li>下载完成后，先备份本地数据，退出 Biomed Reader 和 Word，再<strong>手动运行安装程序</strong>；Mac 打开 DMG 后替换应用。此功能不会自动安装。</li>
+</ol>
+<p>软件更新区域下方的官网链接可用默认浏览器打开。遇到网络问题，也可前往<a class="text-link" href="{{ '/downloads.html' | relative_url }}">下载页</a>手动选择安装包。</p>
+<div class="notice"><strong>同版本修订需手动下载。</strong>本次发布版本号仍为 2.1。已安装旧修订的 2.1 与官网版本号相同时，检查更新会提示无需更新；请在下载页手动下载并覆盖升级本次修订包。</div>
 </section>
 <section class="chapter" id="batch-pdf">
-<h2><span>13</span>批量收藏本地 PDF</h2>
+<h2><span>16</span>批量收藏本地 PDF</h2>
 <p>适合将已下载的一批 PDF 整理进文献库。软件不下载论文，而是读取本地 PDF 的首页完整标题，通过 PubMed 找到可靠匹配并关联原文。</p>
 <ol>
 <li>进入“收藏文章”，点击<strong>批量收藏 PDF…</strong>。</li>
@@ -308,7 +351,7 @@ permalink: /guide.html
 <div class="notice"><strong>匹配不到时：</strong>检查期刊是否在所选目录、PubMed 是否收录、首页是否为封面或扫描图。当前未内置 OCR；无法提取或核实完整标题时会报告失败。可以先按标题手动检索、收藏，再通过“链接文章”选择 PDF。</div>
 </section>
 <section class="chapter" id="word-plugin">
-<h2><span>14</span>Windows：Biomed Reader Word 插件</h2>
+<h2><span>17</span>Windows：Biomed Reader Word 插件</h2>
 <p>适用于 Microsoft Office 2021 及以上的桌面版 Word。Windows 安装版会注册当前用户的插件；完整目录版提供手动注册脚本。Mac 的操作见<a class="text-link" href="#endnote-macos">下一章</a>。</p>
 <h3>安装与打开工具栏</h3>
 <ol>
@@ -338,7 +381,7 @@ permalink: /guide.html
 <p>若插件暂时无法连接，请先确认 Biomed Reader 已启动、使用的是原本的本地文献库，并在升级后完整退出再打开 Word。导出失败时保留原稿，检查 EndNote CWYW 是否正常启用。</p>
 </section>
 <section class="chapter" id="endnote-macos">
-<h2><span>15</span>Mac：Word 文档导出与 EndNote 接管</h2>
+<h2><span>18</span>Mac：Word 文档导出与 EndNote 接管</h2>
 <p>Mac 2.1 使用文档互通流程，在 Biomed Reader 中导出引文集合，再由 Mac Word 中已安装的 EndNote CWYW 接管。此版不安装 Mac 原生 Biomed Reader Word 工具栏，也不自动根据收藏分组变化改写已有稿件。</p>
 <ol>
 <li>打开“收藏文章”，选择目标分组或全部收藏，点击<strong>导出 Word / EndNote…</strong>。</li>
@@ -353,7 +396,7 @@ permalink: /guide.html
 </section>
 <section class="chapter" id="journals">
 <h2>
-<span>16</span>期刊目录与 JIF 年份</h2>
+<span>19</span>期刊目录与 JIF 年份</h2>
 <p>内置 IF 6-10、IF 10-20、IF 20-500、NC精选、NC扩选五个目录。IF 三组按 2025 年已录入 JIF 固定划分：6≤JIF&lt;10、10≤JIF&lt;20、20≤JIF≤500。</p>
 <ol>
 <li>创建自定义目录，或将内置目录复制为自定义目录。</li>
@@ -374,7 +417,7 @@ permalink: /guide.html
 </section>
 <section class="chapter" id="sharing">
 <h2>
-<span>17</span>分享、备份与移动数据目录</h2>
+<span>20</span>分享、备份与移动数据目录</h2>
 <h3>分享收藏与期刊目录</h3>
 <p>收藏打包时先选择一个或多个分组，右侧只展示这些组的文章并默认勾选。最终只导出右侧已勾选文章，可选择包含已链接 PDF。接收者使用“读取分享压缩包”，导入文章、分组、笔记与 PDF 关联。</p>
 <figure class="guide-figure">
@@ -412,7 +455,7 @@ permalink: /guide.html
 </section>
 <section class="chapter" id="faq">
 <h2>
-<span>18</span>常见问题与使用注意</h2>
+<span>21</span>常见问题与使用注意</h2>
 <div class="faq">
 <details>
 <summary>为什么结果与 PubMed 或预印本官网不同？</summary>

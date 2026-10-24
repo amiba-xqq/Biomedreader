@@ -7,12 +7,7 @@ import xml.etree.ElementTree as ET
 
 root = Path(sys.argv[1] if len(sys.argv) > 1 else '_site')
 base = '/Biomedreader'
-expected_quark = {
-    'windows': 'https://pan.quark.cn/s/9e03e03670b9',
-    'portable': 'https://pan.quark.cn/s/bc814f34d962',
-    'apple': 'https://pan.quark.cn/s/4e3b4b69e8a7',
-    'intel': 'https://pan.quark.cn/s/7e133dd9b236',
-}
+expected_quark = {'windows': 'https://pan.quark.cn/s/9607c5e28422', 'portable': 'https://pan.quark.cn/s/3dea2c452a22', 'apple': 'https://pan.quark.cn/s/605b035afd5c', 'intel': 'https://pan.quark.cn/s/20c8b1c767cc'}
 expected_legacy_quark = dict(windows='https://pan.quark.cn/s/d7308ecd7a92',portable='https://pan.quark.cn/s/3ad56e327034',apple='https://pan.quark.cn/s/31867e2dc3e0',intel='https://pan.quark.cn/s/4130cba6f1d1')
 filenames = dict(windows='BiomedReader_Setup_2.1_x64.exe',portable='BiomedReader_2.1_Portable_x64.zip',apple='BiomedReader_2.1_macOS12_AppleSilicon.dmg',intel='BiomedReader_2.1_macOS12_Intel.dmg')
 expected_hashes = {'windows': '1df2b533484e000d045971c275f3611eb9b981952fb2cb693da22f4a1fc3e9c4', 'portable': '5e7ed964a611d5d808adc5fc1eb7792e0a66ab7f402443c70381c231b61685fa', 'apple': 'bc2f67cb683402c16e2535acf00df843e2049b6eab638bad02bde3772a4483c7', 'intel': '1e89f3b7a68bded6183a02aad494911af31d21e9c98ddc0c94a21adb3ca58214'}
@@ -95,17 +90,17 @@ for key,filename in filenames.items():
 assert pages['downloads.html'].hashes == expected_hashes
 chapters = {'install', 'start', 'keywords', 'filters', 'ranking', 'refresh', 'browser',
             'views', 'hidden', 'details', 'favorites', 'journals', 'sharing', 'faq',
-            'citations','batch-pdf','word-plugin','endnote-macos'}
+            'citations','batch-pdf','word-plugin','endnote-macos','favorite-search','bulk-unfavorite','software-update'}
 assert chapters <= pages['guide.html'].ids
 assert set(pages['guide.html'].chapters) == chapters
-assert len(pages['guide.html'].chapters) == 18
+assert len(pages['guide.html'].chapters) == 21
 assert 'batch-refresh' in pages['guide.html'].ids
 sitemap = ET.parse(root / 'sitemap.xml')
 locations = [node.text for node in sitemap.iter('{http://www.sitemaps.org/schemas/sitemap/0.9}loc')]
 assert len(locations) == 3
 assert all(link.startswith('https://amiba-xqq.github.io/Biomedreader/') for link in locations)
 assert 'Sitemap: https://amiba-xqq.github.io/Biomedreader/sitemap.xml' in (root / 'robots.txt').read_text()
-print('PASS: Jekyll rendered 3 pages, 18 chapters, all local links/assets/anchors, sitemap, 8 exact Quark links, 8 version-specific GitHub downloads and 4 SHA256 values.')
+print('PASS: Jekyll rendered 3 pages, 21 chapters, all local links/assets/anchors, sitemap, 8 exact Quark links, 8 version-specific GitHub downloads and 4 SHA256 values.')
 
 # The desktop updater consumes the same version and hashes as the download page.
 import json
