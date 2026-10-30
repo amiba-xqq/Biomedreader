@@ -32,7 +32,7 @@ Windows 提供 Biomed Reader Word 插件，用于插入/更新引文、切换期
 ### macOS 12 及以上
 
 按芯片下载对应 DMG，打开后把 Biomed Reader 拖入 Applications。应用未进行 Apple Developer ID 公证，首次打开可能需要在系统“隐私与安全性”中确认可信来源后允许打开。
-Mac 不安装 Windows COM 插件；在收藏页使用“导出 Word / EndNote”生成含引文域、嵌入记录与文末参考文献的 DOCX，交由已安装的 Mac EndNote CWYW 接管。没有原生 Mac Word 工具栏。
+Mac 提供原生 VBA＋Ribbon Word 模板插件：将软件移入 Applications，退出 Word，在设置 → Word 插件安装或修复，重新打开 Word。保留收藏页“导出 Word / EndNote”。Mac Word/EndNote 实机联调尚未验证，请先使用文档副本；安装步骤和兼容边界见 [Mac 仓库说明](https://github.com/amiba-xqq/Biomedreader_macos#mac-原生-word-模板插件221)。软件仍支持 macOS 12+，最新版 Word 自身的系统要求可能更高。
 API Key 使用 macOS 钥匙串保护。首次保存可能提示授权；从 Windows 迁移的数据中的密钥需要在 Mac 上重新输入。Codex 连接需要另行安装官方 Codex 组件并完成官方登录。
 
 ### 基本流程
