@@ -1,21 +1,15 @@
 <footer class="site-footer">
-<div class="wrap footer-inner">
-<div>
-<div class="footer-brand">刊禾 · Biomed Reader</div>
-<p>让文献检索、离线阅读与日常整理，连在一起。</p>
-</div>
-<div class="footer-links">
-<a href="{{ '/downloads.html' | relative_url }}">软件下载</a>
-<a href="{{ '/guide.html' | relative_url }}">使用教程</a>
-<a href="https://github.com/amiba-xqq/Biomedreader" target="_blank" rel="noopener">Windows GitHub ↗</a>
-<a href="https://github.com/amiba-xqq/Biomedreader_macos" target="_blank" rel="noopener">macOS GitHub ↗</a>
-</div>
-</div>
+  <div class="wrap footer-inner">
+    <div><a class="brand footer-brand" href="{{ '/' | relative_url }}"><img src="{{ '/assets/app-icon.png' | relative_url }}" width="38" height="38" alt=""><span><strong>刊禾</strong><small>BIOMED READER</small></span></a><p>面向生物医学研究的桌面工作台。</p></div>
+    <nav class="footer-links" aria-label="页脚导航">
+      <a href="{{ '/guide.html' | relative_url }}">使用教程</a>
+      <a href="{{ '/downloads.html' | relative_url }}">软件下载</a>
+      <a href="https://github.com/amiba-xqq/Biomedreader">Windows GitHub {% include icon.html name='external' %}</a>
+      <a href="https://github.com/amiba-xqq/Biomedreader_macos">macOS GitHub {% include icon.html name='external' %}</a>
+    </nav>
+  </div>
 </footer>
 <dialog class="lightbox" id="image-lightbox" aria-label="软件截图放大预览">
-<div class="lightbox-header">
-<span>软件界面 · 文献为演示数据</span>
-<button class="lightbox-close" autofocus>关闭</button>
-</div>
-<img alt="软件截图放大预览">
+  <div class="lightbox-header"><span>软件截图</span><button class="btn secondary lightbox-close" autofocus>关闭</button></div>
+  <img alt="">
 </dialog>

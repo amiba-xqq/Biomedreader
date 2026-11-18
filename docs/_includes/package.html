@@ -1,0 +1,8 @@
+<article class="package" data-package="{{ include.key }}">
+  <div class="package-head"><span class="icon-tile">{% include icon.html name=include.icon %}</span><span class="badge">{{ include.type }}</span></div>
+  <h3>{{ include.item.name }}</h3>
+  <p>{{ include.description }}</p>
+  <p class="package-info">{{ include.system }} <span aria-hidden="true">·</span> {{ include.item.display_size }}</p>
+  <div class="actions"><a class="btn primary" data-download="{{ include.key }}" aria-label="通过 GitHub 下载 {{ include.item.name }}" href="{{ include.item.github }}">GitHub 下载 {% include icon.html name='download' %}</a><a class="btn secondary" data-quark="{{ include.key }}" aria-label="通过夸克网盘下载 {{ include.item.name }}" href="{{ include.item.quark }}">夸克网盘 {% include icon.html name='external' %}</a></div>
+  <details class="integrity"><summary>文件名与 SHA‑256</summary><p class="filename">{{ include.item.filename }}</p><p class="hash" data-asset-hash="{{ include.key }}">{{ include.item.sha256 }}</p><button type="button" class="btn secondary" data-copy-hash>复制校验值</button></details>
+</article>

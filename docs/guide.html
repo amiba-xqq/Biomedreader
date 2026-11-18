@@ -2,29 +2,24 @@
 layout: default
 page_id: guide
 title: "使用教程｜刊禾 Biomed Reader"
-description: "Biomed Reader 2.1 使用教程：全部联网刷新、引用卷页、Windows Word 插件、EndNote 接管、批量收藏 PDF，以及检索、离线阅读、收藏搜索、批量取消收藏和软件更新。"
+description: "Biomed Reader 2.2.2 学习中心：从文献检索、引用和本地资料管理，到 AI 作图、Protocol、模型部署与课题组协作。"
 permalink: /guide.html
 ---
 <main id="main" class="wrap">
 <section class="page-intro guide-intro">
-<p class="eyebrow">GETTING STARTED & EVERYDAY USE</p>
-<h1>从安装，到自己的文献库。</h1>
-<p class="lead">按一次真实的使用流程，熟悉关键词方案、缓存阅读、收藏与本地数据管理。教程适用于最新 2.1 修订，包含收藏搜索、批量取消收藏、软件更新，以及 Windows Word 插件、Mac Word / EndNote 文档互通、卷页引用和批量收藏 PDF。</p>
-<nav class="guide-new-links" aria-label="2.1 新增功能快速入口">
-<strong>2.1 新增功能</strong>
-<a class="text-link" href="#favorite-search">搜索已收藏文章</a>
-<a class="text-link" href="#bulk-unfavorite">批量取消收藏</a>
-<a class="text-link" href="#software-update">软件更新</a>
-<a class="text-link" href="#batch-refresh">全部联网刷新</a>
-<a class="text-link" href="#citations">复制引用</a>
-<a class="text-link" href="#batch-pdf">批量收藏 PDF</a>
-<a class="text-link" href="#word-plugin">Windows Word 插件</a>
-<a class="text-link" href="#endnote-macos">Mac Word / EndNote</a>
-</nav>
+<p class="kicker"><span></span> LEARNING CENTER <b>2.1 → 2.2.2</b></p>
+<h1>刊禾学习中心</h1>
+<p class="lead">从安装和第一次检索开始，或直接跳到你正在做的任务。保留 2.1 的文献与引用教程，并加入 2.2 系列的 AI 科研工具。</p>
+<nav class="guide-new-links" aria-label="学习路线"><a href="#install">快速上手</a><a href="#word-plugin">Word 与 EndNote</a><a href="#ai-figures">AI 作图</a><a href="#ai-protocol">AI Protocol</a><a href="#versions">版本索引</a></nav>
 </section>
+<section class="version-path" id="versions" aria-labelledby="version-title"><div><p class="eyebrow">VERSION MAP</p><h2 id="version-title">2.1 至 2.2.2 更新导览</h2></div><div class="version-grid">
+<article><span class="badge">2.1</span><h3>文献与写作</h3><p>全部联网刷新、引用卷页、批量 PDF、收藏搜索、批量取消、Word / EndNote 和软件更新。</p><a class="text-link" href="#batch-refresh">从文献更新开始 →</a></article>
+<article><span class="badge">2.2 / 2.2.1</span><h3>AI 进入科研工作流</h3><p>模型与课题组、文章简报、增量报告、科研对话、领域知识库、科学问题、同行评审和 Mac Word 插件。</p><a class="text-link" href="#ai-deploy">了解 AI 部署 →</a></article>
+<article><span class="badge">2.2.2</span><h3>从数据到图，从方法到方案</h3><p>四类实验数据作图、基于上下文改图、AI Protocol、内置科研技能和后续同版本改进。</p><a class="text-link" href="#ai-figures">试用 AI 作图 →</a></article>
+</div></section>
 <div class="guide-layout">
 <aside class="guide-sidebar" aria-label="教程目录">
-<p>使用教程 · CONTENTS</p>
+<details class="guide-directory" open><summary>课程目录 <span>29 章</span></summary>
 <nav class="toc">
 <a href="#install">01　安装与升级</a>
 <a href="#start">02　第一次打开与界面导航</a>
@@ -43,12 +38,20 @@ permalink: /guide.html
 <a href="#software-update">15　软件更新</a>
 <a href="#batch-pdf">16　批量收藏 PDF</a>
 <a href="#word-plugin">17　Windows Word 插件</a>
-<a href="#endnote-macos">18　Mac Word / EndNote</a>
+<a href="#endnote-macos">18　Mac Word 插件与 EndNote</a>
 <a href="#journals">19　期刊目录与 JIF 年份</a>
 <a href="#sharing">20　分享、备份与移动数据目录</a>
-<a href="#faq">21　常见问题与使用注意</a>
+<a href="#ai-deploy">21　配置 AI 与课题组</a>
+<a href="#ai-literature">22　总结与增量报告</a>
+<a href="#research-assistant">23　科研对话、知识库与审稿</a>
+<a href="#ai-figures">24　AI 作图与改图</a>
+<a href="#figures-images">25　WB / gel 与 IF</a>
+<a href="#figures-data">26　qPCR 与 Excel / CSV</a>
+<a href="#ai-protocol">27　AI Protocol</a>
+<a href="#feedback">28　清理与反馈</a>
+<a href="#faq">29　常见问题与使用注意</a>
 </nav>
-<a class="back-top" href="#main">返回顶部 ↑</a>
+<a class="back-top" href="#main">返回顶部 ↑</a></details>
 </aside>
 <div>
 <div class="guide-search">
@@ -56,9 +59,9 @@ permalink: /guide.html
 <circle cx="10" cy="10" r="6"/>
 <path d="m15 15 6 6"/>
 </svg>
-<label class="hidden" for="guide-search">搜索教程章节</label>
-<input type="search" id="guide-search" placeholder="查找教程，例如：收藏搜索、取消收藏、软件更新、Word" autocomplete="off">
-<div class="search-result" role="status">共 21 个章节，可搜索关键词或按目录跳转</div>
+<label class="hidden" for="guide-search">搜索 29 个教程章节</label>
+<input type="search" id="guide-search" placeholder="例如：qPCR、Codex、Word 或收藏" autocomplete="off">
+<div class="search-result" role="status">共 29 个章节，可搜索关键词或按目录跳转</div>
 </div>
 <p class="empty-search" hidden>没有找到匹配章节。试试“检索”“收藏”或“备份”，也可清空搜索查看全部教程。</p>
 <section class="chapter" id="install">
@@ -69,7 +72,7 @@ permalink: /guide.html
 <li>
 <strong>Windows 安装版：</strong>运行 EXE 安装程序。支持 Windows 10/11 的 64 位系统。</li>
 <li>
-<strong>Windows 目录版：</strong>完整解压 ZIP，进入 <code>BiomedReader_2.1_Portable_x64</code> 文件夹运行 <code>BiomedReader.exe</code>，保留 <code>_internal</code>。需要 Word 插件时按<a class="text-link" href="#word-plugin">插件安装步骤</a>注册。</li>
+<strong>Windows 目录版：</strong>完整解压 ZIP，进入 解压得到的 <code>BiomedReader</code> 文件夹运行 <code>BiomedReader.exe</code>，保留 <code>_internal</code>。需要 Word 插件时按<a class="text-link" href="#word-plugin">插件安装步骤</a>注册。</li>
 <li>
 <strong>macOS：</strong>M 系列与 Intel 使用不同的 DMG。支持 macOS 12 及以上，将应用拖到“应用程序”。</li>
 </ol>
@@ -332,7 +335,7 @@ permalink: /guide.html
 <li>下载完成后，先备份本地数据，退出 Biomed Reader 和 Word，再<strong>手动运行安装程序</strong>；Mac 打开 DMG 后替换应用。此功能不会自动安装。</li>
 </ol>
 <p>软件更新区域下方的官网链接可用默认浏览器打开。遇到网络问题，也可前往<a class="text-link" href="{{ '/downloads.html' | relative_url }}">下载页</a>手动选择安装包。</p>
-<div class="notice"><strong>同版本修订需手动下载。</strong>本次发布版本号仍为 2.1。已安装旧修订的 2.1 与官网版本号相同时，检查更新会提示无需更新；请在下载页手动下载并覆盖升级本次修订包。</div>
+<div class="notice"><strong>同版本修订需手动下载。</strong>官网当前版本为 2.2.2。同为 2.2.2 的旧修订不会触发自动下载；如需获取最新同版本修订，请从下载页手动下载并覆盖安装。</div>
 </section>
 <section class="chapter" id="batch-pdf">
 <h2><span>16</span>批量收藏本地 PDF</h2>
@@ -355,7 +358,7 @@ permalink: /guide.html
 <p>适用于 Microsoft Office 2021 及以上的桌面版 Word。Windows 安装版会注册当前用户的插件；完整目录版提供手动注册脚本。Mac 的操作见<a class="text-link" href="#endnote-macos">下一章</a>。</p>
 <h3>安装与打开工具栏</h3>
 <ol>
-<li>关闭 Word 后安装或升级 2.1，重新打开 Word，查找 <strong>Biomed Reader</strong> 选项卡。</li>
+<li>关闭 Word 后安装或升级 Biomed Reader，重新打开 Word，查找 <strong>Biomed Reader</strong> 选项卡。</li>
 <li>目录版先完整解压到固定位置，关闭所有 Word 窗口，运行 <code>RegisterWordAddin.cmd</code> 后重新打开 Word。移动程序文件夹后重新注册；需要取消该目录的注册时使用 <code>UnregisterWordAddin.cmd</code>。</li>
 <li>插件未显示时，在 Word“文件 → 选项 → 加载项 → 管理：COM 加载项 → 转到”中确认 Biomed Reader 已启用。目录版与安装版同时存在时，最近注册的位置决定插件连接哪一份程序。</li>
 <li>点击插件的<strong>打开 Biomed Reader</strong>；也可先手动启动软件并等待本地文献库载入。</li>
@@ -381,18 +384,10 @@ permalink: /guide.html
 <p>若插件暂时无法连接，请先确认 Biomed Reader 已启动、使用的是原本的本地文献库，并在升级后完整退出再打开 Word。导出失败时保留原稿，检查 EndNote CWYW 是否正常启用。</p>
 </section>
 <section class="chapter" id="endnote-macos">
-<h2><span>18</span>Mac：Word 文档导出与 EndNote 接管</h2>
-<p>Mac 2.1 使用文档互通流程，在 Biomed Reader 中导出引文集合，再由 Mac Word 中已安装的 EndNote CWYW 接管。此版不安装 Mac 原生 Biomed Reader Word 工具栏，也不自动根据收藏分组变化改写已有稿件。</p>
-<ol>
-<li>打开“收藏文章”，选择目标分组或全部收藏，点击<strong>导出 Word / EndNote…</strong>。</li>
-<li>在导出窗口勾选文章，选择期刊样式；列表同样为 NC 扩选与已核实 EndNote 样式的交集，可输入关键词筛选。</li>
-<li>导出 <code>.docx</code>。文件包含 EndNote 引文域、各篇嵌入的文献记录、卷页信息和文末参考文献，默认字体为 Arial 常规五号。</li>
-<li>用桌面版 Mac Word 打开，使用 EndNote 的 <strong>Update Citations and Bibliography</strong> 更新引用与格式。EndNote 若没有相应样式，请安装或选择可用样式。</li>
-<li>写入自己的稿件时，从引文集合中复制所需引文域，保留 Word 域格式，再由 EndNote 更新编号与参考文献。不要使用“仅保留文本”或将引文转换为纯文本。</li>
-<li>需要建立 EndNote 文献库时，在 Word 的 EndNote 工具中选择 <strong>Export Traveling Library</strong>，导出嵌入记录。</li>
-</ol>
-<div class="notice"><strong>已验证范围：</strong>跨平台文档结构及 EndNote 重建参考文献已在 Windows Word / EndNote 中测试，Mac 应用已通过双架构构建、部署目标和启动检查；Mac Word / EndNote 的实机端到端联动尚未完成验证。请先用文档副本试用。应用支持 macOS 12，不代表任意 Word 或 EndNote 版本也支持该系统，版本匹配以各软件要求为准。</div>
-<p><a class="text-link" href="https://github.com/amiba-xqq/Biomedreader_macos#mac-word-与-endnote文档互通" target="_blank" rel="noopener">Mac 仓库完整说明 ↗</a> · <a class="text-link" href="https://endnote.com/product-details/compatibility/" target="_blank" rel="noopener">EndNote 官方兼容列表 ↗</a></p>
+<h2><span>18</span>Mac：原生 Word 插件与 EndNote 接管</h2>
+<ol><li>用 ⌘Q 完全退出 Word，在刊禾中选择「设置 → Word 插件 → 安装／修复 Word 插件」，重开 Word 后按提示信任本地 <code>BiomedReader.dotm</code> 模板。</li><li>在刊禾收藏页面选择文献，在 Word 光标处用 Biomed Reader 选项卡插入或更新引用。可选择期刊样式和字体。后台连接处理引用请求，只有主动点击「打开 Biomed Reader」才打开主界面。</li><li>使用「导出为 EndNote」生成稿件副本，在已安装 EndNote CWYW 的 Word 中核对并更新引用。还可从「收藏文章 → 导出 Word / EndNote…」生成独立引用集合。</li></ol>
+<div class="notice"><strong>升级后先在副本中试用。</strong>无需启用所有宏或开放 VBA 工程访问。Mac 插件已做双架构打包验证，Word 和 EndNote 的版本匹配与实际联动请在本机核对。</div>
+<p><a class="text-link" href="https://github.com/amiba-xqq/Biomedreader_macos#mac-word-插件">Mac 插件安装和排查 ↗</a></p>
 </section>
 <section class="chapter" id="journals">
 <h2>
@@ -453,9 +448,10 @@ permalink: /guide.html
 </ul>
 <p>路径选择窗口支持在 Look in 中输入或粘贴路径，按 Enter 进入后再选择目录。字体和布局可在设置中自动适配屏幕或整体缩放，软件保持浅色界面。</p>
 </section>
+{% include research-lessons.html %}
 <section class="chapter" id="faq">
 <h2>
-<span>21</span>常见问题与使用注意</h2>
+<span>29</span>常见问题与使用注意</h2>
 <div class="faq">
 <details>
 <summary>为什么结果与 PubMed 或预印本官网不同？</summary>
@@ -487,11 +483,11 @@ permalink: /guide.html
 </details>
 <details><summary>为什么复制引用后仍缺少 Volume 或 Pages？</summary><p>在线优先发表或预印本可能尚未分配卷页，元数据也可能延迟。字段缺失时每次点击都会尝试联网补齐，完整后使用缓存；不会为了填满格式而虚构卷页。</p></details>
 <details><summary>批量收藏 PDF 为什么有些文件失败？</summary><p>先查看失败报告。常见原因包括 PubMed 未收录、所选期刊目录不包含该刊、首页缺少可提取的大标题、扫描件或网络失败。可复制或导出未成功文件名，报告需手动关闭。</p></details>
-<details><summary>为什么 Mac Word 中没有 Biomed Reader 工具栏？</summary><p>Mac 2.1 采用“收藏文章 → 导出 Word / EndNote…”的文档互通方式。Windows 的 COM 插件不能直接安装到 Mac；使用 Mac Word 的 EndNote CWYW 接管导出的引文文档。</p></details>
+<details><summary>为什么 Mac Word 中没有 Biomed Reader 工具栏？</summary><p>完全退出 Word，回到「设置 → Word 插件」安装或修复模板，再打开 Word。请在 Word 中检查本地模板信任状态，或参考 <a href="#endnote-macos">Mac Word 教程</a>。</p></details>
 </div>
 </section>
-<p class="notice">现有图示来自 2.0 的真实界面和独立演示数据，用于说明两版共有操作，不代表 2.1 新增窗口截图。2.1 新功能按本页文字步骤使用。Windows 通过 Word 插件操作；Mac 通过 Word 文档导出与 EndNote CWYW 接管，两平台写作入口不同。</p>
-<a class="btn" href="{{ '/downloads.html' | relative_url }}">下载并开始使用</a>
+<p class="notice">部分截图来自旧版，用于说明各版本共有操作。新增功能请以 2.2.2 界面及文字步骤为准。</p>
+<a class="btn primary" href="{{ '/downloads.html' | relative_url }}">下载并开始使用 {% include icon.html name='arrow' %}</a>
 </div>
 </div>
 </main>

@@ -7,10 +7,12 @@ import xml.etree.ElementTree as ET
 
 root = Path(sys.argv[1] if len(sys.argv) > 1 else '_site')
 base = '/Biomedreader'
-expected_quark = {'windows': 'https://pan.quark.cn/s/9607c5e28422', 'portable': 'https://pan.quark.cn/s/3dea2c452a22', 'apple': 'https://pan.quark.cn/s/605b035afd5c', 'intel': 'https://pan.quark.cn/s/20c8b1c767cc'}
-expected_legacy_quark = dict(windows='https://pan.quark.cn/s/d7308ecd7a92',portable='https://pan.quark.cn/s/3ad56e327034',apple='https://pan.quark.cn/s/31867e2dc3e0',intel='https://pan.quark.cn/s/4130cba6f1d1')
-filenames = dict(windows='BiomedReader_Setup_2.1_x64.exe',portable='BiomedReader_2.1_Portable_x64.zip',apple='BiomedReader_2.1_macOS12_AppleSilicon.dmg',intel='BiomedReader_2.1_macOS12_Intel.dmg')
-expected_hashes = {'windows': '1df2b533484e000d045971c275f3611eb9b981952fb2cb693da22f4a1fc3e9c4', 'portable': '5e7ed964a611d5d808adc5fc1eb7792e0a66ab7f402443c70381c231b61685fa', 'apple': 'bc2f67cb683402c16e2535acf00df843e2049b6eab638bad02bde3772a4483c7', 'intel': '1e89f3b7a68bded6183a02aad494911af31d21e9c98ddc0c94a21adb3ca58214'}
+version = '2.2.2'
+expected_quark = {'windows': 'https://pan.quark.cn/s/083dd1cd8541', 'portable': 'https://pan.quark.cn/s/3c0ada60108b', 'apple': 'https://pan.quark.cn/s/0286e143c7fe', 'intel': 'https://pan.quark.cn/s/c21cc37271b0'}
+expected_legacy_quark = {'windows': 'https://pan.quark.cn/s/d7308ecd7a92', 'portable': 'https://pan.quark.cn/s/3ad56e327034', 'apple': 'https://pan.quark.cn/s/31867e2dc3e0', 'intel': 'https://pan.quark.cn/s/4130cba6f1d1'}
+filenames = {'windows': 'BiomedReader_Setup_2.2.2_x64.exe', 'portable': 'BiomedReader_2.2.2_Portable_x64.zip', 'apple': 'BiomedReader_2.2.2_macOS12_AppleSilicon.dmg', 'intel': 'BiomedReader_2.2.2_macOS12_Intel.dmg'}
+expected_hashes = {'windows': 'b3709404d6193f9ba6c9837c6e1ca10a5b9e41474958e010aa59d1beeaa1daaf', 'portable': 'e60c2c19271bdd8fe3d285f34ca98becc4c447a3b3552b606be140f8cab5917b', 'apple': '44d7aee5f47396458362f036ef2e6d4a21c178002532f41948de6d827ce06b3b', 'intel': 'f0bede9410224059eadc33c752a859710e4be2e3fa03f84a19751cedfb18fe4b'}
+expected_sizes = {'windows': 183551905, 'portable': 277781906, 'apple': 393252853, 'intel': 444567002}
 
 
 class Page(HTMLParser):
@@ -85,30 +87,31 @@ assert pages['downloads.html'].legacy_quark == expected_legacy_quark
 for key,filename in filenames.items():
     repo = 'Biomedreader' if key in ('windows','portable') else 'Biomedreader_macos'
     prefix = 'https://github.com/amiba-xqq/' + repo + '/releases/download/'
-    assert pages['downloads.html'].github[key] == prefix+'v2.1/'+filename
-    assert pages['downloads.html'].legacy_github[key] == prefix+'v2.0/'+filename.replace('2.1','2.0')
+    assert pages['downloads.html'].github[key] == prefix+f'v{version}/'+filename
+    assert pages['downloads.html'].legacy_github[key] == prefix+'v2.0/'+filename.replace(version,'2.0')
 assert pages['downloads.html'].hashes == expected_hashes
 chapters = {'install', 'start', 'keywords', 'filters', 'ranking', 'refresh', 'browser',
             'views', 'hidden', 'details', 'favorites', 'journals', 'sharing', 'faq',
-            'citations','batch-pdf','word-plugin','endnote-macos','favorite-search','bulk-unfavorite','software-update'}
+            'citations','batch-pdf','word-plugin','endnote-macos','favorite-search','bulk-unfavorite','software-update',
+            'ai-deploy','ai-literature','research-assistant','ai-figures','figures-images','figures-data','ai-protocol','feedback'}
 assert chapters <= pages['guide.html'].ids
 assert set(pages['guide.html'].chapters) == chapters
-assert len(pages['guide.html'].chapters) == 21
+assert len(pages['guide.html'].chapters) == 29
 assert 'batch-refresh' in pages['guide.html'].ids
 sitemap = ET.parse(root / 'sitemap.xml')
 locations = [node.text for node in sitemap.iter('{http://www.sitemaps.org/schemas/sitemap/0.9}loc')]
 assert len(locations) == 3
 assert all(link.startswith('https://amiba-xqq.github.io/Biomedreader/') for link in locations)
 assert 'Sitemap: https://amiba-xqq.github.io/Biomedreader/sitemap.xml' in (root / 'robots.txt').read_text()
-print('PASS: Jekyll rendered 3 pages, 21 chapters, all local links/assets/anchors, sitemap, 8 exact Quark links, 8 version-specific GitHub downloads and 4 SHA256 values.')
+print('PASS: Jekyll rendered 3 pages, 29 chapters, all local links/assets/anchors, sitemap, 8 exact Quark links, 8 version-specific GitHub downloads and 4 SHA256 values.')
 
 # The desktop updater consumes the same version and hashes as the download page.
 import json
 update=json.loads((root/'app-update.json').read_text(encoding='utf8'))
-assert update['schema']==1 and update['application']=='BiomedReader' and update['version']=='2.1'
+assert update['schema']==1 and update['application']=='BiomedReader' and update['version']==version
 for label,key in [('windows-x64','windows'),('macos-arm64','apple'),('macos-intel','intel')]:
     package=update['packages'][label]
     assert package['filename']==filenames[key]
     assert package['url']==pages['downloads.html'].github[key]
-    assert package['sha256']==expected_hashes[key] and package['bytes']>0
+    assert package['sha256']==expected_hashes[key] and package['bytes']==expected_sizes[key]
 print('PASS: desktop update manifest agrees with the published packages.')

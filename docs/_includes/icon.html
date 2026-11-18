@@ -1,0 +1,14 @@
+<svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+{% case include.name %}
+{% when 'book' %}<path d="M12 6a9 9 0 0 0-8-2v14a9 9 0 0 1 8 2 9 9 0 0 1 8-2V4a9 9 0 0 0-8 2v14Z"/>
+{% when 'chart' %}<path d="M4 3v17h17M8 16v-4m5 4V7m5 9v-6"/>
+{% when 'flask' %}<path d="M9 3h6m-5 0v6l-5 8a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-8V3m-6 11h8"/>
+{% when 'team' %}<circle cx="9" cy="8" r="3"/><path d="M3 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2m3-15a3 3 0 0 1 0 6m3 9v-2a4 4 0 0 0-3-4"/>
+{% when 'download' %}<path d="M12 3v12m-4-4 4 4 4-4M4 16v4h16v-4"/>
+{% when 'arrow' %}<path d="M4 12h15m-6-6 6 6-6 6"/>
+{% when 'external' %}<path d="M13 5h6v6m0-6-9 9m7 0v5H5V7h5"/>
+{% when 'windows' %}<path d="M3 5l8-1v7H3zm10-1 8-1v8h-8zM3 13h8v7l-8-1zm10 0h8v8l-8-1z"/>
+{% when 'mac' %}<rect x="3" y="4" width="18" height="13" rx="2"/><path d="M9 21h6m-3-4v4"/>
+{% when 'search' %}<circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/>
+{% endcase %}
+</svg>
