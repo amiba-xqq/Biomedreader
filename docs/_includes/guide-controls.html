@@ -1,0 +1,12 @@
+{% assign controls = site.data.guide_controls[include.id] %}
+{% if controls %}
+<details class="guide-reference">
+  <summary>{{ controls.title | escape }}</summary>
+  <dl class="control-list">
+  {% for item in controls.items %}
+    <dt>{{ item.name | escape }}</dt><dd>{{ item.use | escape }}</dd>
+  {% endfor %}
+  </dl>
+  <p class="guide-check"><strong>操作后核对：</strong>{{ controls.check | escape }}</p>
+</details>
+{% endif %}

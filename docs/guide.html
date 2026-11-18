@@ -85,6 +85,7 @@ permalink: /guide.html
 <div class="notice">
 <strong>升级前先备份。</strong>先在旧版设置中备份完整本地数据，再退出 Biomed Reader 和 Word 后升级。新版沿用数据兼容标识，缓存、方案、收藏与 PDF 关联继续使用。macOS 若出现开发者提示，请参考<a class="text-link" href="https://github.com/amiba-xqq/Biomedreader_macos#下载与安装" target="_blank" rel="noopener">仓库安装说明</a>。</div>
 {% include guide-shot.html id='install' %}
+{% include guide-controls.html id='install' %}
 </section>
 <section class="chapter" id="start">
 <h2>
@@ -102,6 +103,7 @@ permalink: /guide.html
 </ul>
 <p>首次使用时先检查设置中的预印本来源范围与最近年限，然后创建关键词方案。</p>
 {% include guide-shot.html id='start' %}
+{% include guide-controls.html id='start' %}
 </section>
 <section class="chapter" id="keywords">
 <h2><span>03</span>创建关键词方案与表达式</h2>
@@ -117,6 +119,7 @@ permalink: /guide.html
 </dl>
 {% include guide-shot.html id='keywords' %}
 <p>同一个主题在两类来源中出现不同数量的文章很正常。结果异常时，先确认当前启用的来源及该来源的输入框，再检查候选数和时间范围。</p>
+{% include guide-controls.html id='keywords' %}
 </section>
 <section class="chapter" id="filters">
 <h2>
@@ -137,6 +140,7 @@ permalink: /guide.html
 <p>PubMed 可选默认范围或标题与摘要。预印本可选默认、标题与摘要、全文、全文与标题摘要。预印本最近年限默认两年，并与方案年份取交集。全文命中也可能来自参考文献等位置。</p>
 
 {% include guide-shot.html id='filters-search-settings' %}
+{% include guide-controls.html id='filters' %}
 </section>
 <section class="chapter" id="ranking">
 <h2>
@@ -167,6 +171,7 @@ permalink: /guide.html
 <p>综合最佳使用 72% 归一化相关性与 28% 时间新近度，时间权重约每 180 天减半。相关性依据已有标题、摘要和关键词计算，不能视为跨网站统一的官方评分。</p>
 <div class="notice">有限候选集不保证覆盖全部历史中最相关的文章。候选数、年份、期刊、文章类型和收录时间差异，都会影响软件与官网结果的对应关系。</div>
 {% include guide-shot.html id='ranking' %}
+{% include guide-controls.html id='ranking' %}
 </section>
 <section class="chapter" id="refresh">
 <h2>
@@ -193,6 +198,7 @@ permalink: /guide.html
 </ol>
 <p>开始全部刷新前请等待正在运行的单方案检索结束。遇到预印本验证窗口，仍需人工完成验证；可最小化该窗口等待检索。</p>
 {% include guide-shot.html id='refresh' %}
+{% include guide-controls.html id='refresh' %}
 </section>
 <section class="chapter" id="browser">
 <h2>
@@ -206,6 +212,7 @@ permalink: /guide.html
 </ul>
 <p>网站改版、限流或临时不可用都可能影响检索。遇到问题先保留缓存，再检查来源和筛选条件。预印本通常尚未完成同行评审，引用前请核对正式发表状态。</p>
 {% include guide-shot.html id='browser-entry' %}
+{% include guide-controls.html id='browser' %}
 </section>
 <section class="chapter" id="views">
 <h2>
@@ -225,6 +232,7 @@ permalink: /guide.html
 <strong>预印本：</strong>标题浅红加粗。缺失摘要按当前页面后台补取，尚未获取的摘要可能暂时无法离线查看。</li>
 </ul>
 {% include guide-shot.html id='views-cards' %}
+{% include guide-controls.html id='views' %}
 </section>
 <section class="chapter" id="hidden">
 <h2>
@@ -238,6 +246,7 @@ permalink: /guide.html
 </ol>
 <p>隐藏只作用于当前关键词方案，重启和刷新后仍保留，不删除缓存、收藏或 PDF。缓存总数仍包含隐藏文章，当前显示数量会根据筛选变化。</p>
 {% include guide-shot.html id='hidden' %}
+{% include guide-controls.html id='hidden' %}
 </section>
 <section class="chapter" id="details">
 <h2>
@@ -246,6 +255,7 @@ permalink: /guide.html
 <p>“打开 DOI / 文章界面”会调用默认浏览器，详情文字保持不变。点击后，这一轮结果中的对应文章显示访问标记，字体颜色变淡，<strong>卡片背景始终保持白色</strong>。</p>
 <p>联网刷新重置 DOI 访问标记，保留收藏、笔记和隐藏状态。软件不会在刷新或打开详情时自动寻找模型图或抓取文章首图。</p>
 {% include guide-shot.html id='details' %}
+{% include guide-controls.html id='details' %}
 </section>
 <section class="chapter" id="citations">
 <h2><span>11</span>复制引用、期刊样式与卷页信息</h2>
@@ -264,6 +274,7 @@ permalink: /guide.html
 </ul>
 <p>元数据优先通过 PubMed 获取，必要时按 DOI 补充。单篇引用格式对未匹配独立样式的期刊会明确标注出版社通用后备样式。复制引用得到文字；需要在 Word 中自动编号和维护文末列表，请使用下面对应平台的写作流程。</p>
 {% include guide-shot.html id='citation-settings' %}
+{% include guide-controls.html id='citations' %}
 </section>
 <section class="chapter" id="favorites">
 <h2>
@@ -281,6 +292,7 @@ permalink: /guide.html
 <div class="notice">
 <strong>取消收藏与删除：</strong>所有入口都会弹出确认窗口。确认后从全部分组取消该文章的收藏，并清除 PDF 链接、删除不再使用的 paper 内副本；原始下载文件与文章缓存保留。详见<a class="text-link" href="#bulk-unfavorite">批量取消收藏与确认规则</a>。</div>
 {% include guide-shot.html id='linked-pdf' %}
+{% include guide-controls.html id='favorites' %}
 </section>
 <section class="chapter" id="favorite-search">
 <h2><span>13</span>搜索已收藏文章</h2>
@@ -295,6 +307,7 @@ permalink: /guide.html
 <p>多个词用空格分隔时，需要全部匹配；完整短语可用双引号，例如 <code>"DNA repair" ATM</code>。这里不使用 PubMed 的 AND / OR 检索表达式。筛选不会删除或移动文章，也不会改变分组归属。</p>
 <div class="notice"><strong>筛选范围：</strong>搜索只覆盖所选分组中的本地缓存。当前搜索条件在本次打开期间保留，重新启动后需重新设置。</div>
 {% include guide-shot.html id='favorite-search' %}
+{% include guide-controls.html id='favorite-search' %}
 </section>
 <section class="chapter" id="bulk-unfavorite">
 <h2><span>14</span>批量取消收藏与删除确认</h2>
@@ -308,6 +321,7 @@ permalink: /guide.html
 <div class="notice"><strong>所有取消收藏入口采用相同规则。</strong>关键词方案中的收藏按钮、文章详情和批量取消都会先确认。确认后，文章会从<strong>全部收藏分组</strong>移除；已链接的 PDF 会解除关联，当前数据目录 <code>paper</code> 中不再被其它文章共用的 PDF 副本会被删除。<code>paper</code> 外的原始 PDF、检索缓存和笔记保留。操作前请确认要删除的对象。</div>
 <p>批量取消与正在进行的 PDF 导入、分享操作不能同时执行。打开了 PDF 选择窗口时，请先关闭该窗口。若文章已用于 Windows Word 插件，之后更新引用时还会按原收藏分组的成员关系重新核对，详见<a class="text-link" href="#word-plugin">Word 插件教程</a>。</p>
 {% include guide-shot.html id='bulk-unfavorite' %}
+{% include guide-controls.html id='bulk-unfavorite' %}
 </section>
 <section class="chapter" id="software-update">
 <h2><span>15</span>检查软件更新与安装新版</h2>
@@ -321,6 +335,7 @@ permalink: /guide.html
 <p>软件更新区域下方的官网链接可用默认浏览器打开。遇到网络问题，也可前往<a class="text-link" href="{{ '/downloads.html' | relative_url }}">下载页</a>手动选择安装包。</p>
 <div class="notice"><strong>同版本修订需手动下载。</strong>官网当前版本为 2.2.2。同为 2.2.2 的旧修订不会触发自动下载；如需获取最新同版本修订，请从下载页手动下载并覆盖安装。</div>
 {% include guide-shot.html id='software-update' %}
+{% include guide-controls.html id='software-update' %}
 </section>
 <section class="chapter" id="batch-pdf">
 <h2><span>16</span>批量收藏本地 PDF</h2>
@@ -339,6 +354,7 @@ permalink: /guide.html
 <p>点击“取消 PDF 导入”会保留已成功收藏和关联的文件，尚未完成的项目在报告中列出。同篇文章按标识合并；原始下载 PDF 不会被移走或删除，已有链接也会尽量沿用。</p>
 <div class="notice"><strong>匹配不到时：</strong>检查期刊是否在所选目录、PubMed 是否收录、首页是否为封面或扫描图。当前未内置 OCR；无法提取或核实完整标题时会报告失败。可以先按标题手动检索、收藏，再通过“链接文章”选择 PDF。</div>
 {% include guide-shot.html id='batch-pdf-progress' %}
+{% include guide-controls.html id='batch-pdf' %}
 </section>
 <section class="chapter" id="word-plugin">
 <h2><span>17</span>Windows：Biomed Reader Word 插件</h2>
@@ -373,6 +389,7 @@ permalink: /guide.html
 </ol>
 <p>若插件暂时无法连接，请先确认 Biomed Reader 已启动、使用的是原本的本地文献库，并在升级后完整退出再打开 Word。导出失败时保留原稿，检查 EndNote CWYW 是否正常启用。</p>
 {% include guide-shot.html id='word-export' %}
+{% include guide-controls.html id='word-plugin' %}
 </section>
 <section class="chapter" id="endnote-macos">
 <h2><span>18</span>Mac：原生 Word 插件与 EndNote 接管</h2>
@@ -380,6 +397,7 @@ permalink: /guide.html
 <div class="notice"><strong>升级后先在副本中试用。</strong>无需启用所有宏或开放 VBA 工程访问。Mac 插件已做双架构打包验证，Word 和 EndNote 的版本匹配与实际联动请在本机核对。</div>
 <p><a class="text-link" href="https://github.com/amiba-xqq/Biomedreader_macos#mac-word-插件">Mac 插件安装和排查 ↗</a></p>
 {% include guide-shot.html id='mac-word-reference' %}
+{% include guide-controls.html id='endnote-macos' %}
 </section>
 <section class="chapter" id="journals">
 <h2>
@@ -394,6 +412,7 @@ permalink: /guide.html
 <p>设置中的 JIF 年份默认本地年份减一，可选 2010 年至当前年。只有已录入对应年度数据时才显示数值，缺失留空。切换显示年份不会重新划分 IF 三组的成员。</p>
 <p>软件不在线补全 JIF，不调用 Clarivate Journals API。NLM 公开目录收录不等同于 SCI 认证，指标以本地已录入年度数据为准。</p>
 {% include guide-shot.html id='journals' %}
+{% include guide-controls.html id='journals' %}
 </section>
 <section class="chapter" id="sharing">
 <h2>
@@ -419,6 +438,7 @@ permalink: /guide.html
 </ul>
 <p>路径选择窗口支持在 Look in 中输入或粘贴路径，按 Enter 进入后再选择目录。字体和布局可在设置中自动适配屏幕或整体缩放，软件保持浅色界面。</p>
 {% include guide-shot.html id='settings-data' %}
+{% include guide-controls.html id='sharing' %}
 </section>
 {% include research-lessons.html %}
 <section class="chapter" id="faq">
@@ -461,13 +481,14 @@ permalink: /guide.html
 <h3 id="faq-ai">AI 常见问题与排查顺序</h3>
 <div class="faq">
 <details><summary>模型已配置，为什么任务窗口找不到？</summary><p>先回「AI部署」确认已保存且已开启文字模型，再回到任务窗口重新选择。个人 API Key 的模型要检查调用权限；课题组学生要检查「可用AI模型」。本机 Codex 的列表来自当前账号，登录后点「检测 / 刷新模型」，再打开模型设置。图像专用通道只在绘图设置出现。<a href="#ai-deploy">查看 AI 部署教程</a>。</p></details>
-<details><summary>个人通道与课题组通道切换失败，或学生退出失败怎么办？</summary><p>模型两条通道都配置且可用时才有回退。分别核对 Key、课题组授权和服务商模型权限。学生退出需要联网释放本机占用，可在网络恢复后重新尝试；若两台设备名额已满，请先在旧设备退出。被 PI 停用时应联系 PI。<a href="#lab-access">查看课题组步骤</a>。</p></details>
+<details><summary>个人通道与课题组通道切换失败，或学生退出失败怎么办？</summary><p>模型两条通道都配置且可用时才有回退。分别核对 Key、课题组授权和服务商模型权限。学生退出需要联网释放本机占用，可在网络恢复后重新尝试；若两台设备名额已满，请先在旧设备退出。中国大陆网络请在登录时选默认 biomedreader.cn；切换入口不增加名额。被 PI 停用时应联系 PI。<a href="#lab-access">查看课题组步骤</a>。</p></details>
 <details><summary>文字总结已完成，为什么模型图没生成？</summary><p>先保存文字总结。再检查「AI模型图生成」是否设置为跳过、所选绘图通道是否开启，以及平台、区域、模型或 endpoint ID 与 Key 是否匹配。超时后先查看服务商是否已收到请求，以免盲目重复生成。<a href="#image-channel">查看绘图通道设置</a>。</p></details>
 <details><summary>改了左侧作图设置，为什么 AI 作图还是原来的样子？</summary><p>左侧设置更新的是「软件原图」。要把新设置带入 AI 修改，请先生成并切到新的软件原图；想继续编辑现有结果，则保持预览在「AI作图」。第一次 AI 修改也可以撤销，可用重做恢复。<a href="#ai-figures">查看原图、修改与导出流程</a>。</p></details>
 <details><summary>AI Protocol 找不到引用，或者总结只读取了摘要，如何补救？</summary><p>先核对窗口显示的材料范围。如果只有摘要，可提供已有权限的正文或关联本地 PDF；把任务限定到具体方法或段落，再生成或修订。未核实的引用不适合使用，原文没有的数值、材料或条件应明确标为缺项。<a href="#ai-protocol">查看 Protocol 教程</a>。</p></details>
 <details><summary>会向模型发送哪些资料？取消任务还会产生费用吗？</summary><p>根据功能和选项，所选论文、提取的正文、附件、对话历史或作图预览会提供给所选服务。发起任务前检查附件和「向模型提供原始预览及项目素材」等选项。取消可以停止本地等待和后续调用；服务商已经接收的请求仍可能计费。</p></details>
 </div>
 {% include guide-shot.html id='faq-ai-settings' %}
+{% include guide-controls.html id='faq' %}
 </section>
 <p class="notice">截图来自 Biomed Reader 2.2.2 的演示环境。文献、图表和输入内容均为示例；配图展示相关软件入口，跨平台插件的实际界面以本机 Word 为准。</p>
 <a class="btn primary" href="{{ '/downloads.html' | relative_url }}">下载并开始使用 {% include icon.html name='arrow' %}</a>

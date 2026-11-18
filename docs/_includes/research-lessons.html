@@ -1,54 +1,48 @@
-<section class="chapter" id="ai-deploy">
-  <h2><span>21</span>配置 AI、本机 Codex 与课题组</h2>
-  <h3 id="personal-channel">个人 API 与优先调用通道</h3>
-  <ol><li>左侧打开「AI部署」，在文字模型卡片点击「设置」。个人直连时，填入该服务的 API Key；使用服务商账号产生的费用由该账号承担。</li><li>在「调用通道」为该服务选择优先个人直连或课题组授权。只有另一条通道也已配置、可用时，优先通道不可用后才能切换。切换后重新看当前通道的余额和用量；没有返回余额不等于余额为零。</li><li>保存并开启模型。回到文章总结或其他 AI 任务的窗口，确认顶部下拉框选中了刚刚开启的模型。失败时先检查模型 ID 与通道，再检查 Key 所属的项目是否有调用权限。</li></ol>
-  {% include guide-shot.html id='personal-channel' %}
-  <h3 id="codex-local">本机 Codex：登录、刷新模型和推理强度</h3>
-  <ol><li>展开「ChatGPT Codex · 本机连接」，点「使用 ChatGPT 登录」，在官方浏览器页面完成授权后返回软件。</li><li>点击「检测 / 刷新模型」，等待列表返回。进入「设置」，选择本机账号可用的模型与推理强度，保存后点「开启模型」。如果新模型未显示，先重新刷新，再打开设置查看。</li><li>开始任务前确认选中的是本机 Codex。它使用各自电脑的 ChatGPT 会话，不使用课题组的 API Key，也不随组员授权共享。</li></ol>
-  {% include guide-shot.html id='codex-local' %}
-  <h3 id="lab-access">PI 管理与学生访问</h3>
-  <ol><li><strong>PI：</strong>在课题组面板点击「PI登录」。登录后在「学生与用量管理」创建学生访问 ID，按需配置服务商授权、停用 ID 或检查近一年的日用量。查看余额时先选对服务商。</li><li><strong>学生：</strong>点「学生登录」，输入 PI 分发的访问 ID。凭据仅在软件登录窗填写；成功后打开「可用AI模型」核对授权范围，开始任务时选已授权的模型。</li><li>同一学生 ID 最多同时有两台设备。换电脑前从旧电脑点「退出课题组登录」，等待联网退出确认后再登录新电脑。若提示 ID 被停用，应联系 PI；重新登录或切换电脑不会恢复权限。</li></ol>
-  {% include guide-shot.html id='lab-roles' %}
-  {% include guide-shot.html id='lab-student' %}
-  <h3 id="image-channel">模型图使用独立绘图通道</h3>
-  <ol><li>在设置的「AI模型图生成」中选择阿里云百炼、火山引擎方舟、GLM-Image、分析模型可调用的工具，或跳过 AI 模型图。这个选择不改变用于总结文章的文字模型。</li><li>选择第三方绘图通道时，打开对应平台的绘图设置，确认已开启通道。个人直连要填所属平台的 Key；课题组通道要有 PI 授权。核对模型或 endpoint ID，百炼还要核对 Key 所属区域。</li><li>文章有可用的原始模型图时优先沿用；需要新图时，再发起生成。若文字总结成功、模型图失败，可先保存文字。出现超时、权限或余额报错时，根据失败的绘图通道检查，不必重做已经保存的文字结果。</li></ol>
-  {% include guide-shot.html id='image-channel' %}
-</section>
+{% include deployment-lesson.html %}
 <section class="chapter" id="ai-literature">
   <h2><span>22</span>从文章总结到增量 AI 报告</h2>
   <h3>阅读单篇文章并核对来源</h3>
   <ol><li>打开文章详情，选择「AI总结文章」。如果有本地原文，先在收藏中关联 PDF。没有 PDF 时可打开已有权限的 DOI 网页，在内置浏览器等待识别或点击「读取当前文章」。正文无法读取时，可改选本地 PDF。</li><li>在总结窗口确认分析模型和材料覆盖范围。只读到标题或摘要时，不要把总结当成已经核对全文；若网页需要登录、授权或人机验证，由用户自行完成。使用预印本时同时核对正式发表记录及版本。</li><li>按需切换中文简报、英文简报或新闻稿。阅读主要发现和证据来源，再保存结果供离线阅读，或导出简报／新闻稿 PDF。模型图可单独保存，图形未生成时也可以先保留文字。</li></ol>
   {% include guide-shot.html id='ai-literature' %}
   <h3>关键词推荐与批次报告</h3>
-  <ol><li>不确定如何检索时，从关键词方案首页打开「AI推荐检索词」，描述研究对象和问题，从历史或结果中复制有用的英文词。按第 3 节拆到 PubMed 和预印本两个输入框。</li><li>刷新关键词方案后，从方案卡打开「AI报告」，检查批次新增篇数及时间范围。点击生成按钮后，逐篇读取结果；没有新增文章时，不会为了生成空报告调用模型。</li><li>多个 AI 任务可分别保存或取消。取消会停止本地等待和后续调用，已经提交到云端的请求仍可能计费。换模型继续时，先检查将要复用的历史材料。</li></ol>
+  <ol><li>不确定如何检索时，从关键词方案首页打开「AI推荐关键词组」，描述研究对象和问题，从历史或结果中复制有用的英文词。按第 3 节拆到 PubMed 和预印本两个输入框。</li><li>刷新关键词方案后，从方案卡打开「AI报告」，检查批次新增篇数及时间范围。点击生成按钮后，逐篇读取结果；没有新增文章时，不会为了生成空报告调用模型。</li><li>多个 AI 任务可分别保存或取消。取消会停止本地等待和后续调用，已经提交到云端的请求仍可能计费。换模型继续时，先检查将要复用的历史材料。</li></ol>
   {% include guide-shot.html id='ai-report' %}
+{% include guide-controls.html id='ai-literature' %}
 </section>
 <section class="chapter" id="research-assistant">
   <span id="knowledge-library"></span>
   <h2><span>23</span>领域知识库：建立并补充证据</h2>
   <ol><li>在「AI助手」点击「AI模型训练」卡，再点「新建知识库」。写一个能区分用途的名字，例如「DNA 复制与复制压力」。</li><li>选择分析模型和收藏文章；要提高证据覆盖优先关联可用 PDF。点击「读取新文献并更新领域知识库」，逐项检查已读篇数和实际覆盖范围，再保存。</li><li>以后从同一张知识库卡打开，添加新文章继续补充。已整理过的证据可以复用；知识库整理文献记录和证据笔记，不修改模型权重。</li><li>在「AI提出科学问题」或「AI reviewer」的领域知识库下拉框选择它。若由不同模型继续整理，软件会询问是否把已有证据笔记交给当前模型。</li></ol>
   {% include guide-shot.html id='knowledge-library' %}
+{% include guide-controls.html id='research-assistant' %}
 </section>
 <section class="chapter" id="scientific-questions">
   <h2><span>24</span>AI 提出科学问题：从限制出发做选题</h2>
   <ol><li>打开「AI助手 → AI提出科学问题」，写清研究领域和目前卡住的问题。也可从「历史记录」打开之前的主题继续。</li><li>可从领域知识库加载已整理的证据，或注明希望讨论的范围。在问题里区分已知现象、证据空白和希望模型比较的解释。</li><li>阅读结果时，优先核对引用能否支持该判断，区分已有结论和待验证假说。继续追问时，可要求列出替代解释、限制和可证伪条件。需要留档时保存历史或按界面选项导出。</li></ol>
   {% include guide-shot.html id='scientific-questions' %}
+{% include guide-controls.html id='scientific-questions' %}
 </section>
 <section class="chapter" id="ai-reviewer">
   <h2><span>25</span>AI reviewer：阅读和追问模拟同行评审</h2>
   <ol><li>打开「AI助手 → AI reviewer」。在输入页添加待审稿件（PDF、DOCX 或图片），补充研究范围。需要逐页解读 PDF 图表时选择支持视觉输入的模型；可按需加载相关领域知识库。</li><li>点击 <strong>Read manuscript and review</strong>，在 <strong>Peer Review</strong> 页依次阅读 Summary and significance assessment、Major comments 和 Minor comments。对关键意见回看原稿页码、图表和引用依据。</li><li>可继续追问某条意见、保存历史或导出 PDF。它是模拟评审，不代表期刊正式审稿结果。历史记录引用原稿路径，移动文件后需要重新选中源稿再续审。</li></ol>
   {% include guide-shot.html id='ai-reviewer' %}
+{% include guide-controls.html id='ai-reviewer' %}
 </section>
 <section class="chapter" id="ai-find-articles">
   <h2><span>26</span>AI 寻找文章：用证据卡核查文献</h2>
   <ol><li>打开「AI助手 → AI寻找文章」，点「添加对话卡片」。把目标写具体，例如「比较 R-loop 检测方法的综述，请说明各方法的适用范围与局限」。</li><li>可点「科研资料」添加背景文档，说明所需文章类型、时间段或不应纳入的材料。按 Enter 发送，Shift+Enter 换行。按分子或组合检索时，检查不同分组是否反复引用同一篇文章。</li><li>回答内点击引用编号跳到对应文献卡。核对题名、DOI、出处和材料覆盖后再收藏；关注「全文」还是「摘要」支持该结论。后续可继续对话、修改提问，或将确认过的文章加入相应收藏组。</li></ol>
   {% include guide-shot.html id='ai-find-articles' %}
+  <h3 id="finder-results">生成后：左侧回答、右侧证据卡片</h3>
+  <dl class="control-list"><dt>引用编号与分栏</dt><dd>点击左侧回答的 [1]、[2] 等编号，右侧独立滚动到对应卡片；在卡片较多时可单独滚动右栏。拖动中间分隔条可分配左右栏宽度，拖动回复的侧边还可调整整条回复宽度。</dd><dt>文章详情／收藏</dt><dd>先点「文章详情」核验题名、来源、DOI 和读取范围，再点「收藏」并选择分组。状态已显示「已收藏」时不用重复添加。</dd><dt>科研资料／停止／复制、编辑、删除消息</dt><dd>「科研资料」添加你选定的文件，也可拖放；提交前用「清除附件」移除不需要的材料。「停止」取消本地等待。消息可复制，自己的问题可编辑并重新发送；删除会移除对应消息独有的缓存，已收藏文章保留。</dd></dl>
+  {% include guide-shot.html id='finder-result' %}
+{% include guide-controls.html id='ai-find-articles' %}
 </section>
 {% include figure-lessons.html %}
 <section class="chapter" id="ai-protocol">
   <h2><span>32</span>AI Protocol：提取、编辑和分享</h2>
   <ol><li>打开「AI助手 → AI Protocol」并新建卡片。添加本地论文、学位论文、收藏文献或自拟方法；添加图片时选支持图片输入的模型。</li><li>明确写清需要提取的内容，例如「只整理本文中的 Western blot 步骤，并标记原文没有说明的条件」。选择分析模型，按需使用配置好的绘图通道生成流程图。</li><li>生成后对照原文核对步骤、单位、数值和材料出处。未核实的文献不会进入推荐：找不到某条条件时应标注缺项。点击编辑入口修改草案，确认后保存。</li><li>用 Word 或 PDF 导出便于校对；需要把可继续编辑的方案转给同事时，在卡片列表打包分享，对方使用导入。检查导出的格式和材料是否符合分享范围。</li></ol>
   {% include guide-shot.html id='ai-protocol' %}
+{% include guide-controls.html id='ai-protocol' %}
 </section>
 <section class="chapter" id="feedback">
   <h2><span>33</span>清理资料与反馈问题</h2>
@@ -58,4 +52,5 @@
   <h3>选择私密反馈或公开问题</h3>
   <ol><li>在左侧点「反馈」。不希望公开的问题选择「反馈发送到开发者邮箱」；适合公开讨论的建议可选择 GitHub Issue。</li><li>填写系统、版本、复现步骤、预期与实际结果，并按需附错误文字。私密表单勾选同意后发送；公开渠道仅打开预填页面，由你在 GitHub 上再次检查并确认提交。</li><li>不要填写 API Key、学生访问 ID、患者信息或未公开资料。如果私密反馈暂不可用，保留草稿并稍后重试。</li></ol>
   {% include guide-shot.html id='feedback' %}
+{% include guide-controls.html id='feedback' %}
 </section>

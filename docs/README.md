@@ -9,7 +9,7 @@ GitHub Pages 官网：https://amiba-xqq.github.io/Biomedreader/
 - `_data/downloads.json`：四个当前包的文件名、GitHub / 夸克链接、大小和 SHA‑256。`previous` 对应 2.1，`legacy` 对应 2.0。
 - `app-update.json`：桌面软件读取的更新清单，使用同一组数据。完整目录 ZIP 通过下载页提供。
 - `site.js`：教程筛选、目录高亮、截图放大、减少动态效果支持和复制校验值。安装包链接已写入页面，无需调用 GitHub API 才能使用。
-- `assets/`：软件图标及 2.2.2 演示截图（`assets/guide-222/`）。截图尺寸、替代文本和说明在 `_data/guide_shots.json` 维护。
+- `assets/`：软件图标及 2.2.2 演示截图（`assets/guide-222/`）。截图尺寸、替代文本和说明在 `_data/guide_shots.json` 维护。各章控件速查在 `_data/guide_controls.json`，AI 部署单章维护在 `_includes/deployment-lesson.html`。
 
 维护者替换同版本安装包时，请从 GitHub Release 核对文件名、字节数和校验值，同步 `_data/downloads.json` 与 CI 校验。用户提供的夸克入口与 GitHub 文件分别核对，历史版本链接保留。
 

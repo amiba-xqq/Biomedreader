@@ -109,10 +109,14 @@ assert set(pages['guide.html'].chapters) == chapters
 assert len(pages['guide.html'].chapters) == 34
 guide = pages['guide.html']
 assert all(guide.lesson_images.values()), {key for key, images in guide.lesson_images.items() if not images}
-assert len(guide.lesson_images['ai-deploy']) >= 4
-assert sum(map(len, guide.lesson_images.values())) >= 60
+assert len(guide.lesson_images['ai-deploy']) == 11
+assert any(src.endswith('/finder-result.webp') for src in guide.lesson_images['ai-find-articles'])
+assert sum(map(len, guide.lesson_images.values())) == 68
 guide_text = (root / 'guide.html').read_text(encoding='utf8')
 assert '布尔表达式只适用于 PubMed' in guide_text and 'Biomni' not in guide_text
+assert '默认 · biomedreader.cn' in guide_text and '备用入口 · workers.dev' in guide_text
+assert guide_text.count('操作后核对：') == 28
+assert {'lab-access', 'lab-management', 'finder-results'} <= guide.ids
 assert 'batch-refresh' in pages['guide.html'].ids
 sitemap = ET.parse(root / 'sitemap.xml')
 locations = [node.text for node in sitemap.iter('{http://www.sitemaps.org/schemas/sitemap/0.9}loc')]

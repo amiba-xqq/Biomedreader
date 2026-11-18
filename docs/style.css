@@ -254,3 +254,8 @@ ul,ol{padding-inline-start:1.5em}
 .control-list dt{font-weight:750;background:#fff2e2;color:var(--deep)}
 .control-list dt:last-of-type,.control-list dd:last-child{border-bottom:0}
 @media(max-width:600px){.control-list{grid-template-columns:minmax(0,1fr)}.control-list dt{border:0;padding-bottom:5px}.control-list dd{padding-top:8px}}
+.guide-reference{margin-top:20px;border:1px solid var(--line);border-radius:14px;background:var(--paper);padding:0 14px}
+.chapter .guide-reference summary{min-height:48px;padding:10px 4px;color:var(--accent)}
+.guide-reference>.control-list{margin:0 0 12px}
+.chapter .guide-reference .guide-check{margin:0 0 13px;color:var(--muted)}
+.chapter h4{font-size:1.06rem;margin-top:23px}

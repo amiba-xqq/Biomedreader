@@ -364,5 +364,47 @@
     "caption": "示例展示私密反馈表单；提交前检查内容，公开问题可切换到 GitHub。",
     "width": 964,
     "height": 490
+  },
+  "finder-result": {
+    "alt": "AI 寻找文章左侧带编号的回答和右侧文献卡片",
+    "caption": "2.2.2 分栏界面。回答和文献记录为教程演示，不是实测模型输出或真实引文。点击正文编号可定位对应卡片。",
+    "width": 800,
+    "height": 555
+  },
+  "lab-pi-login": {
+    "alt": "PI 登录窗口中的登录入口、服务商、API Key 和追加绑定按钮",
+    "caption": "PI 选登录入口及服务商，再填自己的 Key；截图不包含密钥。",
+    "width": 690,
+    "height": 345
+  },
+  "lab-management": {
+    "alt": "PI 课题组用量日历、学生列表及管理按钮",
+    "caption": "演示课题组的管理窗口。选中学生行后可管理授权、导出或重置访问 ID。",
+    "width": 840,
+    "height": 548
+  },
+  "lab-available-models": {
+    "alt": "可用 AI 模型窗口的平台、用途和刷新模型目录按钮",
+    "caption": "模型目录区分文本分析与模型图；表中个别模型为演示，实际目录以登录账户为准。",
+    "width": 735,
+    "height": 311
+  },
+  "lab-balance": {
+    "alt": "PI 余额窗口的查询状态、全部刷新和打开账单按钮",
+    "caption": "余额窗口示例；有些服务商只提供官方账单入口。",
+    "width": 720,
+    "height": 289
+  },
+  "lab-keys": {
+    "alt": "PI 本地 API keys 的遮挡显示与复制按钮",
+    "caption": "凭据不直接展示，点击「复制API Key」才会写入剪贴板。截图为测试界面，不含真实密钥。",
+    "width": 638,
+    "height": 274
+  },
+  "codex-model-settings": {
+    "alt": "本机 Codex 设置的模型、推理强度和图像工具控制项",
+    "caption": "先刷新本机模型，再设置分析用文本模型；图像工具由 Codex 本机组件管理。",
+    "width": 645,
+    "height": 304
   }
 }
