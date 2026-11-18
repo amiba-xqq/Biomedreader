@@ -1,0 +1,368 @@
+{
+  "install": {
+    "alt": "软件更新区域",
+    "caption": "升级前：从设置里检查版本和安装包；备份后再关闭客户端与 Word。",
+    "width": 934,
+    "height": 146
+  },
+  "start": {
+    "alt": "关键词方案首页和左侧导航栏",
+    "caption": "刚打开软件时，先认识左侧的关键词方案、收藏、期刊、AI 与设置入口。",
+    "width": 1220,
+    "height": 460
+  },
+  "keywords": {
+    "alt": "PubMed 的关键词填布尔表达式，预印本的关键词填 R-loop replication",
+    "caption": "选择「PubMed + 预印本官网」后，会出现两栏。把布尔表达式填在上方的 PubMed 栏。",
+    "width": 880,
+    "height": 256
+  },
+  "filters": {
+    "alt": "编辑关键词方案中的年份上下限和期刊目录",
+    "caption": "编辑方案时设置年份，并勾选要采用的期刊目录。",
+    "width": 800,
+    "height": 294
+  },
+  "filters-search-settings": {
+    "alt": "设置中的预印本来源及 PubMed、预印本搜索范围",
+    "caption": "设置页决定默认检索范围与预印本来源；保存后用于下一次联网检索。",
+    "width": 934,
+    "height": 254
+  },
+  "ranking": {
+    "alt": "方案的两类候选数和默认排序控件",
+    "caption": "PubMed 和预印本候选数分开设置；预印本限制按每个站点分别计算。",
+    "width": 880,
+    "height": 159
+  },
+  "refresh-single": {
+    "alt": "关键词结果页面上方的联网刷新与缓存状态",
+    "caption": "进入单一关键词方案，在结果页发起联网刷新并观察缓存状态。",
+    "width": 964,
+    "height": 244
+  },
+  "refresh": {
+    "alt": "关键词卡片页的全部联网刷新按钮",
+    "caption": "在关键词方案首页按卡片顺序启动全部联网刷新。",
+    "width": 964,
+    "height": 350
+  },
+  "browser-entry": {
+    "alt": "预印本来源范围及搜索范围选项",
+    "caption": "开始官网检索前，先在设置中确认要打开 bioRxiv、medRxiv 还是两个站点。上方步骤说明弹窗中的逐页读取操作。",
+    "width": 934,
+    "height": 254
+  },
+  "views-settings": {
+    "alt": "设置中的关键词方案默认展现形式",
+    "caption": "设置页用于更改每次启动后的默认展现形式。",
+    "width": 934,
+    "height": 168
+  },
+  "views-cards": {
+    "alt": "关键词方案的紧密卡片和密度控件",
+    "caption": "在结果页临时切换表格、嵌入式卡片及卡片密度。",
+    "width": 964,
+    "height": 475
+  },
+  "filters-source": {
+    "alt": "已缓存结果的来源筛选对话框",
+    "caption": "此窗口只决定当前显示哪些来源，不会更改联网检索条件。",
+    "width": 308,
+    "height": 168
+  },
+  "hidden": {
+    "alt": "隐藏设置中的显示隐藏文章复选框",
+    "caption": "在「隐藏设置」勾选显示隐藏的文章，再对需要恢复的结果取消隐藏。",
+    "width": 291,
+    "height": 87
+  },
+  "details": {
+    "alt": "文章详情里的作者、期刊、DOI、摘要和笔记",
+    "caption": "文章详情将元数据、摘要和个人笔记放在同一个窗口。",
+    "width": 800,
+    "height": 690
+  },
+  "citations": {
+    "alt": "复制文章引用窗口中的期刊选择与引用预览",
+    "caption": "先看引用预览，再按「复制引用」；确认卷页和 DOI 没有缺失。",
+    "width": 1310,
+    "height": 315
+  },
+  "citation-settings": {
+    "alt": "设置页的默认参考文献格式",
+    "caption": "在设置里为文章详情的复制引用选默认期刊样式。",
+    "width": 934,
+    "height": 95
+  },
+  "favorites": {
+    "alt": "收藏文章的分组与批量操作",
+    "caption": "从收藏页进入分组、搜索文献或管理 PDF。",
+    "width": 964,
+    "height": 385
+  },
+  "linked-pdf": {
+    "alt": "收藏文章详情中的本地 PDF 关联入口",
+    "caption": "在收藏的文章详情管理 PDF 链接与打开原文。",
+    "width": 800,
+    "height": 645
+  },
+  "favorite-search": {
+    "alt": "搜索已收藏文章的分组和关键词输入窗口",
+    "caption": "先选择搜索范围和分组，再填写库内关键词。",
+    "width": 650,
+    "height": 520
+  },
+  "bulk-unfavorite": {
+    "alt": "批量取消收藏窗口的组和文章选择区",
+    "caption": "左侧选范围，右侧核对本次要移出的文章，再打开确认步骤。",
+    "width": 800,
+    "height": 575
+  },
+  "software-update": {
+    "alt": "检查软件更新、展示更新内容和卸载的入口",
+    "caption": "当前版本等于官网版本时，检查更新不会下载同版包。",
+    "width": 890,
+    "height": 82
+  },
+  "batch-pdf": {
+    "alt": "批量收藏 PDF 的文件列表、期刊目录和收藏分组",
+    "caption": "批量导入开始前，确认文件、期刊目录、目标分组及是否链接 PDF。",
+    "width": 980,
+    "height": 683
+  },
+  "batch-pdf-progress": {
+    "alt": "收藏页中的批量 PDF 入口和状态所在区域",
+    "caption": "打开批量导入的收藏页。任务运行时在这个页面查看进度和取消入口；失败清单另弹出。",
+    "width": 964,
+    "height": 257
+  },
+  "word-install": {
+    "alt": "刊禾设置里的参考文献格式入口",
+    "caption": "这是刊禾的引用设置。插件安装后，需要在 Word 另行打开「Biomed Reader」选项卡。",
+    "width": 934,
+    "height": 95
+  },
+  "word-library": {
+    "alt": "刊禾收藏分组的示例文章",
+    "caption": "插入前先在刊禾选择文献，再回 Word 把光标放到正文中。",
+    "width": 964,
+    "height": 435
+  },
+  "word-style": {
+    "alt": "刊禾文章引用的期刊下拉框及格式预览",
+    "caption": "图中展示刊禾的单篇引用预览；Word 的整篇期刊和字体从 Word 插件设置。",
+    "width": 1310,
+    "height": 315
+  },
+  "word-export": {
+    "alt": "可作为引文来源的收藏文章列表",
+    "caption": "Word 插件应使用插入时所连接的同一个刊禾资料库；EndNote 导出在 Word 插件中操作。",
+    "width": 964,
+    "height": 435
+  },
+  "mac-word-reference": {
+    "alt": "刊禾的收藏文献选择区",
+    "caption": "图示为两平台共有的文献选择步骤（截图取自 Windows）；Mac 安装及 Word Ribbon 操作见本节文字。",
+    "width": 964,
+    "height": 435
+  },
+  "journals": {
+    "alt": "自定义期刊目录的搜索、JIF 范围和表格",
+    "caption": "输入期刊关键词后，可叠加「只展示已选择的期刊」或 JIF 范围。",
+    "width": 964,
+    "height": 490
+  },
+  "sharing": {
+    "alt": "打包分享收藏的双列选择窗口",
+    "caption": "分别勾选要分享的收藏分组和文章；不要误选不宜分享的资料。",
+    "width": 925,
+    "height": 575
+  },
+  "journal-share": {
+    "alt": "打包导出期刊目录的勾选窗口",
+    "caption": "分享期刊目录使用单独的导出窗口。",
+    "width": 830,
+    "height": 440
+  },
+  "settings-data": {
+    "alt": "设置中的备份、移动、链接和数据清理按钮",
+    "caption": "本地数据设置：先备份，再迁移或清理。截图路径来自演示环境。",
+    "width": 934,
+    "height": 165
+  },
+  "cleanup-data": {
+    "alt": "本地数据设置中的清除无用缓存按钮",
+    "caption": "点击「清除无用缓存」前先确认资料库和备份位置。",
+    "width": 934,
+    "height": 165
+  },
+  "faq-ai-settings": {
+    "alt": "AI 部署页面上的模型与通道卡片",
+    "caption": "排查 AI 问题时从「AI部署」确认模型与通道，再按上面的症状逐步检查。",
+    "width": 964,
+    "height": 425
+  },
+  "faq": {
+    "alt": "Biomed Reader 2.2.2 更新内容查看窗口",
+    "caption": "核对版本或回顾更新时，可从设置打开「展示更新内容」。",
+    "width": 950,
+    "height": 245
+  },
+  "personal-channel": {
+    "alt": "个人模型设置中的调用通道和 API Key 输入框",
+    "caption": "模型设置中先选通道，再核对模型并保存；截图未填入真实密钥。",
+    "width": 920,
+    "height": 520
+  },
+  "codex-local": {
+    "alt": "Codex 卡片的检测刷新模型与使用 ChatGPT 登录按钮",
+    "caption": "展开本机 Codex 卡片，先登录，再检测并刷新模型。",
+    "width": 710,
+    "height": 348
+  },
+  "lab-roles": {
+    "alt": "课题组面板的 PI 登录与学生登录入口",
+    "caption": "PI 与学生在各自的角色入口操作。",
+    "width": 790,
+    "height": 360
+  },
+  "lab-student": {
+    "alt": "课题组学生登录窗口和访问 ID 输入框",
+    "caption": "学生在此填 PI 分发的访问 ID；截图未填凭据。",
+    "width": 790,
+    "height": 420
+  },
+  "image-channel": {
+    "alt": "火山引擎方舟绘图设置里的调用通道、API Key 和模型 ID",
+    "caption": "此处设置图像服务，示例为方舟；与文字分析使用的模型分开。",
+    "width": 810,
+    "height": 390
+  },
+  "ai-literature": {
+    "alt": "文章总结窗口的展示方式、模型和保存控件",
+    "caption": "先核对模型及读取范围，再切换简报或新闻稿，并保存结果。",
+    "width": 1000,
+    "height": 660
+  },
+  "ai-report": {
+    "alt": "AI 报告窗口的批次范围、生成按钮与页码",
+    "caption": "先确认本次新增范围，再生成已经选中的文章批次报告。",
+    "width": 800,
+    "height": 705
+  },
+  "knowledge-library": {
+    "alt": "领域知识库名称、文章选择和读取新文献按钮",
+    "caption": "命名并选择收藏文献后读取；以后可继续往同一个库补充。",
+    "width": 800,
+    "height": 685
+  },
+  "scientific-questions": {
+    "alt": "科学问题窗口的输入和知识库选择控件",
+    "caption": "写清研究问题及限制，再按需附领域知识库。",
+    "width": 1080,
+    "height": 685
+  },
+  "ai-reviewer": {
+    "alt": "AI reviewer 窗口中的待审稿件和领域知识库控件",
+    "caption": "先添加待审稿件，在输入页写明重点，再阅读英文评审。",
+    "width": 800,
+    "height": 748
+  },
+  "ai-find-articles": {
+    "alt": "AI 寻找文章的对话、科研资料与查找文献入口",
+    "caption": "问题可以写成一个可检索的目标；输入示例未发起模型请求。",
+    "width": 1080,
+    "height": 670
+  },
+  "ai-figures": {
+    "alt": "AI 作图项目列表及新建作图卡片控件",
+    "caption": "按 WB、IF、qPCR 或 Excel / CSV 创建对应作图卡片。",
+    "width": 1090,
+    "height": 510
+  },
+  "figure-edit": {
+    "alt": "AI 作图底部的修改要求输入、撤销、重做和导出按钮",
+    "caption": "在当前预览下写清想改的内容；示例只填写请求，未发送模型。",
+    "width": 917,
+    "height": 240
+  },
+  "figures-images": {
+    "alt": "WB 选取原图区域、裁剪框和泳道设置",
+    "caption": "在模拟条带上选择裁剪范围，再核对左右泳道的位置。",
+    "width": 800,
+    "height": 740
+  },
+  "if-channels": {
+    "alt": "IF 选取原图区域、同步裁剪和通道设置",
+    "caption": "IF 选区窗口：核对通道名称和素材编号，再检查裁剪与比例尺。",
+    "width": 800,
+    "height": 740
+  },
+  "wb-density": {
+    "alt": "相对灰度中的选区、蛋白、对照泳道与展示方式",
+    "caption": "圈选前确认深浅条带与对照泳道，最后检查每个框是否对准。",
+    "width": 1030,
+    "height": 720
+  },
+  "qpcr-repeat": {
+    "alt": "qPCR 设置重复组窗口里的样本和重复篮",
+    "caption": "默认一文件一组；如果同文件有多个独立重复，先把样本分到不同篮子。",
+    "width": 1000,
+    "height": 630
+  },
+  "qpcr-map": {
+    "alt": "qPCR 编辑不同素材的样本和基因映射",
+    "caption": "映射窗口可逐素材设置；多行粘贴前先核对起始行。",
+    "width": 1000,
+    "height": 635
+  },
+  "qpcr-ip": {
+    "alt": "qPCR 设置 IP 配对窗口和对照选择",
+    "caption": "绑定同一重复的对照与 IP。界面上的素材标识均为示例。",
+    "width": 1000,
+    "height": 635
+  },
+  "figure-grouping": {
+    "alt": "样本分组、处理条件和归一化参考批量编辑窗口",
+    "caption": "可填写选中格，或为选中样本行应用同一个归一化参考。",
+    "width": 800,
+    "height": 515
+  },
+  "figure-reference": {
+    "alt": "Grouped 数值矩阵的对照组选择",
+    "caption": "Grouped 矩阵选择对照组均值作参考，或保留不归一化。",
+    "width": 780,
+    "height": 230
+  },
+  "figure-palette": {
+    "alt": "统计图配色窗口和当前色条",
+    "caption": "使用预设、渐变或自定义颜色，并在软件原图中核对。",
+    "width": 860,
+    "height": 425
+  },
+  "figures-data": {
+    "alt": "qPCR 作图设置中的分析方式、重复组与 Ct 列",
+    "caption": "先选分析方法和重复组，核对 Ct 列、内参和对照再查看原图。",
+    "width": 1005,
+    "height": 760
+  },
+  "figures-table": {
+    "alt": "Excel CSV 的列组设置、矩阵识别和作图预览",
+    "caption": "先检查「识别结果」和方向，再核对控制组及统计设置。",
+    "width": 1005,
+    "height": 760
+  },
+  "ai-protocol": {
+    "alt": "AI Protocol 结果窗口的编辑、预览与导出入口",
+    "caption": "这里显示教程用草案；实际生成后，先核对原文再保存或导出。",
+    "width": 800,
+    "height": 710
+  },
+  "feedback": {
+    "alt": "开发者私密反馈表单和提交前确认选项",
+    "caption": "示例展示私密反馈表单；提交前检查内容，公开问题可切换到 GitHub。",
+    "width": 964,
+    "height": 490
+  }
+}

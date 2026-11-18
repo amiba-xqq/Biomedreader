@@ -28,6 +28,8 @@ class Page(HTMLParser):
         self.hashes = {}
         self.hash_key = None
         self.chapters = []
+        self.lesson_images = {}
+        self.chapter = None
         text = path.read_text(encoding='utf8')
         assert '{{' not in text and '{%' not in text, f'Unrendered Liquid in {path}'
         assert 'chatgpt.site' not in text, f'Old hosting address in {path}'
@@ -54,10 +56,18 @@ class Page(HTMLParser):
         if values.get('data-asset-hash'):
             self.hash_key = values['data-asset-hash']
             self.hashes[self.hash_key] = ''
-        if tag == 'section' and values.get('class') == 'chapter':
-            self.chapters.append(values['id'])
+        if tag == 'section' and 'chapter' in values.get('class', '').split():
+            self.chapter = values['id']
+            self.chapters.append(self.chapter)
+            self.lesson_images[self.chapter] = []
+        if tag == 'img' and self.chapter:
+            assert values['src'].startswith(base + '/assets/guide-222/')
+            assert values.get('alt') and values.get('loading') == 'lazy'
+            assert int(values['width']) > 0 and int(values['height']) > 0
+            self.lesson_images[self.chapter].append(values['src'])
 
     def handle_endtag(self, tag):
+        if tag == 'section': self.chapter = None
         if tag == 'p': self.hash_key = None
 
     def handle_data(self, data):
@@ -93,17 +103,23 @@ assert pages['downloads.html'].hashes == expected_hashes
 chapters = {'install', 'start', 'keywords', 'filters', 'ranking', 'refresh', 'browser',
             'views', 'hidden', 'details', 'favorites', 'journals', 'sharing', 'faq',
             'citations','batch-pdf','word-plugin','endnote-macos','favorite-search','bulk-unfavorite','software-update',
-            'ai-deploy','ai-literature','research-assistant','ai-figures','figures-images','figures-data','ai-protocol','feedback'}
+            'ai-deploy','ai-literature','research-assistant','scientific-questions','ai-reviewer','ai-find-articles','ai-figures','figures-images','figures-if','figures-data','figures-excel','ai-protocol','feedback'}
 assert chapters <= pages['guide.html'].ids
 assert set(pages['guide.html'].chapters) == chapters
-assert len(pages['guide.html'].chapters) == 29
+assert len(pages['guide.html'].chapters) == 34
+guide = pages['guide.html']
+assert all(guide.lesson_images.values()), {key for key, images in guide.lesson_images.items() if not images}
+assert len(guide.lesson_images['ai-deploy']) >= 4
+assert sum(map(len, guide.lesson_images.values())) >= 60
+guide_text = (root / 'guide.html').read_text(encoding='utf8')
+assert '布尔表达式只适用于 PubMed' in guide_text and 'Biomni' not in guide_text
 assert 'batch-refresh' in pages['guide.html'].ids
 sitemap = ET.parse(root / 'sitemap.xml')
 locations = [node.text for node in sitemap.iter('{http://www.sitemaps.org/schemas/sitemap/0.9}loc')]
 assert len(locations) == 3
 assert all(link.startswith('https://amiba-xqq.github.io/Biomedreader/') for link in locations)
 assert 'Sitemap: https://amiba-xqq.github.io/Biomedreader/sitemap.xml' in (root / 'robots.txt').read_text()
-print('PASS: Jekyll rendered 3 pages, 29 chapters, all local links/assets/anchors, sitemap, 8 exact Quark links, 8 version-specific GitHub downloads and 4 SHA256 values.')
+print('PASS: Jekyll rendered 3 pages, 34 illustrated chapters, all local links/assets/anchors, sitemap, 8 exact Quark links, 8 version-specific GitHub downloads and 4 SHA256 values.')
 
 # The desktop updater consumes the same version and hashes as the download page.
 import json

@@ -10,7 +10,7 @@ permalink: /guide.html
 <p class="kicker"><span></span> LEARNING CENTER <b>2.1 → 2.2.2</b></p>
 <h1>刊禾学习中心</h1>
 <p class="lead">从安装和第一次检索开始，或直接跳到你正在做的任务。保留 2.1 的文献与引用教程，并加入 2.2 系列的 AI 科研工具。</p>
-<nav class="guide-new-links" aria-label="学习路线"><a href="#install">快速上手</a><a href="#word-plugin">Word 与 EndNote</a><a href="#ai-figures">AI 作图</a><a href="#ai-protocol">AI Protocol</a><a href="#versions">版本索引</a></nav>
+<nav class="guide-new-links" aria-label="学习路线"><a href="#install">快速上手</a><a href="#word-plugin">Word 与 EndNote</a><a href="#ai-figures">AI 作图</a><a href="#ai-protocol">AI Protocol</a><a href="#faq-ai">AI 常见问题</a><a href="#versions">版本索引</a></nav>
 </section>
 <section class="version-path" id="versions" aria-labelledby="version-title"><div><p class="eyebrow">VERSION MAP</p><h2 id="version-title">2.1 至 2.2.2 更新导览</h2></div><div class="version-grid">
 <article><span class="badge">2.1</span><h3>文献与写作</h3><p>全部联网刷新、引用卷页、批量 PDF、收藏搜索、批量取消、Word / EndNote 和软件更新。</p><a class="text-link" href="#batch-refresh">从文献更新开始 →</a></article>
@@ -19,8 +19,8 @@ permalink: /guide.html
 </div></section>
 <div class="guide-layout">
 <aside class="guide-sidebar" aria-label="教程目录">
-<details class="guide-directory" open><summary>课程目录 <span>29 章</span></summary>
-<nav class="toc">
+<details class="guide-directory" open><summary>课程目录 <span>34 章</span></summary>
+<nav class="toc" aria-label="章节导航" tabindex="0">
 <a href="#install">01　安装与升级</a>
 <a href="#start">02　第一次打开与界面导航</a>
 <a href="#keywords">03　创建关键词方案与表达式</a>
@@ -43,25 +43,31 @@ permalink: /guide.html
 <a href="#sharing">20　分享、备份与移动数据目录</a>
 <a href="#ai-deploy">21　配置 AI 与课题组</a>
 <a href="#ai-literature">22　总结与增量报告</a>
-<a href="#research-assistant">23　科研对话、知识库与审稿</a>
-<a href="#ai-figures">24　AI 作图与改图</a>
-<a href="#figures-images">25　WB / gel 与 IF</a>
-<a href="#figures-data">26　qPCR 与 Excel / CSV</a>
-<a href="#ai-protocol">27　AI Protocol</a>
-<a href="#feedback">28　清理与反馈</a>
-<a href="#faq">29　常见问题与使用注意</a>
+<a href="#research-assistant">23　领域知识库</a>
+<a href="#scientific-questions">24　AI 提出科学问题</a>
+<a href="#ai-reviewer">25　AI reviewer</a>
+<a href="#ai-find-articles">26　AI 寻找文章</a>
+<a href="#ai-figures">27　AI 作图总览</a>
+<a href="#figures-images">28　WB / gel 条带</a>
+<a href="#figures-if">29　IF 多通道</a>
+<a href="#figures-data">30　qPCR 作图</a>
+<a href="#figures-excel">31　Excel / CSV 作图</a>
+<a href="#ai-protocol">32　AI Protocol</a>
+<a href="#feedback">33　清理与反馈</a>
+<a href="#faq">34　常见问题与使用注意</a>
 </nav>
 <a class="back-top" href="#main">返回顶部 ↑</a></details>
 </aside>
 <div>
+<div class="chapter-rail" aria-label="当前章节"><span data-current-chapter>01　安装与升级</span><div><a data-step="previous" href="#install" hidden aria-label="上一节">←</a><a data-step="next" href="#start" hidden aria-label="下一节">→</a></div></div>
 <div class="guide-search">
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
 <circle cx="10" cy="10" r="6"/>
 <path d="m15 15 6 6"/>
 </svg>
-<label class="hidden" for="guide-search">搜索 29 个教程章节</label>
+<label class="hidden" for="guide-search">搜索 34 个教程章节</label>
 <input type="search" id="guide-search" placeholder="例如：qPCR、Codex、Word 或收藏" autocomplete="off">
-<div class="search-result" role="status">共 29 个章节，可搜索关键词或按目录跳转</div>
+<div class="search-result" role="status">共 34 个章节，可搜索关键词或按目录跳转</div>
 </div>
 <p class="empty-search" hidden>没有找到匹配章节。试试“检索”“收藏”或“备份”，也可清空搜索查看全部教程。</p>
 <section class="chapter" id="install">
@@ -72,12 +78,13 @@ permalink: /guide.html
 <li>
 <strong>Windows 安装版：</strong>运行 EXE 安装程序。支持 Windows 10/11 的 64 位系统。</li>
 <li>
-<strong>Windows 目录版：</strong>完整解压 ZIP，进入 解压得到的 <code>BiomedReader</code> 文件夹运行 <code>BiomedReader.exe</code>，保留 <code>_internal</code>。需要 Word 插件时按<a class="text-link" href="#word-plugin">插件安装步骤</a>注册。</li>
+<strong>Windows 目录版：</strong>完整解压 ZIP，进入解压得到的 <code>BiomedReader</code> 文件夹运行 <code>BiomedReader.exe</code>，保留 <code>_internal</code>。需要 Word 插件时按<a class="text-link" href="#word-plugin">插件安装步骤</a>注册。</li>
 <li>
 <strong>macOS：</strong>M 系列与 Intel 使用不同的 DMG。支持 macOS 12 及以上，将应用拖到“应用程序”。</li>
 </ol>
 <div class="notice">
 <strong>升级前先备份。</strong>先在旧版设置中备份完整本地数据，再退出 Biomed Reader 和 Word 后升级。新版沿用数据兼容标识，缓存、方案、收藏与 PDF 关联继续使用。macOS 若出现开发者提示，请参考<a class="text-link" href="https://github.com/amiba-xqq/Biomedreader_macos#下载与安装" target="_blank" rel="noopener">仓库安装说明</a>。</div>
+{% include guide-shot.html id='install' %}
 </section>
 <section class="chapter" id="start">
 <h2>
@@ -94,28 +101,22 @@ permalink: /guide.html
 <strong>设置：</strong>调整默认视图、检索范围、JIF 年份、字体和本地数据。</li>
 </ul>
 <p>首次使用时先检查设置中的预印本来源范围与最近年限，然后创建关键词方案。</p>
+{% include guide-shot.html id='start' %}
 </section>
 <section class="chapter" id="keywords">
-<h2>
-<span>03</span>创建关键词方案与表达式</h2>
+<h2><span>03</span>创建关键词方案与表达式</h2>
 <ol>
-<li>点击“添加关键词组”，输入便于识别的<strong>方案名称</strong>。</li>
-<li>输入关键词或布尔表达式。方案名称用于卡片与收藏分组，检索表达式决定实际查询。</li>
-<li>选择本方案的数据源、候选数与默认排序，保存后即可从主页卡片进入。</li>
+<li>在「关键词方案」点击「添加关键词组」，给方案取一个便于识别的名称。名称用来识别卡片和收藏分组；它不会被当成检索词。</li>
+<li>选择「联网检索数据源（仅此方案）」。选择「PubMed + 预印本官网」时填写两个输入框；选择单一来源时填写对应的关键词即可。</li>
+<li>再设置候选数、年份与默认排序。保存后点击方案卡片，先检查检索条件，再进行首次联网刷新。</li>
 </ol>
-<div class="example">R-loop OR "DNA-RNA hybrid"</div>
-<p>
-<code>AND</code> 连接需要同时满足的概念，<code>OR</code> 合并同义词，英文引号标记短语，括号组织条件。不同网站对表达式的解析可能不同，复杂查询建议在对应官网核对。</p>
-<p>PubMed 专属字段标签建议只用于仅 PubMed 的方案。主页关键词卡片可拖动排序，默认每行五张，也可调整宽度。</p>
-<figure class="guide-figure">
-<button type="button" class="zoom-image" aria-label="放大查看：编辑关键词方案：名称、关键词、数据源和候选数">
-<img src="{{ '/assets/profile.png' | relative_url }}" alt="编辑关键词方案：名称、关键词、数据源和候选数" loading="lazy">
-</button>
-<figcaption>
-<span>软件实际界面，文献为演示数据</span>
-<span>点击图片放大</span>
-</figcaption>
-</figure>
+<div class="notice"><strong>布尔表达式只适用于 PubMed。</strong>把 AND、OR、NOT、括号和 PubMed 专用字段标签写在「PubMed 的关键词」栏。「预印本的关键词」栏对应 bioRxiv／medRxiv 官网搜索，请写普通关键词，不要把 PubMed 表达式复制到这里。</div>
+<dl class="guide-form-examples">
+<div><dt>PubMed 的关键词</dt><dd><code>(R-loop OR "RNA-DNA hybrid") AND replication</code>。用 OR 包含同义词，用 AND 要求同时含有另一概念；英文双引号可指定短语。</dd></div>
+<div><dt>预印本的关键词</dt><dd><code>R-loop replication</code>。先用简短关键词核对官网结果，需要缩小范围时调整关键词或年份。</dd></div>
+</dl>
+{% include guide-shot.html id='keywords' %}
+<p>同一个主题在两类来源中出现不同数量的文章很正常。结果异常时，先确认当前启用的来源及该来源的输入框，再检查候选数和时间范围。</p>
 </section>
 <section class="chapter" id="filters">
 <h2>
@@ -131,17 +132,11 @@ permalink: /guide.html
 <li>
 <strong>最低 JIF 与期刊目录：</strong>仅限制 PubMed，不限制预印本文章。</li>
 </ul>
+{% include guide-shot.html id='filters' %}
 <h3>检索范围在设置中调整</h3>
 <p>PubMed 可选默认范围或标题与摘要。预印本可选默认、标题与摘要、全文、全文与标题摘要。预印本最近年限默认两年，并与方案年份取交集。全文命中也可能来自参考文献等位置。</p>
-<figure class="guide-figure">
-<button type="button" class="zoom-image" aria-label="放大查看：发表年份上下限与多个期刊目录勾选">
-<img src="{{ '/assets/filters.png' | relative_url }}" alt="发表年份上下限与多个期刊目录勾选" loading="lazy">
-</button>
-<figcaption>
-<span>软件实际界面，文献为演示数据</span>
-<span>点击图片放大</span>
-</figcaption>
-</figure>
+
+{% include guide-shot.html id='filters-search-settings' %}
 </section>
 <section class="chapter" id="ranking">
 <h2>
@@ -171,6 +166,7 @@ permalink: /guide.html
 </table>
 <p>综合最佳使用 72% 归一化相关性与 28% 时间新近度，时间权重约每 180 天减半。相关性依据已有标题、摘要和关键词计算，不能视为跨网站统一的官方评分。</p>
 <div class="notice">有限候选集不保证覆盖全部历史中最相关的文章。候选数、年份、期刊、文章类型和收录时间差异，都会影响软件与官网结果的对应关系。</div>
+{% include guide-shot.html id='ranking' %}
 </section>
 <section class="chapter" id="refresh">
 <h2>
@@ -187,6 +183,7 @@ permalink: /guide.html
 <p>检索结果分批保存。取消或部分失败后，仍能查看本次已缓存的新文章。失败不会推进整体成功刷新时间，也不会改变其它关键词卡片的刷新时间。</p>
 <div class="notice">
 <strong>严格按日增量的边界：</strong>PubMed 依据发表日期，预印本依据版本发布日期，可能遗漏晚收录的旧文章。需要重新核对时使用完整检索。刷新时间与间隔以本地电脑时间为准。</div>
+{% include guide-shot.html id='refresh-single' %}
 <h3 id="batch-refresh">2.1：全部联网刷新</h3>
 <ol>
 <li>回到“关键词方案”，先拖动卡片排好顺序，再点击右上角<strong>全部联网刷新</strong>。</li>
@@ -195,11 +192,12 @@ permalink: /guide.html
 <li>某个来源或方案失败会记录结果并继续队列；已取得内容保留。需要停止时点击<strong>取消全部刷新</strong>，取消当前检索及后续队列。</li>
 </ol>
 <p>开始全部刷新前请等待正在运行的单方案检索结束。遇到预印本验证窗口，仍需人工完成验证；可最小化该窗口等待检索。</p>
+{% include guide-shot.html id='refresh' %}
 </section>
 <section class="chapter" id="browser">
 <h2>
 <span>07</span>预印本官网验证与取消</h2>
-<p>预印本关键词检索由对应的 bioRxiv 或 medRxiv 官网完成。弹出的搜索窗口可以最小化，搜索会继续。</p>
+<p>预印本关键词检索由对应的 bioRxiv 或 medRxiv 官网完成。软件打开预印本官网窗口。阅读当前页之前，可先最小化窗口；等搜索结果显示后，再点「读取当前页」。需要多个页面时逐页确认。</p>
 <ul>
 <li>出现人机验证时，恢复窗口并<strong>手动完成验证</strong>，软件不会自动破解验证码。</li>
 <li>如果网站提示请求过多，请等待自动恢复，频繁重新加载可能延长等待。</li>
@@ -207,6 +205,7 @@ permalink: /guide.html
 <li>首次大量结果可能需要多页读取，比在官网仅查看第一页更耗时。</li>
 </ul>
 <p>网站改版、限流或临时不可用都可能影响检索。遇到问题先保留缓存，再检查来源和筛选条件。预印本通常尚未完成同行评审，引用前请核对正式发表状态。</p>
+{% include guide-shot.html id='browser-entry' %}
 </section>
 <section class="chapter" id="views">
 <h2>
@@ -214,15 +213,7 @@ permalink: /guide.html
 <p>
 <strong>默认展现形式：</strong>在设置中选择“关键词方案默认展现形式”：宽松的嵌入式卡片、紧密的嵌入式卡片、表格。默认紧密卡片。</p>
 <p>每次重新打开软件，各方案从设置中的默认形式开始。进入方案后仍可临时切换表格、卡片及密度，临时选择仅在本次运行有效，不修改全局默认值。</p>
-<figure class="guide-figure">
-<button type="button" class="zoom-image" aria-label="放大查看：设置中的关键词方案默认展现形式">
-<img src="{{ '/assets/default-view.png' | relative_url }}" alt="设置中的关键词方案默认展现形式" loading="lazy">
-</button>
-<figcaption>
-<span>Biomed Reader 2.0 实际设置界面</span>
-<span>点击图片放大</span>
-</figcaption>
-</figure>
+{% include guide-shot.html id='views-settings' %}
 <ul>
 <li>
 <strong>表格：</strong>拖动列边界调整宽度。先加载部分行，向下滚动继续查看。</li>
@@ -233,26 +224,20 @@ permalink: /guide.html
 <li>
 <strong>预印本：</strong>标题浅红加粗。缺失摘要按当前页面后台补取，尚未获取的摘要可能暂时无法离线查看。</li>
 </ul>
-<figure class="guide-figure">
-<button type="button" class="zoom-image" aria-label="放大查看：紧密的嵌入式卡片、摘要、收藏与分页">
-<img src="{{ '/assets/reading.png' | relative_url }}" alt="紧密的嵌入式卡片、摘要、收藏与分页" loading="lazy">
-</button>
-<figcaption>
-<span>软件实际界面，文献为演示数据</span>
-<span>点击图片放大</span>
-</figcaption>
-</figure>
+{% include guide-shot.html id='views-cards' %}
 </section>
 <section class="chapter" id="hidden">
 <h2>
 <span>09</span>缓存来源与隐藏文章</h2>
 <p>结果页面的“检索源”用于筛选<strong>已缓存</strong>的 PubMed、bioRxiv、medRxiv 文章，可以多选。它不会更改方案的联网检索数据源，也不会删除其它来源的缓存。</p>
+{% include guide-shot.html id='filters-source' %}
 <ol>
 <li>对不想继续看到的文章点击“隐藏”。表格模式先选择文章，再使用对应按钮。</li>
 <li>需要恢复时打开“隐藏设置”，勾选显示隐藏文章。</li>
 <li>对该文章点击“取消隐藏”，再关闭显示隐藏的选项即可恢复普通展示。</li>
 </ol>
 <p>隐藏只作用于当前关键词方案，重启和刷新后仍保留，不删除缓存、收藏或 PDF。缓存总数仍包含隐藏文章，当前显示数量会根据筛选变化。</p>
+{% include guide-shot.html id='hidden' %}
 </section>
 <section class="chapter" id="details">
 <h2>
@@ -260,6 +245,7 @@ permalink: /guide.html
 <p>点击文章详情可阅读完整摘要、作者、DOI、期刊与已录入的 JIF，也可记录标签和笔记。已缓存内容可以离线查看，DOI 网页本身通常需要联网。</p>
 <p>“打开 DOI / 文章界面”会调用默认浏览器，详情文字保持不变。点击后，这一轮结果中的对应文章显示访问标记，字体颜色变淡，<strong>卡片背景始终保持白色</strong>。</p>
 <p>联网刷新重置 DOI 访问标记，保留收藏、笔记和隐藏状态。软件不会在刷新或打开详情时自动寻找模型图或抓取文章首图。</p>
+{% include guide-shot.html id='details' %}
 </section>
 <section class="chapter" id="citations">
 <h2><span>11</span>复制引用、期刊样式与卷页信息</h2>
@@ -269,6 +255,7 @@ permalink: /guide.html
 <li>等候必要的元数据补全，检查引用中的作者、年份、期刊、<strong>Volume（卷号）</strong>、Issue（期号）、<strong>Pages（页码或文章号）</strong>及 DOI。</li>
 <li>点击<strong>复制引用</strong>，引用窗口关闭并提示“复制成功，可以粘贴”，再粘贴到所需位置。</li>
 </ol>
+{% include guide-shot.html id='citations' %}
 <h3>什么时候联网，什么时候使用缓存？</h3>
 <ul>
 <li>Volume 或 Pages 任意一项仍缺失：每次点击导出/复制引用都即时尝试补全，不等待 24 小时。</li>
@@ -276,29 +263,24 @@ permalink: /guide.html
 <li>在线优先发表或预印本可能尚未分配卷页，网络也可能临时不可用。软件保留已有引用，未分配字段留空，不编造数值。</li>
 </ul>
 <p>元数据优先通过 PubMed 获取，必要时按 DOI 补充。单篇引用格式对未匹配独立样式的期刊会明确标注出版社通用后备样式。复制引用得到文字；需要在 Word 中自动编号和维护文末列表，请使用下面对应平台的写作流程。</p>
+{% include guide-shot.html id='citation-settings' %}
 </section>
 <section class="chapter" id="favorites">
 <h2>
 <span>12</span>收藏分组与本地 PDF</h2>
 <p>在哪个关键词方案收藏，文章就进入同名收藏分组。删除关键词方案后，收藏分组继续保留。支持自定义分组、拖动排序，将一篇或多篇文章复制或移动到其它分组。</p>
 <p>收藏文章可按分组或全部展示，并按发表时间或收藏时间排序。<strong>收藏时间按最近收藏优先</strong>：表格从上到下由新到旧，卡片按相应阅读顺序排列。组内支持表格、嵌入式卡片和卡片密度选择。</p>
+{% include guide-shot.html id='favorites' %}
 <h3>链接与打开原文</h3>
 <ol>
 <li>先收藏文章，在收藏文章详情中点击“链接文章”。</li>
 <li>浏览并选择已下载的 PDF，软件复制到当前数据目录的 <code>paper</code> 文件夹，以文章标题命名。</li>
 <li>链接成功且文件存在时，“查看原文”可点击，由系统默认 PDF 阅读器打开副本。</li>
 </ol>
-<figure class="guide-figure">
-<button type="button" class="zoom-image" aria-label="放大查看：收藏文章详情中的链接文章与查看原文">
-<img src="{{ '/assets/pdf.png' | relative_url }}" alt="收藏文章详情中的链接文章与查看原文" loading="lazy">
-</button>
-<figcaption>
-<span>软件实际界面，文献为演示数据</span>
-<span>点击图片放大</span>
-</figcaption>
-</figure>
+
 <div class="notice">
 <strong>取消收藏与删除：</strong>所有入口都会弹出确认窗口。确认后从全部分组取消该文章的收藏，并清除 PDF 链接、删除不再使用的 paper 内副本；原始下载文件与文章缓存保留。详见<a class="text-link" href="#bulk-unfavorite">批量取消收藏与确认规则</a>。</div>
+{% include guide-shot.html id='linked-pdf' %}
 </section>
 <section class="chapter" id="favorite-search">
 <h2><span>13</span>搜索已收藏文章</h2>
@@ -312,6 +294,7 @@ permalink: /guide.html
 </ol>
 <p>多个词用空格分隔时，需要全部匹配；完整短语可用双引号，例如 <code>"DNA repair" ATM</code>。这里不使用 PubMed 的 AND / OR 检索表达式。筛选不会删除或移动文章，也不会改变分组归属。</p>
 <div class="notice"><strong>筛选范围：</strong>搜索只覆盖所选分组中的本地缓存。当前搜索条件在本次打开期间保留，重新启动后需重新设置。</div>
+{% include guide-shot.html id='favorite-search' %}
 </section>
 <section class="chapter" id="bulk-unfavorite">
 <h2><span>14</span>批量取消收藏与删除确认</h2>
@@ -324,6 +307,7 @@ permalink: /guide.html
 </ol>
 <div class="notice"><strong>所有取消收藏入口采用相同规则。</strong>关键词方案中的收藏按钮、文章详情和批量取消都会先确认。确认后，文章会从<strong>全部收藏分组</strong>移除；已链接的 PDF 会解除关联，当前数据目录 <code>paper</code> 中不再被其它文章共用的 PDF 副本会被删除。<code>paper</code> 外的原始 PDF、检索缓存和笔记保留。操作前请确认要删除的对象。</div>
 <p>批量取消与正在进行的 PDF 导入、分享操作不能同时执行。打开了 PDF 选择窗口时，请先关闭该窗口。若文章已用于 Windows Word 插件，之后更新引用时还会按原收藏分组的成员关系重新核对，详见<a class="text-link" href="#word-plugin">Word 插件教程</a>。</p>
+{% include guide-shot.html id='bulk-unfavorite' %}
 </section>
 <section class="chapter" id="software-update">
 <h2><span>15</span>检查软件更新与安装新版</h2>
@@ -336,6 +320,7 @@ permalink: /guide.html
 </ol>
 <p>软件更新区域下方的官网链接可用默认浏览器打开。遇到网络问题，也可前往<a class="text-link" href="{{ '/downloads.html' | relative_url }}">下载页</a>手动选择安装包。</p>
 <div class="notice"><strong>同版本修订需手动下载。</strong>官网当前版本为 2.2.2。同为 2.2.2 的旧修订不会触发自动下载；如需获取最新同版本修订，请从下载页手动下载并覆盖安装。</div>
+{% include guide-shot.html id='software-update' %}
 </section>
 <section class="chapter" id="batch-pdf">
 <h2><span>16</span>批量收藏本地 PDF</h2>
@@ -348,10 +333,12 @@ permalink: /guide.html
 <li>点击“开始识别与收藏”。程序识别首页较大字号的完整标题，包括换行，并结合 DOI 核对候选。仅通过 PubMed 检索，检索范围跟随设置，<strong>不使用年份和 JIF 限制</strong>，但始终保留所选期刊目录范围。</li>
 <li>确认匹配后加入所选分组，PDF 副本存入当前数据目录的 <code>paper</code> 并自动关联。打开该收藏详情，点击“查看原文”即可用默认 PDF 阅读器查看。</li>
 </ol>
+{% include guide-shot.html id='batch-pdf' %}
 <h3>查看进度、失败名单和取消结果</h3>
 <p>目标分组卡片显示进度，例如“共 10 个 PDF，已完成 2 个”。全部成功时提示完成；部分失败时显示文件名与原因，可点击“复制未成功的 PDF 文件名”或“导出文件名单…”。<strong>复制后报告继续保持打开，需手动关闭</strong>。</p>
 <p>点击“取消 PDF 导入”会保留已成功收藏和关联的文件，尚未完成的项目在报告中列出。同篇文章按标识合并；原始下载 PDF 不会被移走或删除，已有链接也会尽量沿用。</p>
 <div class="notice"><strong>匹配不到时：</strong>检查期刊是否在所选目录、PubMed 是否收录、首页是否为封面或扫描图。当前未内置 OCR；无法提取或核实完整标题时会报告失败。可以先按标题手动检索、收藏，再通过“链接文章”选择 PDF。</div>
+{% include guide-shot.html id='batch-pdf-progress' %}
 </section>
 <section class="chapter" id="word-plugin">
 <h2><span>17</span>Windows：Biomed Reader Word 插件</h2>
@@ -363,6 +350,7 @@ permalink: /guide.html
 <li>插件未显示时，在 Word“文件 → 选项 → 加载项 → 管理：COM 加载项 → 转到”中确认 Biomed Reader 已启用。目录版与安装版同时存在时，最近注册的位置决定插件连接哪一份程序。</li>
 <li>点击插件的<strong>打开 Biomed Reader</strong>；也可先手动启动软件并等待本地文献库载入。</li>
 </ol>
+{% include guide-shot.html id='word-install' %}
 <h3>选择文章并插入引用</h3>
 <ol>
 <li>在 Biomed Reader 的“收藏文章”进入目标分组，选中要引用的文章，表格或卡片均可。</li>
@@ -370,10 +358,12 @@ permalink: /guide.html
 <li>点击插件<strong>插入引用</strong>。程序按所选样式插入引文标记，并在文末维护参考文献；继续插入其它文章时会重新排列编号。</li>
 <li>引文样式决定使用上标、括号编号或其它标记。默认 Cell；样式改变时不要手动改数字，使用更新命令统一处理。</li>
 </ol>
+{% include guide-shot.html id='word-library' %}
 <h3>更换期刊格式、字体与更新文献</h3>
 <p>在插件“参考文献格式”的期刊框中下拉选择，或点击<strong>选择期刊…</strong>输入部分名称筛选。Word 列表限于 <strong>NC 扩选与已核实 EndNote 样式的交集</strong>。选择后点击<strong>更新引用文献</strong>应用到全文；软件设置中的单篇复制引用样式，与 Word 当前文档的期刊选择是两个入口。</p>
 <p>点击<strong>参考文献字体</strong>设置字体、字形和字号。默认 <strong>Arial、常规、五号（10.5 磅）</strong>，作用于文末参考文献和正文引文标记；上标继续保持上标，正文普通文字的字体不受影响。旧文档缺少卷页时，更新引用也会尝试从本地库补齐已有信息。</p>
 <div class="notice"><strong>更新前请保存稿件副本。</strong>引用记录绑定最初选择文章时的收藏分组。若文章已从那个原分组移出，点击“更新引用文献”会删除对应引文并重排编号，即使它仍在其它组收藏。文档来自其它本地文献库时，应先连接原文献库再更新，以免核对错误。</div>
+{% include guide-shot.html id='word-style' %}
 <h3>导出给 EndNote 接管</h3>
 <ol>
 <li>先安装并启用 EndNote 桌面版及 Word 的 Cite While You Write（CWYW）插件。</li>
@@ -382,12 +372,14 @@ permalink: /guide.html
 <li>在导出副本中使用 EndNote 的“Update Citations and Bibliography”继续维护；需要独立文献库时，使用 EndNote 的“Export Traveling Library”。</li>
 </ol>
 <p>若插件暂时无法连接，请先确认 Biomed Reader 已启动、使用的是原本的本地文献库，并在升级后完整退出再打开 Word。导出失败时保留原稿，检查 EndNote CWYW 是否正常启用。</p>
+{% include guide-shot.html id='word-export' %}
 </section>
 <section class="chapter" id="endnote-macos">
 <h2><span>18</span>Mac：原生 Word 插件与 EndNote 接管</h2>
 <ol><li>用 ⌘Q 完全退出 Word，在刊禾中选择「设置 → Word 插件 → 安装／修复 Word 插件」，重开 Word 后按提示信任本地 <code>BiomedReader.dotm</code> 模板。</li><li>在刊禾收藏页面选择文献，在 Word 光标处用 Biomed Reader 选项卡插入或更新引用。可选择期刊样式和字体。后台连接处理引用请求，只有主动点击「打开 Biomed Reader」才打开主界面。</li><li>使用「导出为 EndNote」生成稿件副本，在已安装 EndNote CWYW 的 Word 中核对并更新引用。还可从「收藏文章 → 导出 Word / EndNote…」生成独立引用集合。</li></ol>
 <div class="notice"><strong>升级后先在副本中试用。</strong>无需启用所有宏或开放 VBA 工程访问。Mac 插件已做双架构打包验证，Word 和 EndNote 的版本匹配与实际联动请在本机核对。</div>
 <p><a class="text-link" href="https://github.com/amiba-xqq/Biomedreader_macos#mac-word-插件">Mac 插件安装和排查 ↗</a></p>
+{% include guide-shot.html id='mac-word-reference' %}
 </section>
 <section class="chapter" id="journals">
 <h2>
@@ -398,44 +390,23 @@ permalink: /guide.html
 <li>输入部分期刊名称或 ISSN，按名称或 JIF 排序，输入 JIF 上下限筛选。</li>
 <li>勾选“只显示已选择的期刊”检查成员，命名并保存。全选与全不选只针对当前筛选结果。</li>
 </ol>
-<figure class="guide-figure">
-<button type="button" class="zoom-image" aria-label="放大查看：按部分名称和 JIF 范围筛选自定义期刊目录">
-<img src="{{ '/assets/journals.png' | relative_url }}" alt="按部分名称和 JIF 范围筛选自定义期刊目录" loading="lazy">
-</button>
-<figcaption>
-<span>软件实际界面，文献为演示数据</span>
-<span>点击图片放大</span>
-</figcaption>
-</figure>
+
 <p>设置中的 JIF 年份默认本地年份减一，可选 2010 年至当前年。只有已录入对应年度数据时才显示数值，缺失留空。切换显示年份不会重新划分 IF 三组的成员。</p>
 <p>软件不在线补全 JIF，不调用 Clarivate Journals API。NLM 公开目录收录不等同于 SCI 认证，指标以本地已录入年度数据为准。</p>
+{% include guide-shot.html id='journals' %}
 </section>
 <section class="chapter" id="sharing">
 <h2>
 <span>20</span>分享、备份与移动数据目录</h2>
 <h3>分享收藏与期刊目录</h3>
 <p>收藏打包时先选择一个或多个分组，右侧只展示这些组的文章并默认勾选。最终只导出右侧已勾选文章，可选择包含已链接 PDF。接收者使用“读取分享压缩包”，导入文章、分组、笔记与 PDF 关联。</p>
-<figure class="guide-figure">
-<button type="button" class="zoom-image" aria-label="放大查看：选择分组和文章后打包收藏分享 ZIP">
-<img src="{{ '/assets/share.png' | relative_url }}" alt="选择分组和文章后打包收藏分享 ZIP" loading="lazy">
-</button>
-<figcaption>
-<span>软件实际界面，文献为演示数据</span>
-<span>点击图片放大</span>
-</figcaption>
-</figure>
+
 <p>期刊目录也可选择多个卡片导出 ZIP。导入同名目录时追加“_已重复”，避免覆盖原目录。</p>
+{% include guide-shot.html id='sharing' %}
+{% include guide-shot.html id='journal-share' %}
 <h3>备份整个本地资料库</h3>
 <p>“备份本地数据（ZIP）”导出整个数据目录，包含数据库、缓存和 paper 下的 PDF。单独导出收藏分享包不能代替完整备份。</p>
-<figure class="guide-figure">
-<button type="button" class="zoom-image" aria-label="放大查看：本地数据的备份、移动和链接入口">
-<img src="{{ '/assets/data.png' | relative_url }}" alt="本地数据的备份、移动和链接入口" loading="lazy">
-</button>
-<figcaption>
-<span>演示环境的数据目录，实际位置以软件设置为准</span>
-<span>点击图片放大</span>
-</figcaption>
-</figure>
+
 <ul>
 <li>Windows 默认：<code>%LOCALAPPDATA%\OrangeReader\BiomedLiterature</code>
 </li>
@@ -447,11 +418,12 @@ permalink: /guide.html
 <strong>链接本地数据目录：</strong>选择已有文件夹本身，其中应直接包含 <code>biomed_literature.sqlite3</code>，结构不正确会拒绝链接。</li>
 </ul>
 <p>路径选择窗口支持在 Look in 中输入或粘贴路径，按 Enter 进入后再选择目录。字体和布局可在设置中自动适配屏幕或整体缩放，软件保持浅色界面。</p>
+{% include guide-shot.html id='settings-data' %}
 </section>
 {% include research-lessons.html %}
 <section class="chapter" id="faq">
 <h2>
-<span>29</span>常见问题与使用注意</h2>
+<span>34</span>常见问题与使用注意</h2>
 <div class="faq">
 <details>
 <summary>为什么结果与 PubMed 或预印本官网不同？</summary>
@@ -485,8 +457,19 @@ permalink: /guide.html
 <details><summary>批量收藏 PDF 为什么有些文件失败？</summary><p>先查看失败报告。常见原因包括 PubMed 未收录、所选期刊目录不包含该刊、首页缺少可提取的大标题、扫描件或网络失败。可复制或导出未成功文件名，报告需手动关闭。</p></details>
 <details><summary>为什么 Mac Word 中没有 Biomed Reader 工具栏？</summary><p>完全退出 Word，回到「设置 → Word 插件」安装或修复模板，再打开 Word。请在 Word 中检查本地模板信任状态，或参考 <a href="#endnote-macos">Mac Word 教程</a>。</p></details>
 </div>
+{% include guide-shot.html id='faq' %}
+<h3 id="faq-ai">AI 常见问题与排查顺序</h3>
+<div class="faq">
+<details><summary>模型已配置，为什么任务窗口找不到？</summary><p>先回「AI部署」确认已保存且已开启文字模型，再回到任务窗口重新选择。个人 API Key 的模型要检查调用权限；课题组学生要检查「可用AI模型」。本机 Codex 的列表来自当前账号，登录后点「检测 / 刷新模型」，再打开模型设置。图像专用通道只在绘图设置出现。<a href="#ai-deploy">查看 AI 部署教程</a>。</p></details>
+<details><summary>个人通道与课题组通道切换失败，或学生退出失败怎么办？</summary><p>模型两条通道都配置且可用时才有回退。分别核对 Key、课题组授权和服务商模型权限。学生退出需要联网释放本机占用，可在网络恢复后重新尝试；若两台设备名额已满，请先在旧设备退出。被 PI 停用时应联系 PI。<a href="#lab-access">查看课题组步骤</a>。</p></details>
+<details><summary>文字总结已完成，为什么模型图没生成？</summary><p>先保存文字总结。再检查「AI模型图生成」是否设置为跳过、所选绘图通道是否开启，以及平台、区域、模型或 endpoint ID 与 Key 是否匹配。超时后先查看服务商是否已收到请求，以免盲目重复生成。<a href="#image-channel">查看绘图通道设置</a>。</p></details>
+<details><summary>改了左侧作图设置，为什么 AI 作图还是原来的样子？</summary><p>左侧设置更新的是「软件原图」。要把新设置带入 AI 修改，请先生成并切到新的软件原图；想继续编辑现有结果，则保持预览在「AI作图」。第一次 AI 修改也可以撤销，可用重做恢复。<a href="#ai-figures">查看原图、修改与导出流程</a>。</p></details>
+<details><summary>AI Protocol 找不到引用，或者总结只读取了摘要，如何补救？</summary><p>先核对窗口显示的材料范围。如果只有摘要，可提供已有权限的正文或关联本地 PDF；把任务限定到具体方法或段落，再生成或修订。未核实的引用不适合使用，原文没有的数值、材料或条件应明确标为缺项。<a href="#ai-protocol">查看 Protocol 教程</a>。</p></details>
+<details><summary>会向模型发送哪些资料？取消任务还会产生费用吗？</summary><p>根据功能和选项，所选论文、提取的正文、附件、对话历史或作图预览会提供给所选服务。发起任务前检查附件和「向模型提供原始预览及项目素材」等选项。取消可以停止本地等待和后续调用；服务商已经接收的请求仍可能计费。</p></details>
+</div>
+{% include guide-shot.html id='faq-ai-settings' %}
 </section>
-<p class="notice">部分截图来自旧版，用于说明各版本共有操作。新增功能请以 2.2.2 界面及文字步骤为准。</p>
+<p class="notice">截图来自 Biomed Reader 2.2.2 的演示环境。文献、图表和输入内容均为示例；配图展示相关软件入口，跨平台插件的实际界面以本机 Word 为准。</p>
 <a class="btn primary" href="{{ '/downloads.html' | relative_url }}">下载并开始使用 {% include icon.html name='arrow' %}</a>
 </div>
 </div>

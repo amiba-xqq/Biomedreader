@@ -1,0 +1,8 @@
+{% assign shot = site.data.guide_shots[include.id] %}
+<figure class="guide-figure">
+  <a class="zoom-image" href="{{ '/assets/guide-222/' | append: include.id | append: '.webp' | relative_url }}" data-guide-zoom aria-label="放大截图：{{ shot.alt | escape }}" aria-describedby="caption-{{ include.id }}">
+    <img src="{{ '/assets/guide-222/' | append: include.id | append: '.webp' | relative_url }}" alt="{{ shot.alt | escape }}" width="{{ shot.width }}" height="{{ shot.height }}" loading="lazy" decoding="async">
+    <span aria-hidden="true">放大截图 ↗</span>
+  </a>
+  <figcaption id="caption-{{ include.id }}">{{ shot.caption | escape }}</figcaption>
+</figure>

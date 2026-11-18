@@ -1,14 +1,19 @@
-document.querySelectorAll('.zoom-image').forEach(button => button.addEventListener('click', () => {
-  const modal = document.querySelector('#image-lightbox');
-  const img = button.querySelector('img');
-  modal.querySelector('img').src = img.src;
-  modal.querySelector('img').alt = img.alt;
-  modal.showModal();
-}));
 const modal = document.querySelector('#image-lightbox');
-modal?.querySelector('.lightbox-close').addEventListener('click', () => modal.close());
-modal?.addEventListener('click', event => { if (event.target === modal) modal.close(); });
-
+if (modal && typeof modal.showModal === 'function') {
+  const preview = modal.querySelector('img');
+  let opener;
+  document.querySelectorAll('[data-guide-zoom]').forEach(link => link.addEventListener('click', event => {
+    if (event.defaultPrevented || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    opener = link;
+    preview.src = link.href;
+    preview.alt = link.querySelector('img').alt;
+    modal.showModal();
+  }));
+  modal.querySelector('.lightbox-close').addEventListener('click', () => modal.close());
+  modal.addEventListener('click', event => { if (event.target === modal) modal.close(); });
+  modal.addEventListener('close', () => { preview.removeAttribute('src'); opener?.focus(); });
+}
 const search = document.querySelector('#guide-search');
 if (search) {
   const directory = document.querySelector('.guide-directory');
@@ -35,12 +40,59 @@ if (search) {
     if (chapter?.hidden) { search.value = ''; applySearch(); }
   }));
   applySearch();
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => { if (entry.isIntersecting) {
-      toc.forEach(link => link.classList.toggle('active', link.hash === '#' + entry.target.id));
-    }});
-  }, {rootMargin: '-110px 0px -60% 0px', threshold: 0});
-  chapters.forEach(chapter => observer.observe(chapter));
+  const contents = document.querySelector('.toc');
+  const desktop = window.matchMedia('(min-width: 771px)');
+  const rail = document.querySelector('.chapter-rail');
+  let current, scheduled = false;
+  const updateCurrent = () => {
+    scheduled = false;
+    let section;
+    for (const chapter of chapters) {
+      if (chapter.hidden) continue;
+      if (!section || chapter.getBoundingClientRect().top <= 140) section = chapter;
+      else break;
+    }
+    if (current === section) return;
+    current = section;
+    const selected = section && toc.find(link => link.hash === '#' + section.id);
+    toc.forEach(link => {
+      if (link === selected) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    });
+    if (rail) {
+      const title = rail.querySelector('[data-current-chapter]');
+      title.textContent = selected?.textContent.trim() || '未找到匹配章节';
+      const visible = toc.filter(link => !link.hidden);
+      const index = visible.indexOf(selected);
+      for (const [name, next] of [['previous', index > 0 ? visible[index - 1] : null], ['next', index >= 0 ? visible[index + 1] : null]]) {
+        const link = rail.querySelector('[data-step="' + name + '"]');
+        link.hidden = !next;
+        if (next) {
+          link.href = next.hash;
+          link.setAttribute('aria-label', (name === 'previous' ? '上一节：' : '下一节：') + next.textContent.trim());
+        }
+      }
+    }
+    if (selected && desktop.matches) {
+      const linkBox = selected.getBoundingClientRect();
+      const listBox = contents.getBoundingClientRect();
+      if (linkBox.top < listBox.top) contents.scrollTop -= listBox.top - linkBox.top + 6;
+      else if (linkBox.bottom > listBox.bottom) contents.scrollTop += linkBox.bottom - listBox.bottom + 6;
+    }
+  };
+  const queueChapter = () => {
+    if (!scheduled) {
+      scheduled = true;
+      requestAnimationFrame(updateCurrent);
+    }
+  };
+  window.addEventListener('scroll', queueChapter, {passive:true});
+  window.addEventListener('resize', queueChapter, {passive:true});
+  window.addEventListener('hashchange', queueChapter);
+  function updateAfterFilter() { current = null; queueChapter(); }
+  search.addEventListener('input', updateAfterFilter);
+  search.addEventListener('keydown', updateAfterFilter);
+  queueChapter();
 }
 
 function toast(message) {
@@ -54,3 +106,14 @@ document.querySelectorAll('[data-copy-hash]').forEach(button => button.addEventL
   try { await navigator.clipboard.writeText(code.textContent.trim()); toast('已复制 SHA256 校验值'); }
   catch { const range = document.createRange(); range.selectNodeContents(code); const selection = window.getSelection(); selection.removeAllRanges(); selection.addRange(range); toast('请复制已选中的校验值'); }
 }));
+
+if (typeof IntersectionObserver === 'function' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const reveal = new IntersectionObserver(entries => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      entry.target.classList.add('reveal-in');
+      reveal.unobserve(entry.target);
+    }
+  }, {rootMargin: '0px 0px -10px 0px', threshold: 0.08});
+  document.querySelectorAll('.course, .package, .version-grid article, .guide-figure, .audience-grid, .cta-band').forEach(element => reveal.observe(element));
+}
