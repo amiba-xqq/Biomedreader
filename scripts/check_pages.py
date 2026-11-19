@@ -74,7 +74,7 @@ class Page(HTMLParser):
         if self.hash_key: self.hashes[self.hash_key] += data.strip()
 
 
-pages = {name: Page(root / name) for name in ('index.html', 'downloads.html', 'guide.html')}
+pages = {name: Page(root / name) for name in ('index.html', 'downloads.html', 'guide.html', 'video.html')}
 for name, page in pages.items():
     assert page.h1s == 1, name
     for link in page.links:
@@ -120,10 +120,10 @@ assert {'lab-access', 'lab-management', 'finder-results'} <= guide.ids
 assert 'batch-refresh' in pages['guide.html'].ids
 sitemap = ET.parse(root / 'sitemap.xml')
 locations = [node.text for node in sitemap.iter('{http://www.sitemaps.org/schemas/sitemap/0.9}loc')]
-assert len(locations) == 3
+assert len(locations) == 4
 assert all(link.startswith('https://amiba-xqq.github.io/Biomedreader/') for link in locations)
 assert 'Sitemap: https://amiba-xqq.github.io/Biomedreader/sitemap.xml' in (root / 'robots.txt').read_text()
-print('PASS: Jekyll rendered 3 pages, 34 illustrated chapters, all local links/assets/anchors, sitemap, 8 exact Quark links, 8 version-specific GitHub downloads and 4 SHA256 values.')
+print('PASS: Jekyll rendered 4 pages, 34 illustrated chapters, all local links/assets/anchors, sitemap, 8 exact Quark links, 8 version-specific GitHub downloads and 4 SHA256 values.')
 
 # The desktop updater consumes the same version and hashes as the download page.
 import json

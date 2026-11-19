@@ -4,6 +4,6 @@ permalink: /sitemap.xml
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-{% assign paths = '/,/downloads.html,/guide.html' | split: ',' %}{% for path in paths %}
+{% assign paths = '/,/downloads.html,/guide.html,/video.html' | split: ',' %}{% for path in paths %}
   <url><loc>{{ path | absolute_url }}</loc></url>
 {% endfor %}</urlset>

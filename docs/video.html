@@ -1,0 +1,38 @@
+---
+layout: default
+page_id: video
+title: "教程视频｜刊禾 Biomed Reader"
+description: "观看 Biomed Reader 2.2.2 完整实录，按章节学习文献检索、AI 工具与四种科研作图。"
+permalink: /video.html
+---
+<main id="main" class="cinema">
+  <div class="wrap">
+    <header class="film-intro">
+      <p class="film-version">BIOMED READER <b>2.2.2</b></p>
+      <h1>教程视频</h1>
+      <p>跟随实机演示，从建立检索方案、核对 AI 引文，到完成四类科研图。选择章节，即可从对应操作开始观看。</p>
+    </header>
+    <div class="screening">
+      <section class="film-stage" aria-label="完整实录播放器">
+        <div class="film-screen">
+          <video id="tutorial-film" controls playsinline preload="metadata" width="1920" height="1080" aria-label="Biomed Reader 2.2.2 完整实录" poster="{{ '/assets/video/tutorial-cover.webp' | relative_url }}">
+            <source src="{{ '/assets/video/biomedreader-222-mambo.mp4' | relative_url }}" type="video/mp4">
+            <a href="{{ '/assets/video/biomedreader-222-mambo.mp4' | relative_url }}">打开完整视频</a>
+          </video>
+          <button id="film-start" type="button" hidden><span aria-hidden="true">▶</span> 播放教程</button>
+        </div>
+        <div class="film-caption"><div><p>当前章节 <span id="film-number">01 / 13</span></p><h2 id="film-title">初次打开与关键词方案</h2></div><a href="{{ '/guide.html' | relative_url }}">图文教程 ↗</a></div>
+        <p id="film-error" hidden>视频暂时无法播放。<a href="{{ '/assets/video/biomedreader-222-mambo.mp4' | relative_url }}">直接打开 MP4</a></p>
+      </section>
+      <section class="film-index" aria-labelledby="film-index-title">
+        <header><h2 id="film-index-title">章节目录</h2><span>13 章 · 28:46</span></header>
+        <ol>
+        {% for item in site.data.video_chapters %}
+          <li><button type="button" data-start="{{ item.start }}"{% if forloop.first %} aria-current="true"{% endif %}><span class="film-num">{{ item.num }}</span><span class="film-name">{{ item.title }}</span><span class="film-time">{{ item.clock }}</span></button></li>
+        {% endfor %}
+        </ol>
+      </section>
+    </div>
+  </div>
+</main>
+<script defer src="{{ '/assets/video/player.js' | relative_url }}"></script>
