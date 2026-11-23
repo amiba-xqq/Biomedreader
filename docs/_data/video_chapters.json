@@ -8,73 +8,73 @@
   {
     "num": "02",
     "title": "联网刷新与阅读",
-    "start": 138.68,
-    "clock": "02:18"
+    "start": 152.68,
+    "clock": "02:32"
   },
   {
     "num": "03",
     "title": "收藏、期刊和写作",
-    "start": 235.0,
-    "clock": "03:55"
+    "start": 259.0,
+    "clock": "04:19"
   },
   {
     "num": "04",
     "title": "AI 部署与课题组",
-    "start": 319.84,
-    "clock": "05:19"
+    "start": 351.84,
+    "clock": "05:51"
   },
   {
     "num": "05",
     "title": "从推荐关键词到 AI 报告",
-    "start": 551.84,
-    "clock": "09:11"
+    "start": 605.84,
+    "clock": "10:05"
   },
   {
     "num": "06",
     "title": "领域知识库与科学问题",
-    "start": 655.2,
-    "clock": "10:55"
+    "start": 719.2,
+    "clock": "11:59"
   },
   {
     "num": "07",
     "title": "模拟审稿与 AI 寻找文章",
-    "start": 776.04,
-    "clock": "12:56"
+    "start": 852.04,
+    "clock": "14:12"
   },
   {
     "num": "08",
     "title": "AI Protocol",
-    "start": 881.96,
-    "clock": "14:41"
+    "start": 967.96,
+    "clock": "16:07"
   },
   {
     "num": "09",
     "title": "作图项目与 WB 条带",
-    "start": 946.32,
-    "clock": "15:46"
+    "start": 1038.32,
+    "clock": "17:18"
   },
   {
     "num": "10",
     "title": "IF 多通道图",
-    "start": 1090.04,
-    "clock": "18:10"
+    "start": 1196.04,
+    "clock": "19:56"
   },
   {
     "num": "11",
     "title": "qPCR 表达与富集分析",
-    "start": 1188.72,
-    "clock": "19:48"
+    "start": 1304.72,
+    "clock": "21:44"
   },
   {
     "num": "12",
     "title": "Excel、CSV 与继续修图",
-    "start": 1420.24,
-    "clock": "23:40"
+    "start": 1560.24,
+    "clock": "26:00"
   },
   {
     "num": "13",
     "title": "备份、反馈与课后练习",
-    "start": 1662.64,
-    "clock": "27:42"
+    "start": 1828.64,
+    "clock": "30:28"
   }
 ]
