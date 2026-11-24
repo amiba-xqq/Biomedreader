@@ -259,3 +259,41 @@ ul,ol{padding-inline-start:1.5em}
 .guide-reference>.control-list{margin:0 0 12px}
 .chapter .guide-reference .guide-check{margin:0 0 13px;color:var(--muted)}
 .chapter h4{font-size:1.06rem;margin-top:23px}
+
+/* DDRimage learning path and related chapters */
+.course-ddrimage {
+  background: linear-gradient(145deg, #fff8ec 0%, #ffe5c5 100%);
+  border-color: #efc497;
+}
+.course-ddrimage:hover, .course-ddrimage:focus-visible {
+  background: #ffecd5;
+  border-color: var(--accent);
+}
+.chapter .workflow-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(12rem, 100%), 1fr));
+  gap: 8px;
+  list-style: none;
+  padding-left: 0;
+}
+.chapter .workflow-links li { margin: 0; }
+.chapter .workflow-links a {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--tint);
+  text-decoration-thickness: 1px;
+  text-underline-offset: .16em;
+}
+@media (min-width: 1001px) {
+  .course-grid-paths { grid-template-columns: repeat(6,minmax(0,1fr)); }
+  .course-grid-paths > .course { grid-column: span 2; }
+  .course-grid-paths > .course:nth-last-child(-n+2) { grid-column: span 3; }
+  .version-grid { grid-template-columns: repeat(4,minmax(0,1fr)); }
+}
+@media (min-width: 701px) and (max-width: 1000px) {
+  .version-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}

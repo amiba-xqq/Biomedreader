@@ -2,24 +2,25 @@
 layout: default
 page_id: guide
 title: "使用教程｜刊禾 Biomed Reader"
-description: "Biomed Reader 2.2.2 学习中心：从文献检索、引用和本地资料管理，到 AI 作图、Protocol、模型部署与课题组协作。"
+description: "Biomed Reader 2.2.3 学习中心：文献检索与引用、AI 科研工具和 DDRimage 图像转换与定量教程。"
 permalink: /guide.html
 ---
 <main id="main" class="wrap">
 <section class="page-intro guide-intro">
-<p class="kicker"><span></span> LEARNING CENTER <b>2.1 → 2.2.2</b></p>
+<p class="kicker"><span></span> LEARNING CENTER <b>2.1 → 2.2.3</b></p>
 <h1>刊禾学习中心</h1>
-<p class="lead">从安装和第一次检索开始，或直接跳到你正在做的任务。保留 2.1 的文献与引用教程，并加入 2.2 系列的 AI 科研工具。</p>
-<nav class="guide-new-links" aria-label="学习路线"><a href="#install">快速上手</a><a href="#word-plugin">Word 与 EndNote</a><a href="#ai-figures">AI 作图</a><a href="#ai-protocol">AI Protocol</a><a href="#faq-ai">AI 常见问题</a><a href="#versions">版本索引</a></nav>
+<p class="lead">从安装和第一次检索开始，或直接跳到你正在做的任务。保留 2.1 的文献与引用教程，涵盖 2.2 系列 AI 科研工具和 2.2.3 新增的 DDRimage。</p>
+<nav class="guide-new-links" aria-label="学习路线"><a href="#install">快速上手</a><a href="#word-plugin">Word 与 EndNote</a><a href="#ai-figures">AI 作图</a><a href="#ai-protocol">AI Protocol</a><a href="#ddrimage">DDRimage 图像分析</a><a href="#faq-ai">AI 常见问题</a><a href="#versions">版本索引</a></nav>
 </section>
-<section class="version-path" id="versions" aria-labelledby="version-title"><div><p class="eyebrow">VERSION MAP</p><h2 id="version-title">2.1 至 2.2.2 更新导览</h2></div><div class="version-grid">
+<section class="version-path" id="versions" aria-labelledby="version-title"><div><p class="eyebrow">VERSION MAP</p><h2 id="version-title">2.1 至 2.2.3 更新导览</h2></div><div class="version-grid">
 <article><span class="badge">2.1</span><h3>文献与写作</h3><p>全部联网刷新、引用卷页、批量 PDF、收藏搜索、批量取消、Word / EndNote 和软件更新。</p><a class="text-link" href="#batch-refresh">从文献更新开始 →</a></article>
 <article><span class="badge">2.2 / 2.2.1</span><h3>AI 进入科研工作流</h3><p>模型与课题组、文章简报、增量报告、科研对话、领域知识库、科学问题、同行评审和 Mac Word 插件。</p><a class="text-link" href="#ai-deploy">了解 AI 部署 →</a></article>
 <article><span class="badge">2.2.2</span><h3>从数据到图，从方法到方案</h3><p>四类实验数据作图、基于上下文改图、AI Protocol、内置科研技能和后续同版本改进。</p><a class="text-link" href="#ai-figures">试用 AI 作图 →</a></article>
+<article><span class="badge">2.2.3</span><h3>显微图像定量</h3><p>DDRimage 图像转换、四种分析、并排预览、手动矫正和分组绘图。</p><a class="text-link" href="#ddrimage">学习 DDRimage →</a></article>
 </div></section>
 <div class="guide-layout">
 <aside class="guide-sidebar" aria-label="教程目录">
-<details class="guide-directory" open><summary>课程目录 <span>34 章</span></summary>
+<details class="guide-directory" open><summary>课程目录 <span>41 章</span></summary>
 <nav class="toc" aria-label="章节导航" tabindex="0">
 <a href="#install">01　安装与升级</a>
 <a href="#start">02　第一次打开与界面导航</a>
@@ -54,7 +55,14 @@ permalink: /guide.html
 <a href="#figures-excel">31　Excel / CSV 作图</a>
 <a href="#ai-protocol">32　AI Protocol</a>
 <a href="#feedback">33　清理与反馈</a>
-<a href="#faq">34　常见问题与使用注意</a>
+<a href="#ddrimage">34　DDRimage 入门与文件准备</a>
+<a href="#ddrimage-export">35　Leica / Olympus 转 TIFF</a>
+<a href="#ddrimage-foci">36　细胞核内 Foci</a>
+<a href="#ddrimage-intensity">37　核内相对荧光强度</a>
+<a href="#ddrimage-fiber">38　DNA Fiber</a>
+<a href="#ddrimage-colony">39　单克隆形成</a>
+<a href="#ddrimage-plot">40　DDRimage 统计作图</a>
+<a href="#faq">41　常见问题与使用注意</a>
 </nav>
 <a class="back-top" href="#main">返回顶部 ↑</a></details>
 </aside>
@@ -65,9 +73,9 @@ permalink: /guide.html
 <circle cx="10" cy="10" r="6"/>
 <path d="m15 15 6 6"/>
 </svg>
-<label class="hidden" for="guide-search">搜索 34 个教程章节</label>
-<input type="search" id="guide-search" placeholder="例如：qPCR、Codex、Word 或收藏" autocomplete="off">
-<div class="search-result" role="status">共 34 个章节，可搜索关键词或按目录跳转</div>
+<label class="hidden" for="guide-search">搜索 41 个教程章节</label>
+<input type="search" id="guide-search" placeholder="例如：DDRimage、qPCR、Codex 或 Word" autocomplete="off">
+<div class="search-result" role="status">共 41 个章节，可搜索关键词或按目录跳转</div>
 </div>
 <p class="empty-search" hidden>没有找到匹配章节。试试“检索”“收藏”或“备份”，也可清空搜索查看全部教程。</p>
 <section class="chapter" id="install">
@@ -333,7 +341,7 @@ permalink: /guide.html
 <li>下载完成后，先备份本地数据，退出 Biomed Reader 和 Word，再<strong>手动运行安装程序</strong>；Mac 打开 DMG 后替换应用。此功能不会自动安装。</li>
 </ol>
 <p>软件更新区域下方的官网链接可用默认浏览器打开。遇到网络问题，也可前往<a class="text-link" href="{{ '/downloads.html' | relative_url }}">下载页</a>手动选择安装包。</p>
-<div class="notice"><strong>同版本修订需手动下载。</strong>官网当前版本为 2.2.2。同为 2.2.2 的旧修订不会触发自动下载；如需获取最新同版本修订，请从下载页手动下载并覆盖安装。</div>
+<div class="notice"><strong>同版本修订需手动下载。</strong>官网当前版本为 {{ site.data.downloads.version }}。从 2.2.2 升级时可检查更新或前往下载页。同版本的后续修订需要从下载页手动下载并覆盖安装。</div>
 {% include guide-shot.html id='software-update' %}
 {% include guide-controls.html id='software-update' %}
 </section>
@@ -441,9 +449,10 @@ permalink: /guide.html
 {% include guide-controls.html id='sharing' %}
 </section>
 {% include research-lessons.html %}
+{% include ddrimage-lessons.html %}
 <section class="chapter" id="faq">
 <h2>
-<span>34</span>常见问题与使用注意</h2>
+<span>41</span>常见问题与使用注意</h2>
 <div class="faq">
 <details>
 <summary>为什么结果与 PubMed 或预印本官网不同？</summary>
@@ -490,8 +499,9 @@ permalink: /guide.html
 {% include guide-shot.html id='faq-ai-settings' %}
 {% include guide-controls.html id='faq' %}
 </section>
-<p class="notice">截图来自 Biomed Reader 2.2.2 的演示环境。文献、图表和输入内容均为示例；配图展示相关软件入口，跨平台插件的实际界面以本机 Word 为准。</p>
+<p class="notice">文献与 AI 章节沿用 2.2.2 的演示截图，DDRimage 章节使用 2.2.3 的软件截图。图像、文献和数据均为示例。跨平台插件的实际界面以本机 Word 为准。</p>
 <a class="btn primary" href="{{ '/downloads.html' | relative_url }}">下载并开始使用 {% include icon.html name='arrow' %}</a>
 </div>
 </div>
 </main>
+

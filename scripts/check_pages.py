@@ -7,12 +7,24 @@ import xml.etree.ElementTree as ET
 
 root = Path(sys.argv[1] if len(sys.argv) > 1 else '_site')
 base = '/Biomedreader'
-version = '2.2.2'
-expected_quark = {'windows': 'https://pan.quark.cn/s/083dd1cd8541', 'portable': 'https://pan.quark.cn/s/3c0ada60108b', 'apple': 'https://pan.quark.cn/s/0286e143c7fe', 'intel': 'https://pan.quark.cn/s/c21cc37271b0'}
+version = '2.2.3'
+expected_quark = {'windows': 'https://pan.quark.cn/s/d17f3ee2e4e6',
+ 'portable': 'https://pan.quark.cn/s/4310b353ba48',
+ 'apple': 'https://pan.quark.cn/s/1c93ba257b68',
+ 'intel': 'https://pan.quark.cn/s/988a1ed0e995'}
 expected_legacy_quark = {'windows': 'https://pan.quark.cn/s/d7308ecd7a92', 'portable': 'https://pan.quark.cn/s/3ad56e327034', 'apple': 'https://pan.quark.cn/s/31867e2dc3e0', 'intel': 'https://pan.quark.cn/s/4130cba6f1d1'}
-filenames = {'windows': 'BiomedReader_Setup_2.2.2_x64.exe', 'portable': 'BiomedReader_2.2.2_Portable_x64.zip', 'apple': 'BiomedReader_2.2.2_macOS12_AppleSilicon.dmg', 'intel': 'BiomedReader_2.2.2_macOS12_Intel.dmg'}
-expected_hashes = {'windows': 'b3709404d6193f9ba6c9837c6e1ca10a5b9e41474958e010aa59d1beeaa1daaf', 'portable': 'e60c2c19271bdd8fe3d285f34ca98becc4c447a3b3552b606be140f8cab5917b', 'apple': '44d7aee5f47396458362f036ef2e6d4a21c178002532f41948de6d827ce06b3b', 'intel': 'f0bede9410224059eadc33c752a859710e4be2e3fa03f84a19751cedfb18fe4b'}
-expected_sizes = {'windows': 183551905, 'portable': 277781906, 'apple': 393252853, 'intel': 444567002}
+filenames = {'windows': 'BiomedReader_Setup_2.2.3_x64.exe',
+ 'portable': 'BiomedReader_2.2.3_Portable_x64.zip',
+ 'apple': 'BiomedReader_2.2.3_macOS12_AppleSilicon.dmg',
+ 'intel': 'BiomedReader_2.2.3_macOS12_Intel.dmg'}
+expected_hashes = {'windows': 'ae7bf61ff6e31adb28258506d4f0c627bb60f15b92c681ca1383dfe843570db6',
+ 'portable': 'd59d1d5fc56c2c126d0c48039ae00df1062d4d32a5b50ca89600177e77e5fe3e',
+ 'apple': 'f6f3a41c4f538eb4d2edb31332f7f17c8c4c2037d1655b18a396cbe294b035ec',
+ 'intel': '841f3e0c7bc093c6f5bd4ac69f073f79468190a42826a75f4099d7e5be931519'}
+expected_sizes = {'windows': 199906924,
+ 'portable': 305018082,
+ 'apple': 453507133,
+ 'intel': 528491421}
 
 
 class Page(HTMLParser):
@@ -61,7 +73,7 @@ class Page(HTMLParser):
             self.chapters.append(self.chapter)
             self.lesson_images[self.chapter] = []
         if tag == 'img' and self.chapter:
-            assert values['src'].startswith(base + '/assets/guide-222/')
+            assert values['src'].startswith((base + '/assets/guide-222/', base + '/assets/guide-223/'))
             assert values.get('alt') and values.get('loading') == 'lazy'
             assert int(values['width']) > 0 and int(values['height']) > 0
             self.lesson_images[self.chapter].append(values['src'])
@@ -104,18 +116,22 @@ chapters = {'install', 'start', 'keywords', 'filters', 'ranking', 'refresh', 'br
             'views', 'hidden', 'details', 'favorites', 'journals', 'sharing', 'faq',
             'citations','batch-pdf','word-plugin','endnote-macos','favorite-search','bulk-unfavorite','software-update',
             'ai-deploy','ai-literature','research-assistant','scientific-questions','ai-reviewer','ai-find-articles','ai-figures','figures-images','figures-if','figures-data','figures-excel','ai-protocol','feedback'}
+ddrimage_chapters = ('ddrimage', 'ddrimage-export', 'ddrimage-foci', 'ddrimage-intensity', 'ddrimage-fiber', 'ddrimage-colony', 'ddrimage-plot')
+chapters.update(ddrimage_chapters)
 assert chapters <= pages['guide.html'].ids
 assert set(pages['guide.html'].chapters) == chapters
-assert len(pages['guide.html'].chapters) == 34
+assert len(pages['guide.html'].chapters) == 41
 guide = pages['guide.html']
 assert all(guide.lesson_images.values()), {key for key, images in guide.lesson_images.items() if not images}
 assert len(guide.lesson_images['ai-deploy']) == 11
 assert any(src.endswith('/finder-result.webp') for src in guide.lesson_images['ai-find-articles'])
-assert sum(map(len, guide.lesson_images.values())) == 68
+assert sum(map(len, guide.lesson_images.values())) == 80
+assert all(any('/guide-223/' in src for src in guide.lesson_images[chapter]) for chapter in ddrimage_chapters)
+assert base + '/guide.html#ddrimage' in pages['index.html'].links
 guide_text = (root / 'guide.html').read_text(encoding='utf8')
 assert '布尔表达式只适用于 PubMed' in guide_text and 'Biomni' not in guide_text
 assert '默认 · biomedreader.cn' in guide_text and '备用入口 · workers.dev' in guide_text
-assert guide_text.count('操作后核对：') == 28
+assert guide_text.count('操作后核对：') == 35
 assert {'lab-access', 'lab-management', 'finder-results'} <= guide.ids
 assert 'batch-refresh' in pages['guide.html'].ids
 sitemap = ET.parse(root / 'sitemap.xml')
@@ -123,7 +139,7 @@ locations = [node.text for node in sitemap.iter('{http://www.sitemaps.org/schema
 assert len(locations) == 4
 assert all(link.startswith('https://amiba-xqq.github.io/Biomedreader/') for link in locations)
 assert 'Sitemap: https://amiba-xqq.github.io/Biomedreader/sitemap.xml' in (root / 'robots.txt').read_text()
-print('PASS: Jekyll rendered 4 pages, 34 illustrated chapters, all local links/assets/anchors, sitemap, 8 exact Quark links, 8 version-specific GitHub downloads and 4 SHA256 values.')
+print('PASS: Jekyll rendered 4 pages, 41 illustrated chapters, all local links/assets/anchors, sitemap, 8 exact Quark links, 8 version-specific GitHub downloads and 4 SHA256 values.')
 
 # The desktop updater consumes the same version and hashes as the download page.
 import json

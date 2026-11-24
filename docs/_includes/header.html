@@ -10,6 +10,7 @@
       <a href="{{ '/video.html' | relative_url }}"{% if page.page_id == 'video' %} aria-current="page"{% endif %}>教程视频</a>
       <a href="{{ '/downloads.html' | relative_url }}"{% if page.page_id == 'downloads' %} aria-current="page"{% endif %}>软件下载</a>
     </nav>
-    <a class="btn primary header-download" href="{{ '/downloads.html' | relative_url }}">下载 2.2.2 {% include icon.html name='download' %}</a>
+    <a class="btn primary header-download" href="{{ '/downloads.html' | relative_url }}">下载 {{ site.data.downloads.version }} {% include icon.html name='download' %}</a>
   </div>
 </header>
+

@@ -1,8 +1,8 @@
 ---
 layout: default
 page_id: downloads
-title: "下载 2.2.2｜刊禾 Biomed Reader"
-description: "下载 Biomed Reader 2.2.2：Windows 安装版 EXE、完整目录 ZIP、macOS Apple Silicon 和 Intel DMG。"
+title: "下载 2.2.3｜刊禾 Biomed Reader"
+description: "下载 Biomed Reader 2.2.3：Windows 安装版 EXE、完整目录 ZIP、macOS Apple Silicon 和 Intel DMG。"
 permalink: /downloads.html
 ---
 <main id="main">
@@ -16,7 +16,7 @@ permalink: /downloads.html
     <section id="windows"><div class="platform-head"><span class="icon-tile">{% include icon.html name='windows' %}</span><div><p class="eyebrow">01 / WINDOWS</p><h2>Windows</h2></div></div>
       <div class="package-grid">
       {% include package.html key='windows' item=site.data.downloads.windows icon='download' type='EXE' system='Windows 10/11 x64' description='适合首次使用。按安装向导操作，可选择注册当前用户的 Word 插件。' %}
-      {% include package.html key='portable' item=site.data.downloads.portable icon='download' type='ZIP' system='Windows 10/11 x64' description='无需运行安装向导。请先完整解压，再从目录中打开 BiomedReader.exe。' %}
+      {% include package.html key='portable' item=site.data.downloads.portable icon='download' type='ZIP' system='Windows 10/11 x64' description='包含 DDRimage。请先完整解压整个 ZIP，再从目录中打开 BiomedReader.exe。' %}
       </div>
     </section>
     <section id="macos"><div class="platform-head"><span class="icon-tile">{% include icon.html name='mac' %}</span><div><p class="eyebrow">02 / MACOS</p><h2>macOS</h2></div></div>
@@ -27,12 +27,17 @@ permalink: /downloads.html
       </div>
     </section>
     <section class="notice"><div><p class="eyebrow">INSTALLATION</p><h2>升级前先备份</h2><p>请退出 Biomed Reader 和 Word，备份本地资料库后再覆盖安装。保留原有的数据目录。</p></div><a class="btn secondary" href="{{ '/guide.html' | relative_url }}#install">查看安装教程 {% include icon.html name='arrow' %}</a></section>
-    <section id="whats-new" class="release-section"><div class="section-head"><div><p class="eyebrow">03 / WHAT’S NEW</p><h2>2.2.2 带来了什么</h2></div><a class="text-link" href="{{ '/guide.html' | relative_url }}#versions">查看版本教程 {% include icon.html name='arrow' %}</a></div>
-      <div class="release-grid"><article><h3>科研图形工作台</h3><p>支持 WB / gel、IF、qPCR 和 Excel / CSV。可用项目上下文连续改图，撤销或重做最近一次 AI 修改，并导出可编辑矢量图。</p></article><article><h3>AI Protocol 与科研技能</h3><p>从论文、图片或自拟方法整理中文实验方案，支持编辑、分享及 Word / PDF 导出。按任务调用内置科研技能。</p></article><article><h3>AI 调用与团队协作</h3><p>选择个人或课题组优先通道，或接入本机 Codex。文字分析与模型图分别选择服务，并查看通道用量。</p></article></div>
-      <p class="related"><a href="https://github.com/amiba-xqq/Biomedreader/releases/tag/v2.2.2">Windows 发布记录</a><a href="https://github.com/amiba-xqq/Biomedreader_macos/releases/tag/v2.2.2">macOS 发布记录</a></p>
+    <section id="whats-new" class="release-section"><div class="section-head"><div><p class="eyebrow">03 / WHAT’S NEW</p><h2>2.2.3 带来了什么</h2></div><a class="text-link" href="{{ '/guide.html' | relative_url }}#versions">查看版本教程 {% include icon.html name='arrow' %}</a></div>
+      <div class="release-grid">
+        <article><h3>DDRimage 图像分析</h3><p>导出 Leica LIF 与 Olympus OIR 的 TIFF 图像。在本机统计细胞核内 Foci、核内相对荧光强度、DNA Fiber 和单克隆形成。</p></article>
+        <article><h3>同步预览与手动矫正</h3><p>并排核对原图和中间产物。支持排除或合并误分细胞核、排除纤维配对、重新圈定克隆 ROI，应用后更新统计。</p></article>
+        <article><h3>分组作图与结果管理</h3><p>拖动分组卡片调整顺序，按组设置配色和统计比较。正式结果保存在原图目录，关窗自动清理「测试一张」的中间文件。</p></article>
+      </div>
+      <p class="related"><a href="{{ '/guide.html' | relative_url }}#ddrimage">阅读 DDRimage 图文教程</a></p>
+      <p class="related"><a href="https://github.com/amiba-xqq/Biomedreader/releases/tag/v2.2.3">Windows 发布记录</a><a href="https://github.com/amiba-xqq/Biomedreader_macos/releases/tag/v2.2.3">macOS 发布记录</a></p>
     </section>
     <details class="archive" id="legacy"><summary>查找旧版本（2.1 / 2.0）</summary>
-      <p>历史版本用于旧环境兼容。日常安装请优先选择 2.2.2。</p>
+      <p>历史版本用于旧环境兼容。日常安装请优先选择 2.2.3。</p>
       {% assign archive_keys = 'windows,portable,apple,intel' | split: ',' %}
       <div class="archive-grid">
       {% for key in archive_keys %}{% assign v21 = site.data.downloads.previous[key] %}{% assign v20 = site.data.downloads.legacy[key] %}

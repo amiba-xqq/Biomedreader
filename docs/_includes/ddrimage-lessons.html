@@ -1,0 +1,107 @@
+<section class="chapter" id="ddrimage">
+<h2><span>34</span>DDRimage 入门与文件准备</h2>
+<p>DDRimage 在本机处理显微图和克隆形成图像。安装后从左侧「期刊目录」和「AI助手」之间进入。Windows 全新安装时，DDRimage、Word 插件和桌面快捷方式默认勾选。安装向导会显示 DDRimage 的额外占用空间。完整目录版需要解压整个 ZIP，macOS 版在应用内提供这一入口。安装包已包含处理所需的组件。Windows 卸载软件时会一并移除 DDRimage 模块。</p>
+<ol>
+<li><strong>按输入选卡片。</strong>显微镜原始 LIF 或 OIR 先转 TIFF。已有 TIFF 时，按指标选择 Foci 计数、核内相对荧光强度或 DNA Fiber。培养皿或六孔板照片使用单克隆形成。</li>
+<li><strong>按组准备目录。</strong>选择包含多个分组子文件夹的母文件夹。把同组图放入同一个子文件夹。可以把文件夹拖进工作流窗口或路径栏，也可以点「浏览」。双击已填写的路径会打开对应目录。</li>
+<li><strong>先试跑再批量处理。</strong>在「仅运行图像统计」中选「测试一张」并点击「开始运行」，检查右侧图像后切换「全部处理」。运行结束会保留工作流窗口。每个工作流分别记住上次选择的有效路径和设置。</li>
+</ol>
+{% include guide-shot.html id='ddrimage-home' %}
+<ul class="workflow-links">
+<li><a href="#ddrimage-export">Leica / Olympus 导出 TIFF</a></li>
+<li><a href="#ddrimage-foci">细胞核内 Foci</a></li>
+<li><a href="#ddrimage-intensity">核内相对荧光强度</a></li>
+<li><a href="#ddrimage-fiber">DNA Fiber</a></li>
+<li><a href="#ddrimage-colony">单克隆形成</a></li>
+<li><a href="#ddrimage-plot">从 CSV 生成统计图</a></li>
+</ul>
+<p>四个分析窗口可独立最大化或最小化。预览出现后拖动中间分隔线可调整两边宽度，点「铺满窗口」可隐藏参数栏。测试预览可以并排看最多四张图，「＋ 添加对照图」按图像类型添加原图、各通道、Merge 或中间产物，左右箭头切换可用图像。滚轮缩放和按住拖动会同步查看同一区域，切到最小缩放后继续向下滚动会保持图像位置。</p>
+<p>正式统计的中间产物和分组 CSV 保存在原图所在的分组子文件夹中，汇总 CSV 和统计图保存在母文件夹。测试文件带有 <code>DDRimage_测试_</code> 前缀，关闭工作流时会自动清理这些中间文件和该窗口的临时备份，保留原图及正式结果。若要留存试跑结果，可先另存一份。</p>
+{% include guide-controls.html id='ddrimage' %}
+</section>
+
+<section class="chapter" id="ddrimage-export">
+<h2><span>35</span>Leica LIF 与 Olympus OIR 转 TIFF</h2>
+<ol>
+<li>打开「Leica / Olympus 导出 TIFF」，在「原图类型」选择 <strong>Leica（LIF）</strong> 或 <strong>Olympus（OIR）</strong>，拖入或浏览选择存放原图的文件夹。原文件分布在下级目录时，勾选「扫描子文件夹」。</li>
+<li>在「导出内容」选择「合并图与独立通道」，可作为后续核内分析的输入。如只需要 RGB 合并图，选择「仅合并图」。</li>
+<li>Leica 的一个 LIF 通常含多张采集图。直接点击「开始运行」，完成后点击「打开结果文件夹」，查看新生成的 <code>原目录名_tif</code>。</li>
+</ol>
+{% include guide-shot.html id='ddrimage-export' %}
+<p>Olympus 通常把每次采集保存为一个 OIR。要把同组的多个文件汇合，点击「OIR 导出分组」。用「新建分组」建立对照和处理组，填入组名，再把保留完整文件名的卡片拖入对应分组。可用 Ctrl 或 Shift 多选，也可以选卡片后点「加入所选」。删除分组会把该组的卡片送回「待分配」。</p>
+{% include guide-shot.html id='ddrimage-oir' %}
+<p>点击「保存分组」后运行，只有已分配文件会导出。每个分组生成同名子文件夹，里面保存该组的多张 TIFF。选择「逐文件导出」则恢复每个 OIR 单独输出。导出后检查分组、采集张数和通道文件是否齐全，再将 TIFF 母文件夹交给分析工具。</p>
+{% include guide-controls.html id='ddrimage-export' %}
+</section>
+
+<section class="chapter" id="ddrimage-foci">
+<h2><span>36</span>细胞核内 Foci 计数与矫正</h2>
+<ol>
+<li>将 TIFF 母文件夹拖入窗口，先确认蓝色通道对应 DAPI，蛋白信号对应欲统计的通道。在「处理范围」选择「测试一张」。</li>
+<li>先检查「细胞核面积」的上下限，再检查「Foci 面积」。两项均以像素面积计。前者决定哪些核进入统计，后者决定核内哪些斑点计入 Foci。不同放大倍率和像素标定下应重新核对面积。</li>
+<li>核边界不清楚时，查看「DAPI 拉伸窗口」「DAPI 对比度」「DAPI 亮度」。窗口可填 <code>full</code>、<code>none</code> 或 <code>low,high</code>。通道 1–5 分别有窗口、对比度和亮度。调整后将同一组判定参数用于需要比较的样本。</li>
+<li>点击「开始运行」，并排比对合并原图、DAPI 和标注图。确认弱信号、明亮团块和相邻细胞都得到合理识别后，选择「全部处理」。</li>
+</ol>
+{% include guide-shot.html id='ddrimage-foci' %}
+<p>批量完成后点「矫正图像统计…」。上方选分组子文件夹，左右箭头切换采集图。核轮廓叠在原始 DAPI 图上。右键点击核可排除，再右键可恢复。排除区域变黑且保留轮廓。误分的相邻核可先点选一个，再 Ctrl＋左键点击另一核。快捷合并要求几何中心的距离不超过较大核的最大几何直径。</p>
+{% include guide-shot.html id='ddrimage-nuclei-review' %}
+<p>点击「应用矫正并重新分析」同步更新涉及的图片结果、分组 CSV 和已有汇总。需要返回当前图像原始识别时用「重置当前图像」。完成核对后，可切到<a href="#ddrimage-plot">仅生成统计图</a>。</p>
+{% include guide-controls.html id='ddrimage-foci' %}
+</section>
+
+<section class="chapter" id="ddrimage-intensity">
+<h2><span>37</span>核内相对荧光强度</h2>
+<p>该流程先用 DAPI 确定每个核的范围，再累计各蛋白通道中落在阈值范围内的像素灰度。结果是每核的信号累计值，核面积和背景都会影响读数。</p>
+<ol>
+<li>选择 TIFF 母文件夹，先选「测试一张」。在不同处理组间比较时，核对图像曝光、通道对应和像素标定，并使用一致的核分割和阈值设置。</li>
+<li>用「细胞核面积」及 DAPI 的窗口、对比度和亮度调整分核。然后按每个蛋白通道填写阈值上下限，范围为 0–255。降低下限会纳入更多弱信号，也可能纳入背景。先通过预览检查空白区域和弱信号细胞。</li>
+<li>在右侧对比 DAPI 分核图和通道信号图。确认范围后点「全部处理」。点「矫正图像统计…」可沿用 <a href="#ddrimage-foci">Foci 的核轮廓矫正</a>，逐图排除、恢复或合并误分核，再应用更新。</li>
+</ol>
+{% include guide-shot.html id='ddrimage-intensity' %}
+<p>在组子文件夹查看按通道输出的 CSV。要比较组间累计信号，切到<a href="#ddrimage-plot">仅生成统计图</a>，保持与实际通道、组名一致。</p>
+{% include guide-controls.html id='ddrimage-intensity' %}
+</section>
+
+<section class="chapter" id="ddrimage-fiber">
+<h2><span>38</span>DNA Fiber 配对与复制叉作图</h2>
+<ol>
+<li>把每组的 RGB TIFF 放入各自子文件夹，选择共同的母文件夹。若从 OIR 导出，先核对红绿信号在合并 TIFF 中的对应关系。</li>
+<li>选「测试一张」，分别调整绿色与红色的对比度、亮度和阈值。阈值范围为 0–255。先检查微弱的真实纤维是否保留，以及亮噪声是否被识别为片段，再决定两通道的设置。</li>
+<li>在右侧切换 Merge、红色通道、绿色通道、片段识别和配对相关图。核对断裂处、交叉处和孤立片段后，再选「全部处理」。</li>
+</ol>
+{% include guide-shot.html id='ddrimage-fiber' %}
+<p>在「矫正图像统计…」中，红绿边界表示系统识别的配对范围。右键任一片段会排除整对，黑色掩膜仍保留边界，再次右键可恢复。点击左上角「显示原图」可暂时隐藏边界和黑色掩膜，再点一次回到矫正视图。在同一分组内用左右箭头切换图片，应用矫正后会重新计算相关结果。</p>
+{% include guide-shot.html id='ddrimage-fiber-review' %}
+<p>切换至「仅生成统计图」，选择复制叉速度、长度比或两者。按实际染色顺序选「标记顺序」，准确填写图像标定的「像素/μm」和「后标记时间 (min)」。这些参数直接影响速度或长度比的解释。分组选项见<a href="#ddrimage-plot">统计作图</a>。</p>
+{% include guide-controls.html id='ddrimage-fiber' %}
+</section>
+
+<section class="chapter" id="ddrimage-colony">
+<h2><span>39</span>单克隆形成与圆形 ROI 矫正</h2>
+<ol>
+<li>按组整理培养皿或培养板的 JPG、PNG 或单页 TIFF，选取共同母文件夹。先用「测试一张」查看自动识别的圆形 ROI 和克隆标记。</li>
+<li>用「克隆面积」去除明显不合适的对象。漏识别培养孔时先核对「圆检测票数」设置和图像边缘，再查看「Otsu 阈值倍数」「最低灰度差」「距离峰突出度」三个分割参数。阈值倍数较低时更容易纳入浅染色，距离峰突出度增大可减少相邻克隆被过度分割。</li>
+<li>用「＋ 添加对照图」在右侧对比原图和 ROI / 分割中间产物，决定是否进入批量统计。点击「全部处理」后在组文件夹查看标注图与计数 CSV。</li>
+</ol>
+{% include guide-shot.html id='ddrimage-colony' %}
+<p>若自动圆形范围偏离实际培养区域，打开「矫正图像统计…」。选择已有圆调整中心和半径，或者点「圈定正圆」，从圆心向外拖出新的 ROI。可移除选中的圆，也可用「恢复本图的初始 ROI」撤销当前图像的调整。确认后点击「应用矫正并重新分析」，核对新标注和 CSV。</p>
+{% include guide-shot.html id='ddrimage-colony-review' %}
+{% include guide-controls.html id='ddrimage-colony' %}
+</section>
+
+<section class="chapter" id="ddrimage-plot">
+<h2><span>40</span>仅生成统计图与分组比较</h2>
+<ol>
+<li>在 Foci、核内相对荧光强度或 DNA Fiber 的「本次运行步骤」中选择「仅生成统计图」，确认切换后选择含已生成 CSV 的母文件夹。左侧会切换到作图参数。回到「仅运行图像统计」时会再确认，重跑成功后会替换对应旧结果，需要保留时先备份。</li>
+<li>点击「作图分组与顺序」。默认使用汇总 CSV 从左到右的组顺序，包含全部组。拖动左列卡片改变出图顺序，把不使用的组拖到「暂不作图」。也可选择卡片后使用上移或下移按钮。</li>
+</ol>
+{% include guide-shot.html id='ddrimage-plot-groups' %}
+<ol start="3">
+<li>在「配色」使用 Nature 或带色带的渐变预设，也可打开颜色板逐组添加颜色。颜色板可独立最大化或最小化。自定义时，颜色与参与作图列表中的组一一对应。</li>
+<li>在「Wilcoxon 比较」选择全部组两两比较、不进行统计检验，或手动选择比较组对。分组改变后重新核对比较对象。确认实验重复和统计检验的适用条件后再解释显著性。</li>
+<li>点击「开始运行」。右侧最多可并排预览两张生成的图，支持切换、缩放、拖动和铺满窗口。统计图与汇总 CSV 位于母文件夹，与组子目录同级。</li>
+</ol>
+{% include guide-shot.html id='ddrimage-plot' %}
+{% include guide-controls.html id='ddrimage-plot' %}
+</section>
+

@@ -406,5 +406,89 @@
     "caption": "先刷新本机模型，再设置分析用文本模型；图像工具由 Codex 本机组件管理。",
     "width": 645,
     "height": 304
+  },
+  "ddrimage-home": {
+    "width": 1190,
+    "height": 565,
+    "alt": "DDRimage 页的五张功能卡片",
+    "caption": "在 DDRimage 主页选择图像导出、核内 Foci、核内相对荧光强度、DNA Fiber 或单克隆形成。",
+    "folder": "guide-223"
+  },
+  "ddrimage-export": {
+    "width": 875,
+    "height": 640,
+    "alt": "Leica / Olympus 导出 TIFF 窗口的原图类型、输入路径和导出选项",
+    "caption": "将原图类型切为 Olympus 后，窗口会提供「OIR 导出分组」。",
+    "folder": "guide-223"
+  },
+  "ddrimage-oir": {
+    "width": 1150,
+    "height": 690,
+    "alt": "OIR 待分配文件与两个已命名分组的拖放界面",
+    "caption": "对照组和处理组均可汇总多张 OIR。留在左侧的定位图不会参与这次分组导出。",
+    "folder": "guide-223"
+  },
+  "ddrimage-foci": {
+    "width": 1250,
+    "height": 746,
+    "alt": "Foci 左侧分核参数和右侧并排的原图与核内斑点标注",
+    "caption": "测试一张后对比 Merge 和分核结果。示例图仅用于说明软件界面。",
+    "folder": "guide-223"
+  },
+  "ddrimage-nuclei-review": {
+    "width": 1180,
+    "height": 740,
+    "alt": "DAPI 图上的核轮廓、分组选择与核矫正按钮",
+    "caption": "滚轮缩放后仔细核对相邻核，使用右键或侧栏按钮更正，最后应用矫正。",
+    "folder": "guide-223"
+  },
+  "ddrimage-intensity": {
+    "width": 1250,
+    "height": 746,
+    "alt": "核内相对荧光强度测试窗口及右侧原图与分析对照预览",
+    "caption": "先检查原图和识别范围，再按通道调整阈值并比较弱信号的保留情况。",
+    "folder": "guide-223"
+  },
+  "ddrimage-fiber": {
+    "width": 1250,
+    "height": 746,
+    "alt": "DNA Fiber 测试窗口中的红绿参数和相同视野的原图与结果图",
+    "caption": "测试一张时先核对红绿片段配对，再将同一套参数应用于所有样本。",
+    "folder": "guide-223"
+  },
+  "ddrimage-fiber-review": {
+    "width": 1180,
+    "height": 740,
+    "alt": "DNA Fiber 矫正窗口中保留边界的黑色排除掩膜和显示原图按钮",
+    "caption": "右键排除的整对纤维仍保留边界，可再次右键恢复，或暂时切到原图核对。",
+    "folder": "guide-223"
+  },
+  "ddrimage-colony": {
+    "width": 1250,
+    "height": 746,
+    "alt": "单克隆形成试跑的参数区、原始培养皿图片和 ROI 结果",
+    "caption": "先对照原图确认圆形 ROI，再检查克隆面积和分割参数。",
+    "folder": "guide-223"
+  },
+  "ddrimage-colony-review": {
+    "width": 1180,
+    "height": 740,
+    "alt": "克隆形成矫正窗口中的圆形 ROI、圈定正圆和中心半径参数",
+    "caption": "对选中的圆可调整位置和半径，也可移除后重新圈定。",
+    "folder": "guide-223"
+  },
+  "ddrimage-plot-groups": {
+    "width": 865,
+    "height": 540,
+    "alt": "参与作图与暂不作图两列分组卡片",
+    "caption": "左侧从上到下对应图中从左到右，把不作图的组移到右侧。",
+    "folder": "guide-223"
+  },
+  "ddrimage-plot": {
+    "width": 1250,
+    "height": 746,
+    "alt": "仅生成统计图模式中的标记顺序、比例、配色和右侧两种统计图",
+    "caption": "示例为 DNA Fiber 的作图设置及生成结果。浏览另外的统计图时可使用预览区的图像选择。",
+    "folder": "guide-223"
   }
 }

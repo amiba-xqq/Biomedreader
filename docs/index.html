@@ -2,14 +2,14 @@
 layout: default
 page_id: home
 title: "刊禾 Biomed Reader｜生物医学科研工作台"
-description: "刊禾 Biomed Reader 2.2.2：从检索、收藏和引用文献，到科研作图、AI Protocol 和课题组协作。"
+description: "刊禾 Biomed Reader 2.2.3：文献检索、引用、科研作图、AI Protocol 与 DDRimage 显微图像分析。"
 permalink: /
 ---
 <main id="main">
   <section class="hero">
     <div class="wrap hero-grid">
       <div class="hero-copy">
-        <p class="kicker"><span></span> 生物医学科研工作台 <b>V2.2.2</b></p>
+        <p class="kicker"><span></span> 生物医学科研工作台 <b>V{{ site.data.downloads.version }}</b></p>
         <h1>从读文献，<br>到<span>做研究</span>。</h1>
         <p class="lead">把检索、阅读、引用和作图放在同一个桌面工作台。管理本地资料，在阅读时追溯证据，在写作时用得上。</p>
         <div class="actions"><a class="btn primary" href="{{ '/downloads.html' | relative_url }}">下载 Biomed Reader {% include icon.html name='download' %}</a><a class="btn secondary" href="{{ '/guide.html' | relative_url }}">查看使用教程 {% include icon.html name='arrow' %}</a></div>
@@ -31,9 +31,10 @@ permalink: /
   </section>
   <section class="wrap section" aria-labelledby="paths">
     <div class="section-head"><div><p class="eyebrow">01 / LEARNING PATHS</p><h2 id="paths">按你的任务开始</h2></div><p>从手头的论文、表格或图像入手，找到对应的操作教程。</p></div>
-    <div class="course-grid">
+    <div class="course-grid course-grid-paths">
       <a class="course" href="{{ '/guide.html' | relative_url }}#start"><span class="course-top"><span class="icon-tile">{% include icon.html name='book' %}</span><b>课程 01</b></span><h3>建立文献工作流</h3><p>检索 PubMed 和预印本，保存关键词、整理本地 PDF，再把文献插入 Word。</p><span class="course-link">开始阅读 {% include icon.html name='arrow' %}</span></a>
       <a class="course" href="{{ '/guide.html' | relative_url }}#ai-figures"><span class="course-top"><span class="icon-tile">{% include icon.html name='chart' %}</span><b>课程 02</b></span><h3>把实验数据画成图</h3><p>处理 WB、IF、qPCR 和 Excel / CSV，预览、连续改图并导出可编辑的 PDF 或 SVG。</p><span class="course-link">开始作图 {% include icon.html name='arrow' %}</span></a>
+      <a class="course course-ddrimage" href="{{ '/guide.html' | relative_url }}#ddrimage"><span class="course-top"><span class="icon-tile">{% include icon.html name='microscope' %}</span><b>DDRimage</b></span><h3>量化显微图像</h3><p>转换 Leica / Olympus 原图，统计核内 Foci、荧光强度、DNA Fiber 与单克隆形成。</p><span class="course-link">打开图像分析教程 {% include icon.html name='arrow' %}</span></a>
       <a class="course" href="{{ '/guide.html' | relative_url }}#ai-protocol"><span class="course-top"><span class="icon-tile">{% include icon.html name='flask' %}</span><b>课程 03</b></span><h3>从论文到实验方案</h3><p>用 AI 辅助总结、核查来源，将实验方法整理成可编辑的中文 Protocol。</p><span class="course-link">查看操作 {% include icon.html name='arrow' %}</span></a>
       <a class="course" href="{{ '/guide.html' | relative_url }}#ai-deploy"><span class="course-top"><span class="icon-tile">{% include icon.html name='team' %}</span><b>课程 04</b></span><h3>部署模型与课题组协作</h3><p>选择个人 API、课题组授权或本机 Codex，按任务配置文字模型和绘图通道。</p><span class="course-link">了解部署 {% include icon.html name='arrow' %}</span></a>
     </div>
@@ -42,5 +43,5 @@ permalink: /
     <div><p class="eyebrow">02 / WHO IT’S FOR</p><h2>适合谁使用？</h2><p>为需要持续追踪文献、处理实验数据或带领团队共享科研工具的人设计。</p></div>
     <dl><div><dt>学生与科研新人</dt><dd>从一个关键词方案开始，建立自己的文献库和阅读习惯。</dd></div><div><dt>研究人员与实验人员</dt><dd>把增量追踪、论文笔记、规范引用、数据图和方法整理放进日常流程。</dd></div><div><dt>课题组负责人</dt><dd>按服务商配置模型授权，为学生分配访问 ID 并查看用量。</dd></div></dl>
   </div></section>
-  <section class="wrap section"><div class="cta-band"><div><p class="eyebrow">READY TO START</p><h2>把第一份资料带进刊禾。</h2></div><a class="btn light" href="{{ '/downloads.html' | relative_url }}">获取 2.2.2 {% include icon.html name='arrow' %}</a></div></section>
+  <section class="wrap section"><div class="cta-band"><div><p class="eyebrow">READY TO START</p><h2>把第一份资料带进刊禾。</h2></div><a class="btn light" href="{{ '/downloads.html' | relative_url }}">获取 {{ site.data.downloads.version }} {% include icon.html name='arrow' %}</a></div></section>
 </main>
