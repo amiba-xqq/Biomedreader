@@ -14,6 +14,7 @@
   <link rel="canonical" href="{{ page.url | absolute_url }}">
   <link rel="icon" type="image/png" href="{{ '/assets/app-icon.png' | relative_url }}">
   <link rel="stylesheet" href="{{ '/style.css' | relative_url }}?v=academy-3?v={{ site.data.downloads.version }}">
+  {% if page.page_id == 'home' %}<link rel="stylesheet" href="{{ '/assets/film/home.css' | relative_url }}">{% endif %}
   <title>{{ page.title | escape }}</title>
   {% if page.page_id == 'video' %}<link rel="stylesheet" href="{{ '/assets/video/player.css' | relative_url }}">{% endif %}
 </head>

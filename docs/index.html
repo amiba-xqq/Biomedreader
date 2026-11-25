@@ -15,18 +15,27 @@ permalink: /
         <div class="actions"><a class="btn primary" href="{{ '/downloads.html' | relative_url }}">下载 Biomed Reader {% include icon.html name='download' %}</a><a class="btn secondary" href="{{ '/guide.html' | relative_url }}">查看使用教程 {% include icon.html name='arrow' %}</a></div>
         <p class="hero-meta">Windows 10/11 x64 · macOS 12+ · 中文界面</p>
       </div>
-      <div class="hero-stage" aria-label="刊禾科研工作流程示意">
-        <div class="stage-head"><span>BIOMED READER / 研究笔记</span><span>WORKFLOW 01</span></div>
-        <div class="stage-sheet">
-          <div class="sheet-top"><span class="icon-tile">{% include icon.html name='book' %}</span><div><strong>我的研究工作台</strong><small>从证据到成果</small></div><span class="sheet-label">工作流示意</span></div>
-          <div class="sheet-main">
-            <div class="sheet-list"><div><b>01</b><span>文献检索<small>关键词与证据</small></span></div><div><b>02</b><span>收藏与引用<small>资料库与写作</small></span></div><div><b>03</b><span>数据作图<small>整理实验结果</small></span></div></div>
-            <div class="sheet-chart" aria-hidden="true"><div>FIG. 01 <span>DATA VIEW</span></div><svg viewBox="0 0 200 125" fill="none"><path d="M25 13v88h160M25 40h160M25 68h160" stroke="#e4cbb8" stroke-width="1.5"/><path d="M40 100V73h14v27m9 0V63h14v37m22 0V57h14v43m9 0V34h14v66m22 0V42h14v58" fill="#f2a56e"/><path d="M40 100V73h14v27m45 0V57h14v43m45 0V42h14v58" fill="#bf4b1e"/><path d="M26 13v88h160" stroke="#7f492d" stroke-width="1.7"/></svg><p>观察 · 比较 · 导出</p></div>
-          </div>
-          <div class="sheet-bottom"><span>PubMed</span><span>bioRxiv</span><span>medRxiv</span></div>
+      <section class="film" id="product-film" aria-labelledby="film-title">
+        <div class="film-heading"><h2 id="film-title">刊禾产品短片</h2><span>01:14</span></div>
+        <div class="film-screen">
+          <video id="home-film" controls playsinline preload="none" width="1920" height="1080" poster="{{ '/assets/film/cover.webp' | relative_url }}" aria-label="刊禾 Biomed Reader 产品宣传片">
+            <source media="(max-width: 770px)" src="{{ '/assets/film/film-720.mp4' | relative_url }}" type="video/mp4">
+            <source src="{{ '/assets/film/film-1080.mp4' | relative_url }}" type="video/mp4">
+            <a href="{{ '/assets/film/film-1080.mp4' | relative_url }}">打开视频文件</a>
+          </video>
+          <button class="film-cover" hidden type="button" aria-label="播放刊禾产品短片">
+            <span class="film-cover-title">刊禾<span>Biomed Reader</span></span>
+            <span class="film-play"><i aria-hidden="true"></i>播放短片</span>
+          </button>
         </div>
-        <div class="stage-foot"><span>01 ── 03</span><span>READ · ORGANIZE · PLOT</span></div>
-      </div>
+        <div class="film-chapters" aria-label="跳至片段" hidden>
+          <button type="button" data-at="3"><small>00:03</small>查文献</button>
+          <button type="button" data-at="24"><small>00:24</small>量图像</button>
+          <button type="button" data-at="55"><small>00:55</small>做科研图</button>
+        </div>
+        <p class="film-error" hidden>视频暂时无法播放。<a href="{{ '/assets/film/film-720.mp4' | relative_url }}">打开较小的 MP4 版本</a></p>
+      </section>
+      <script defer src="{{ '/assets/film/home.js' | relative_url }}"></script>
     </div>
   </section>
   <section class="wrap section" aria-labelledby="paths">
