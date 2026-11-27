@@ -1,8 +1,8 @@
 ---
 layout: default
 page_id: downloads
-title: "下载 2.2.3｜刊禾 Biomed Reader"
-description: "下载 Biomed Reader 2.2.3：Windows 安装版 EXE、完整目录 ZIP、macOS Apple Silicon 和 Intel DMG。"
+title: "下载 2.3.0｜刊禾 Biomed Reader"
+description: "下载 Biomed Reader 2.3.0 的 Windows EXE、完整目录 ZIP 和 macOS 双架构 DMG，查看 2.2.3 历史安装包。"
 permalink: /downloads.html
 ---
 <main id="main">
@@ -10,7 +10,7 @@ permalink: /downloads.html
     <p class="kicker"><span></span> RELEASE CENTER <b>V{{ site.data.downloads.version }}</b></p>
     <h1>下载 Biomed Reader</h1>
     <p class="lead">选择对应的系统与芯片。四种安装包均提供 GitHub 和夸克网盘入口。</p>
-    <div class="anchor-links"><a href="#windows">跳到 Windows</a><a href="#macos">跳到 macOS</a><a href="#whats-new">查看更新内容</a></div>
+    <div class="anchor-links"><a href="#windows">跳到 Windows</a><a href="#macos">跳到 macOS</a><a href="#whats-new">查看更新内容</a><a href="#legacy">历史下载</a></div>
   </div></section>
   <div class="wrap section download-content">
     <section id="windows"><div class="platform-head"><span class="icon-tile">{% include icon.html name='windows' %}</span><div><p class="eyebrow">01 / WINDOWS</p><h2>Windows</h2></div></div>
@@ -27,21 +27,32 @@ permalink: /downloads.html
       </div>
     </section>
     <section class="notice"><div><p class="eyebrow">INSTALLATION</p><h2>升级前先备份</h2><p>请退出 Biomed Reader 和 Word，备份本地资料库后再覆盖安装。保留原有的数据目录。</p></div><a class="btn secondary" href="{{ '/guide.html' | relative_url }}#install">查看安装教程 {% include icon.html name='arrow' %}</a></section>
-    <section id="whats-new" class="release-section"><div class="section-head"><div><p class="eyebrow">03 / WHAT’S NEW</p><h2>2.2.3 带来了什么</h2></div><a class="text-link" href="{{ '/guide.html' | relative_url }}#versions">查看版本教程 {% include icon.html name='arrow' %}</a></div>
+    <section id="whats-new" class="release-section"><div class="section-head"><div><p class="eyebrow">03 / WHAT’S NEW</p><h2>版本更新</h2></div><a class="text-link" href="{{ '/guide.html' | relative_url }}#versions">查看版本教程 {% include icon.html name='arrow' %}</a></div>
+      <div class="platform-head"><div><h3>2.3.0 · 皮肤与操作体验</h3></div></div>
       <div class="release-grid">
-        <article><h3>DDRimage 图像分析</h3><p>导出 Leica LIF 与 Olympus OIR 的 TIFF 图像。在本机统计细胞核内 Foci、核内相对荧光强度、DNA Fiber 和单克隆形成。</p></article>
-        <article><h3>同步预览与手动矫正</h3><p>并排核对原图和中间产物。支持排除或合并误分细胞核、排除纤维配对、重新圈定克隆 ROI，应用后更新统计。</p></article>
-        <article><h3>分组作图与结果管理</h3><p>拖动分组卡片调整顺序，按组设置配色和统计比较。正式结果保存在原图目录，关窗自动清理「测试一张」的中间文件。</p></article>
+        <article><h4>五款内置皮肤</h4><p>经典、江山青、深海蓝、香槟金和绛红可直接切换。常用导航、卡片和按钮增加功能图标。</p></article>
+        <article><h4>本地与 AI DIY</h4><p>可拖入本地图片制作皮肤，也可用 AI 在后台生成 1 张桌面背景和 8 张独立卡片图。皮肤包支持排序、批量导出与预览导入。</p></article>
+        <article><h4>收藏与作图</h4><p>收藏分组卡片固定宽高，操作按钮集中在一行。四种 AI 作图项目可重命名，WB／gel 和 IF 的选区按屏幕定位。</p></article>
       </div>
-      <p class="related"><a href="{{ '/guide.html' | relative_url }}#ddrimage">阅读 DDRimage 图文教程</a></p>
-      <p class="related"><a href="https://github.com/amiba-xqq/Biomedreader/releases/tag/v2.2.3">Windows 发布记录</a><a href="https://github.com/amiba-xqq/Biomedreader_macos/releases/tag/v2.2.3">macOS 发布记录</a></p>
+      <p class="related"><a href="{{ '/guide.html' | relative_url }}#skins">阅读皮肤教程</a><a href="https://github.com/amiba-xqq/Biomedreader/releases/tag/v2.3.0">Windows 2.3.0 发布记录</a><a href="https://github.com/amiba-xqq/Biomedreader_macos/releases/tag/v2.3.0">macOS 2.3.0 发布记录</a></p>
+      <div class="platform-head"><div><h3>2.2.3 · DDRimage 显微图像分析</h3></div></div>
+      <div class="release-grid">
+        <article><h4>图像转换与定量</h4><p>将 Leica LIF 和 Olympus OIR 转成 TIFF，在本机分析细胞核内 Foci、核内相对荧光强度、DNA Fiber 和单克隆形成。</p></article>
+        <article><h4>并排预览与手动矫正</h4><p>同步查看原图和中间产物，修正分核、纤维配对或克隆 ROI，再更新统计。</p></article>
+        <article><h4>作图与结果清理</h4><p>拖动分组卡片调整顺序，设置配色与统计比较。结果保存在原图目录，关窗会清理单图试跑的中间文件。</p></article>
+      </div>
+      <p class="related"><a href="{{ '/guide.html' | relative_url }}#ddrimage">阅读 DDRimage 教程</a><a href="https://github.com/amiba-xqq/Biomedreader/releases/tag/v2.2.3">Windows 2.2.3 发布记录</a><a href="https://github.com/amiba-xqq/Biomedreader_macos/releases/tag/v2.2.3">macOS 2.2.3 发布记录</a></p>
     </section>
-    <details class="archive" id="legacy"><summary>查找旧版本（2.1 / 2.0）</summary>
-      <p>历史版本用于旧环境兼容。日常安装请优先选择 2.2.3。</p>
+    <details class="archive" id="legacy"><summary>查找历史版本（2.2.3 / 2.1 / 2.0）</summary>
+      <p>历史安装包通过 GitHub 下载。新安装请选择 {{ site.data.downloads.version }}。</p>
       {% assign archive_keys = 'windows,portable,apple,intel' | split: ',' %}
       <div class="archive-grid">
-      {% for key in archive_keys %}{% assign v21 = site.data.downloads.previous[key] %}{% assign v20 = site.data.downloads.legacy[key] %}
-      <div><h3>{{ v21.name }}</h3><p><a href="{{ v21.github }}">2.1 GitHub</a> <a href="{{ v21.quark }}">2.1 夸克</a></p><p><a data-legacy-download="{{ key }}" href="{{ v20.github }}">2.0 GitHub</a> <a data-legacy-quark="{{ key }}" href="{{ v20.quark }}">2.0 夸克</a></p></div>
+      {% for key in archive_keys %}{% assign v223 = site.data.downloads.archive_223[key] %}{% assign v21 = site.data.downloads.previous[key] %}{% assign v20 = site.data.downloads.legacy[key] %}
+      <div><h3>{{ v223.name }}</h3>
+        <p><a data-history-version="2.2.3" data-history-package="{{ key }}" href="{{ v223.github }}" aria-label="GitHub 下载 2.2.3 {{ v223.name }}">2.2.3 GitHub</a></p>
+        <p><a data-history-version="2.1" data-history-package="{{ key }}" href="{{ v21.github }}" aria-label="GitHub 下载 2.1 {{ v21.name }}">2.1 GitHub</a></p>
+        <p><a data-history-version="2.0" data-history-package="{{ key }}" href="{{ v20.github }}" aria-label="GitHub 下载 2.0 {{ v20.name }}">2.0 GitHub</a></p>
+      </div>
       {% endfor %}
       </div>
     </details>

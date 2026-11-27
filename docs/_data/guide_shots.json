@@ -490,5 +490,61 @@
     "alt": "仅生成统计图模式中的标记顺序、比例、配色和右侧两种统计图",
     "caption": "示例为 DNA Fiber 的作图设置及生成结果。浏览另外的统计图时可使用预览区的图像选择。",
     "folder": "guide-223"
+  },
+  "skins-local-editor": {
+    "folder": "guide-230",
+    "alt": "DIY 皮肤包窗口，左侧是待选图片，右侧有桌面预览和两张卡片背景",
+    "caption": "本地 DIY 先为图片指定用途，再调整右侧卡片背景的顺序。",
+    "width": 960,
+    "height": 600,
+    "version": "2.3.0"
+  },
+  "skins-gallery": {
+    "folder": "guide-230",
+    "alt": "2.3.0 皮肤页，上方是五款内置皮肤，下方展示两款示例皮肤包",
+    "caption": "点击预览卡即可应用皮肤。当前卡片有描边和勾选标记。",
+    "width": 1260,
+    "height": 790,
+    "version": "2.3.0"
+  },
+  "skins-ai-form": {
+    "folder": "guide-230",
+    "alt": "AI DIY 窗口中填写创作要求、选择模型，并添加两张参考图",
+    "caption": "选择文字模型和生图模型，窗口底部说明参考图是否会交给绘图模型。",
+    "width": 800,
+    "height": 760,
+    "version": "2.3.0"
+  },
+  "skins-ai-preview": {
+    "folder": "guide-230",
+    "alt": "AI DIY 的预览窗口，左侧桌面背景，右侧列出独立卡片图",
+    "caption": "示例预览中的八张卡片背景可重新排序。确认后点击「保存并应用」。",
+    "width": 800,
+    "height": 760,
+    "version": "2.3.0"
+  },
+  "skins-export": {
+    "folder": "guide-230",
+    "alt": "导出窗口同时勾选了晴空山谷和暮色暖坡",
+    "caption": "勾选要分享的皮肤后，选择一个 ZIP 保存位置。",
+    "width": 700,
+    "height": 555,
+    "version": "2.3.0"
+  },
+  "skins-import": {
+    "folder": "guide-230",
+    "alt": "ZIP 导入窗口预览两款皮肤，仅勾选晴空山谷",
+    "caption": "可预览 ZIP 中的所有皮肤，再选择要保存在本机的皮肤包。",
+    "width": 700,
+    "height": 555,
+    "version": "2.3.0"
+  },
+  "favorites-230": {
+    "folder": "guide-230",
+    "alt": "绛红皮肤下的收藏分组，四张等宽等高的卡片各显示分组名和篇数",
+    "caption": "2.3.0 的分组卡片只显示名称和篇数，所有操作按钮在同一行。",
+    "width": 1440,
+    "height": 760,
+    "version": "2.3.0"
   }
 }

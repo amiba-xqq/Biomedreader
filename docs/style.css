@@ -111,6 +111,7 @@ ul,ol{padding-inline-start:1.5em}
 .notice h2{font-size:1.45rem;margin:5px 0 8px}
 .release-grid,.version-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
 .related{margin-top:20px}
+#whats-new .related + .platform-head{margin-top:32px}
 .archive{border-top:1px solid var(--line)}
 .archive>p{color:var(--muted);margin-block:12px}
 .archive-grid>div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px}
@@ -296,4 +297,7 @@ ul,ol{padding-inline-start:1.5em}
 }
 @media (min-width: 701px) and (max-width: 1000px) {
   .version-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media (min-width: 1140px) {
+  #versions .version-grid { grid-template-columns: repeat(5,minmax(0,1fr)); }
 }
